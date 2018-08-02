@@ -1,0 +1,59 @@
+{
+  "name": "@skyux/theme",
+  "version": "3.0.0",
+  "description": "SKY UX Theme",
+  "main": "bundles/bundle.umd.js",
+  "module": "index.ts",
+  "engines": {
+    "node": ">=8.11.1"
+  },
+  "scripts": {
+    "skyux": "skyux",
+    "test": "skyux test && skyux e2e && skyux build && npm run build",
+    "build": "skyux build-public-library && node ./scripts/compile-sass.js",
+    "start": "skyux serve"
+  },
+  "keywords": [],
+  "author": "Blackbaud",
+  "license": "ISC",
+  "peerDependencies": {
+    "@angular/animations": "^4.3.6",
+    "@angular/common": "^4.3.6",
+    "@angular/compiler": "^4.3.6",
+    "@angular/compiler-cli": "^4.3.6",
+    "@angular/core": "^4.3.6",
+    "@angular/forms": "^4.3.6",
+    "@angular/http": "^4.3.6",
+    "@angular/platform-browser": "^4.3.6",
+    "@angular/platform-browser-dynamic": "^4.3.6",
+    "@angular/router": "^4.3.6",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.10"
+  },
+  "dependencies": {
+    "fontfaceobserver": "2.0.9"
+  },
+  "devDependencies": {
+    "@angular/animations": "4.3.6",
+    "@angular/common": "4.3.6",
+    "@angular/compiler": "4.3.6",
+    "@angular/compiler-cli": "4.3.6",
+    "@angular/core": "4.3.6",
+    "@angular/forms": "4.3.6",
+    "@angular/http": "4.3.6",
+    "@angular/platform-browser": "4.3.6",
+    "@angular/platform-browser-dynamic": "4.3.6",
+    "@angular/router": "4.3.6",
+    "@blackbaud/skyux-design-tokens": "0.0.8",
+    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-2.0.0",
+    "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
+    "core-js": "2.4.1",
+    "normalize-scss": "5.0.3",
+    "rxjs": "5.4.3",
+    "ts-node": "3.0.4",
+    "tslint": "5.2.0",
+    "typescript": "2.3.2",
+    "zone.js": "0.8.10"
+  }
+}

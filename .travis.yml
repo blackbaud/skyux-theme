@@ -1,0 +1,18 @@
+language: node_js
+sudo: required
+dist: trusty
+
+before_install:
+  - npm install -g @blackbaud/skyux-cli
+
+git:
+  depth: 10
+
+branches:
+  only:
+    - master
+    - /^[0-9]+\.[0-9]+\.[0-9]+.*/
+
+cache:
+  directories:
+    - node_modules
