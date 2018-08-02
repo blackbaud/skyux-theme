@@ -9,9 +9,10 @@
   },
   "scripts": {
     "skyux": "skyux",
-    "test": "skyux test && skyux e2e && skyux build && npm run build",
-    "build": "skyux build-public-library && node ./scripts/compile-sass.js",
-    "start": "skyux serve"
+    "test": "npm run build:dev-bundle && skyux test && skyux e2e && skyux build",
+    "build": "skyux build-public-library && node ./scripts/prepare-package.js",
+    "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
+    "start": "npm run build:dev-bundle && skyux serve"
   },
   "keywords": [],
   "author": "Blackbaud",
@@ -46,7 +47,7 @@
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
     "@blackbaud/skyux-design-tokens": "0.0.8",
-    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-2.0.0",
+    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-remove-sky-css",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
     "core-js": "2.4.1",
     "normalize-scss": "5.0.3",
