@@ -1,7 +1,9 @@
 /* jshint node: true */
 'use strict';
 
-require('style-loader!@skyux/theme/css/sky.css');
+// Switch these lines after initial release:
+// require('style-loader!@skyux/theme/css/sky.css');
+require('style-loader!@skyux/theme/src/app/public/styles/sky.scss');
 
 const FontFaceObserver = require('fontfaceobserver');
 const LOAD_TIMEOUT = 30000;
