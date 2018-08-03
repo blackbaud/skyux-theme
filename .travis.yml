@@ -18,9 +18,9 @@ cache:
 before_install:
   - chmod +x ./scripts/travis-after-success.sh
   - npm install -g @blackbaud/skyux-cli
-  - npm install -g blackbaud/skyux-builder-config#shared-config
 
 script:
+  - npm install github:blackbaud/skyux-builder-config#shared-config
   - npm run test:ci
 
 after_script:
