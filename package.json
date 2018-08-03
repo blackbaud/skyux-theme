@@ -9,7 +9,7 @@
   },
   "scripts": {
     "skyux": "skyux",
-    "test": "npm run build:dev-bundle && skyux test",
+    "test": "npm run build:dev-bundle && skyux test --platform travis",
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
     "start": "npm run build:dev-bundle && skyux serve"
