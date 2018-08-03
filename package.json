@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "3.0.0",
+  "version": "3.0.0-alpha.0",
   "description": "SKY UX Theme",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
@@ -33,7 +33,9 @@
     "zone.js": "^0.8.10"
   },
   "dependencies": {
-    "fontfaceobserver": "2.0.9"
+    "@blackbaud/skyux-design-tokens": "0.0.8",
+    "fontfaceobserver": "2.0.9",
+    "normalize-scss": "5.0.3"
   },
   "devDependencies": {
     "@angular/animations": "4.3.6",
@@ -46,11 +48,9 @@
     "@angular/platform-browser": "4.3.6",
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
-    "@blackbaud/skyux-design-tokens": "0.0.8",
     "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-remove-sky-css",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
     "core-js": "2.4.1",
-    "normalize-scss": "5.0.3",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
     "tslint": "5.2.0",
