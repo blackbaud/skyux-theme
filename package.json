@@ -10,7 +10,6 @@
   "scripts": {
     "skyux": "skyux",
     "test": "npm run build:dev-bundle && skyux test",
-    "test:ci": "npm run build:dev-bundle && skyux test --platform travis",
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
     "start": "npm run build:dev-bundle && skyux serve"
@@ -51,7 +50,6 @@
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
     "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-remove-sky-css",
-    "@blackbaud/skyux-builder-config": "blackbaud/skyux-builder-config#shared-config",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
     "core-js": "2.4.1",
     "rxjs": "5.4.3",
