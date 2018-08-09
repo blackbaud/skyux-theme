@@ -50,7 +50,6 @@
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
     "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-remove-sky-css",
-    "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
     "core-js": "2.4.1",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
