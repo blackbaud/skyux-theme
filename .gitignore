@@ -5,6 +5,7 @@ npm-debug.log*
 
 # Coverage directory used by tools like istanbul
 coverage
+test-results
 
 # Dependency directories
 node_modules
@@ -28,6 +29,7 @@ dist
 # SKY UX visual directory
 screenshots-baseline-local
 screenshots-diff-local
+BrowserStackLocal
 
 # OS specific files
 .DS_Store

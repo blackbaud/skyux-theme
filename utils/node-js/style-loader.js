@@ -7,7 +7,7 @@ const FontFaceObserver = require('fontfaceobserver');
 const LOAD_TIMEOUT = 30000;
 
 module.exports = {
-  loadStyles() {
+  loadStyles: function () {
     const fontAwesome = new FontFaceObserver('FontAwesome');
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
