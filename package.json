@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "description": "SKY UX Theme",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
@@ -19,19 +19,7 @@
   "author": "Blackbaud",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/animations": "^4.3.6",
-    "@angular/common": "^4.3.6",
-    "@angular/compiler": "^4.3.6",
-    "@angular/compiler-cli": "^4.3.6",
-    "@angular/core": "^4.3.6",
-    "@angular/forms": "^4.3.6",
-    "@angular/http": "^4.3.6",
-    "@angular/platform-browser": "^4.3.6",
-    "@angular/platform-browser-dynamic": "^4.3.6",
-    "@angular/router": "^4.3.6",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.4.3",
-    "zone.js": "^0.8.10"
+    "@angular/core": "^4.3.6"
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.8",
@@ -50,9 +38,10 @@
     "@angular/platform-browser": "4.3.6",
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
-    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-remove-sky-css",
+    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-2.0.0",
     "@blackbaud/skyux-builder-config": "blackbaud/skyux-builder-config#shared-config",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
+    "@skyux/theme": "3.0.0-alpha.1",
     "core-js": "2.4.1",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
