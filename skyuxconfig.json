@@ -1,5 +1,10 @@
 {
   "name": "skyux-core",
   "mode": "easy",
-  "compileMode": "aot"
+  "compileMode": "aot",
+  "testSettings": {
+    "unit": {
+      "browserSet": "paranoid"
+    }
+  }
 }
