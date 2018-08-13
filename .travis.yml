@@ -14,10 +14,14 @@ cache:
   directories:
     - node_modules
 
-# http://blog.500tech.com/setting-up-travis-ci-to-run-tests-on-latest-google-chrome-version/
 before_install:
   - chmod +x ./scripts/travis-after-success.sh
+  - npm i -g npm@6.0.1
   - npm install -g @blackbaud/skyux-cli
+
+install:
+  - npm install
+  - npm install blackbaud/skyux-builder-config#shared-config
 
 script:
   - npm run test:ci

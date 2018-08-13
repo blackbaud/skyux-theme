@@ -38,7 +38,6 @@
     "@angular/platform-browser": "4.3.6",
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
-    "@blackbaud/skyux-builder-config": "blackbaud/skyux-builder-config#shared-config",
     "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-2.0.0",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
     "@skyux/theme": "3.0.0-alpha.1",
