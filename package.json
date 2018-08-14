@@ -40,7 +40,7 @@
     "@angular/router": "4.3.6",
     "@blackbaud/skyux-builder": "blackbaud/skyux-builder#rc-2.0.0",
     "@skyux-sdk/e2e": "blackbaud/skyux-lib-e2e#add-all-e2e",
-    "@skyux/theme": "3.0.0-alpha.1",
+    "@skyux/theme": "3.0.0-alpha.4",
     "core-js": "2.4.1",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
