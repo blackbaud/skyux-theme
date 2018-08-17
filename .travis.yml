@@ -21,7 +21,7 @@ before_install:
 
 install:
   - npm install
-  - npm install blackbaud/skyux-builder-config
+  - npm install blackbaud/skyux-builder-config --no-save
 
 script:
   - npm run test:ci
