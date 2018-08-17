@@ -10,7 +10,7 @@
   "scripts": {
     "skyux": "skyux",
     "test": "npm run build:dev-bundle && skyux test",
-    "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library",
+    "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library && skyux build-public-library",
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
     "start": "npm run build:dev-bundle && skyux serve"
@@ -19,7 +19,8 @@
   "author": "Blackbaud",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/core": "^4.3.6"
+    "@angular/core": "^4.3.6",
+    "rxjs": "^5.4.3"
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.8",
