@@ -26,6 +26,14 @@ function copyScripts() {
   fs.copySync('./utils', './dist/utils');
 }
 
+function copyCompatMixins() {
+  fs.copySync(
+    './src/app/public/styles/_compat',
+    './dist/scss/_compat'
+  );
+}
+
 copyScss();
 copyDesignTokens();
+copyCompatMixins();
 copyScripts();
