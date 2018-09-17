@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "SKY UX Theme",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
@@ -42,7 +42,7 @@
     "@blackbaud/skyux": "2.19.0",
     "@blackbaud/skyux-builder": "1.19.3",
     "@skyux-sdk/e2e": "3.0.0-alpha.0",
-    "@skyux/theme": "3.0.0-alpha.4",
+    "@skyux/theme": "latest",
     "core-js": "2.4.1",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
