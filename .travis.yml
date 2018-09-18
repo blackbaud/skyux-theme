@@ -22,7 +22,7 @@ install:
 
 # TODO: Switch to official Blackbaud script after released:
 script:
-  - bash <(curl -s https://blackbaud-stevebrush.github.io/skyux-travis/v3/library-script.sh)
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-script.sh)
 
 after_script:
   - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-after-script.sh)
