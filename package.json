@@ -14,7 +14,6 @@
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:ci": "npm run build",
     "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
-    "build:ci": "npm run build",
     "start": "npm run build:dev-bundle && skyux serve"
   },
   "keywords": [],
