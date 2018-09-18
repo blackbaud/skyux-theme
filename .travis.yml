@@ -20,7 +20,6 @@ before_install:
 install:
   - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-install.sh)
 
-# TODO: Switch to official Blackbaud script after released:
 script:
   - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-script.sh)
 
