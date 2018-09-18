@@ -15,19 +15,19 @@ cache:
     - node_modules
 
 before_install:
-  - chmod +x ./scripts/travis-after-success.sh
-  - npm i -g npm@6.0.1
-  - npm install -g @blackbaud/skyux-cli
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-before-install.sh)
 
 install:
-  - npm install
-  - npm install --no-save blackbaud/skyux-builder-config
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-install.sh)
 
 script:
-  - npm run test:ci
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-script.sh)
 
 after_script:
-  - bash <(curl -s https://blackbaud.github.io/skyux-travis/library-after-script.sh)
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-after-script.sh)
 
 after_success:
-  - ./scripts/travis-after-success.sh
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-after-success.sh)
+
+after_failure:
+  - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-after-failure.sh)

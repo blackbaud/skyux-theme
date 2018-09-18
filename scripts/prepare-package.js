@@ -1,7 +1,7 @@
-const sass = require('node-sass');
 const fs = require('fs-extra');
-const path = require('path');
+const sass = require('node-sass');
 const tildeImporter = require('node-sass-tilde-importer');
+const path = require('path');
 
 function copyScss() {
   const result = sass.renderSync({
