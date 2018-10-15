@@ -88,6 +88,7 @@ $sky-switch-size: 22px !default;
   line-height: $sky-switch-size;
   flex: 1 1 auto;
   width: 100%;
+  min-width: 0; // prevent truncated text from spiling out of bounds https://css-tricks.com/flexbox-truncated-text/
 }
 
 .sky-switch-icon-group {
