@@ -10,8 +10,7 @@
   "scripts": {
     "skyux": "skyux",
     "test": "npm run build:dev-bundle && skyux test",
-    "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library && skyux e2e && npm run build",
-    "test:visual": "npm run build:dev-bundle && skyux e2e",
+    "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library && npm run build",
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:ci": "npm run build",
     "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
