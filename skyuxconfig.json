@@ -1,8 +1,12 @@
 {
+  "$schema": "./node_modules/@skyux/config/skyuxconfig-schema.json",
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
   "testSettings": {
+    "e2e": {
+      "browserSet": "speedy"
+    },
     "unit": {
       "browserSet": "paranoid"
     }
