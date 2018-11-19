@@ -3,6 +3,9 @@
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
+  "skyuxModules": [
+    "SkyErrorModule"
+  ],
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
