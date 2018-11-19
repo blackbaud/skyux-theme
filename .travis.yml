@@ -1,9 +1,7 @@
 language: node_js
-sudo: required
-dist: trusty
 
 git:
-  depth: 10
+  depth: 1
 
 branches:
   only:
