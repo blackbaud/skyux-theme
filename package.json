@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "3.2.2",
+  "version": "3.3.0",
   "description": "SKY UX Theme",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
@@ -18,7 +18,7 @@
   "author": "Blackbaud",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/core": "^4.3.6"
+    "@angular/core": ">=4.3.6"
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.10",
@@ -27,7 +27,7 @@
     "normalize-scss": "5.0.3"
   },
   "devDependencies": {
-    "@blackbaud/skyux": "2.28.3",
+    "@blackbaud/skyux": "2.30.0",
     "@blackbaud/skyux-builder": "1.29.0",
     "@skyux-sdk/builder-plugin-skyux": "1.0.0-rc.5"
   },
