@@ -1,7 +1,7 @@
 language: node_js
 
 git:
-  depth: 5
+  depth: 1
 
 branches:
   only:
