@@ -1,3 +1,8 @@
+# 3.3.1 (2018-11-29)
+
+- Fixed select tags to display invalid states on touched [#38](https://github.com/blackbaud/skyux-theme/pull/38)
+- Fixed selected tab mixin to have correct hover color when used with normal tab mixin [#41](https://github.com/blackbaud/skyux-theme/pull/41)
+
 # 3.3.0 (2018-11-19)
 
 - Updated peer dependencies to support Angular versions greater than `4.3.6`. [#39](https://github.com/blackbaud/skyux-theme/pull/39)
