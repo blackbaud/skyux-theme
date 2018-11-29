@@ -1,7 +1,7 @@
 # 3.3.1 (2018-11-29)
 
-- Fixed select tags to display invalid states on touched [#38](https://github.com/blackbaud/skyux-theme/pull/38)
-- Fixed selected tab mixin to have correct hover color when used with normal tab mixin [#41](https://github.com/blackbaud/skyux-theme/pull/41)
+- Fixed native HTML select fields to use the appropriate CSS style when control value is invalid. [#38](https://github.com/blackbaud/skyux-theme/pull/38)
+- Fixed sky-btn-tab SCSS mixin to properly style a tab that is both selected and hovered [#41](https://github.com/blackbaud/skyux-theme/pull/41)
 
 # 3.3.0 (2018-11-19)
 
