@@ -35,7 +35,9 @@
   background-color: $sky-background-color-primary-dark;
   color: #fff;
 
-  &:hover {
+  // NOTE: Though the `not` is not totally necessary here it ensures that the hover state from the
+  // normal `sky-btn-tab` mixin does not overrule this one if both mixins are used together.
+  &:hover:not(.sky-btn-tab-disabled) {
     background-color: $sky-background-color-primary-dark;
     color: #fff;
   }
