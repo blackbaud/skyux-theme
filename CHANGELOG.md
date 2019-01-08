@@ -1,3 +1,8 @@
+# 3.4.0 (2019-01-08)
+
+- Added invalid field status styles to textarea input. [#46](https://github.com/blackbaud/skyux-theme/pull/46)
+- Added support for `@blackbaud/skyux-design-tokens@0.0.11`. [#45](https://github.com/blackbaud/skyux-theme/pull/45)
+
 # 3.3.1 (2018-11-29)
 
 - Fixed native HTML select fields to use the appropriate CSS style when control value is invalid. [#38](https://github.com/blackbaud/skyux-theme/pull/38)
