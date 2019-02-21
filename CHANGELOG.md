@@ -1,6 +1,6 @@
 # 3.4.1 (2019-02-21)
 
-- Fixed radio and checkbox labels to align with chexboxes and radio buttons using a top baseline. [#50](https://github.com/blackbaud/skyux-theme/pull/50)
+- Fixed radio and checkbox labels to align with checkboxes and radio buttons using a top baseline. [#50](https://github.com/blackbaud/skyux-theme/pull/50)
 - Fixed radio and checkbox labels to wrap contents when overflowing a parent element. [#50](https://github.com/blackbaud/skyux-theme/pull/50)
 
 # 3.4.0 (2019-01-08)
