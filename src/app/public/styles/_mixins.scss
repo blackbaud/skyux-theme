@@ -1,4 +1,4 @@
-@import "~@blackbaud/skyux-design-tokens/scss/mixins.scss";
+@import "mixins-public";
 @import "variables";
 @import "_compat/mixins";
 
@@ -68,43 +68,4 @@
   box-shadow: 0 0 8px #ed556599;
   border: 1px solid #ed5565;
   outline: none;
-}
-
-@mixin sky-media($breakpoint) {
-
-  ::ng-deep :not(.sky-flex-container) > {
-    @if $breakpoint == xs {
-      @media (max-width: 767px) { @content; }
-    }
-
-    @if $breakpoint == sm {
-      @media (min-width: 768px) { @content; }
-    }
-
-    @if $breakpoint == md {
-      @media (min-width: 992px) { @content; }
-    }
-
-    @if $breakpoint == lg {
-      @media (min-width: 1200px) { @content; }
-    }
-  }
-
-  ::ng-deep .sky-flex-container {
-    @if $breakpoint == xs {
-      ::ng-deep &.sky-flex-container-xs > { @content; }
-    }
-
-    @if $breakpoint == sm {
-      ::ng-deep &.sky-flex-container-sm > { @content; }
-    }
-
-    @if $breakpoint == md {
-      ::ng-deep &.sky-flex-container-md > { @content; }
-    }
-
-    @if $breakpoint == lg {
-      ::ng-deep &.sky-flex-container-lg > { @content; }
-    }
-  }
 }

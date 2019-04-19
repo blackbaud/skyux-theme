@@ -1,0 +1,53 @@
+@import "~@blackbaud/skyux-design-tokens/scss/mixins.scss";
+
+@mixin sky-media-container-xs() {
+  :host {
+    @content;
+  }
+
+  :host-context(.sky-media-container-xs),
+  :host-context(.sky-media-container-sm),
+  :host-context(.sky-media-container-md),
+  :host-context(.sky-media-container-lg) {
+    @content;
+  }
+}
+
+@mixin sky-media-container-sm() {
+  @media (min-width: $sky-screen-sm-min) {
+    :host{
+      @content;
+    };
+  }
+
+  :host-context(.sky-media-container-sm),
+  :host-context(.sky-media-container-md),
+  :host-context(.sky-media-container-lg) {
+    @content;
+  }
+}
+
+@mixin sky-media-container-md() {
+  @media (min-width: $sky-screen-md-min) {
+    :host{
+      @content;
+    }
+  }
+
+  :host-context(.sky-media-container-md),
+  :host-context(.sky-media-container-lg) {
+    @content;
+  }
+}
+
+@mixin sky-media-container-lg() {
+  @media (min-width: $sky-screen-lg-min) {
+    :host {
+      @content;
+    }
+  }
+
+  :host-context(.sky-media-container-lg) {
+    @content;
+  }
+}
