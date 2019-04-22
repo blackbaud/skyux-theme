@@ -1,53 +1,53 @@
 @import "~@blackbaud/skyux-design-tokens/scss/mixins.scss";
 
-@mixin sky-media-container-xs() {
+@mixin sky-container-query-xs() {
   :host {
     @content;
   }
 
-  :host-context(.sky-media-container-xs),
-  :host-context(.sky-media-container-sm),
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-container-query-xs),
+  :host-context(.sky-container-query-sm),
+  :host-context(.sky-container-query-md),
+  :host-context(.sky-container-query-lg) {
     @content;
   }
 }
 
-@mixin sky-media-container-sm() {
+@mixin sky-container-query-sm() {
   @media (min-width: $sky-screen-sm-min) {
     :host{
       @content;
     };
   }
 
-  :host-context(.sky-media-container-sm),
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-container-query-sm),
+  :host-context(.sky-container-query—md),
+  :host-context(.sky-container-query-lg) {
     @content;
   }
 }
 
-@mixin sky-media-container-md() {
+@mixin sky-container-query-md() {
   @media (min-width: $sky-screen-md-min) {
     :host{
       @content;
     }
   }
 
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-container-query-md),
+  :host-context(.sky-container-query-lg) {
     @content;
   }
 }
 
-@mixin sky-media-container-lg() {
+@mixin sky-container-query-lg() {
   @media (min-width: $sky-screen-lg-min) {
     :host {
       @content;
     }
   }
 
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-container-query-lg) {
     @content;
   }
 }
