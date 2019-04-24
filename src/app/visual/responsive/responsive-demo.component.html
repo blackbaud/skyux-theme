@@ -1,0 +1,68 @@
+<div
+  id="screenshot-responsive"
+>
+  <div
+    id="screen-queries"
+  >
+    <div
+      class="box-1"
+    >
+    </div>
+    <div
+      class="box-2"
+    >
+  </div>
+  </div>
+  <div
+    id="container-queries"
+    [ngClass]="{
+      'sky-media-container-xs': currentBreakpoint === 'xs',
+      'sky-media-container-sm': currentBreakpoint === 'sm',
+      'sky-media-container-md': currentBreakpoint === 'md',
+      'sky-media-container-lg': currentBreakpoint === 'lg'
+    }"
+  >
+    <div
+      class="box-1"
+    >
+    </div>
+    <div
+      class="box-2"
+    >
+    </div>
+  </div>
+</div>
+<div>
+  <button
+    class="sky-btn sky-btn-primary"
+    id="xs-toggle"
+    type="button"
+    (click)="setClass('xs')"
+  >
+    Set xs conainer
+  </button>
+  <button
+    class="sky-btn sky-btn-primary"
+    id="sm-toggle"
+    type="button"
+    (click)="setClass('sm')"
+  >
+    Set sm conainer
+  </button>
+  <button
+    class="sky-btn sky-btn-primary"
+    id="md-toggle"
+    type="button"
+    (click)="setClass('md')"
+  >
+    Set md conainer
+  </button>
+  <button
+    class="sky-btn sky-btn-primary"
+    id="lg-toggle"
+    type="button"
+    (click)="setClass('lg')"
+  >
+    Set lg conainer
+  </button>
+</div>
