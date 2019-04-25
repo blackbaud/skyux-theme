@@ -1,17 +1,8 @@
-<div
-  id="screenshot-responsive"
->
+<div id="screenshot-responsive">
   <div
     id="screen-queries"
   >
-    <div
-      class="box-1"
-    >
-    </div>
-    <div
-      class="box-2"
-    >
-  </div>
+    <sky-responsive-container></sky-responsive-container>
   </div>
   <div
     id="container-queries"
@@ -22,14 +13,7 @@
       'sky-media-container-lg': currentBreakpoint === 'lg'
     }"
   >
-    <div
-      class="box-1"
-    >
-    </div>
-    <div
-      class="box-2"
-    >
-    </div>
+    <sky-responsive-container></sky-responsive-container>
   </div>
 </div>
 <div>
@@ -39,7 +23,7 @@
     type="button"
     (click)="setClass('xs')"
   >
-    Set xs conainer
+    Set xs container
   </button>
   <button
     class="sky-btn sky-btn-primary"
@@ -47,7 +31,7 @@
     type="button"
     (click)="setClass('sm')"
   >
-    Set sm conainer
+    Set sm container
   </button>
   <button
     class="sky-btn sky-btn-primary"
@@ -55,7 +39,7 @@
     type="button"
     (click)="setClass('md')"
   >
-    Set md conainer
+    Set md container
   </button>
   <button
     class="sky-btn sky-btn-primary"
@@ -63,6 +47,6 @@
     type="button"
     (click)="setClass('lg')"
   >
-    Set lg conainer
+    Set lg container
   </button>
 </div>

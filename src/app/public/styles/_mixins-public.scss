@@ -8,11 +8,7 @@
   :host-context(.sky-media-container-xs),
   :host-context(.sky-media-container-sm),
   :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg),
-  :host .sky-media-container-xs,
-  :host .sky-media-container-sm,
-  :host .sky-media-container-md,
-  :host .sky-media-container-lg {
+  :host-context(.sky-media-container-lg) {
     @content;
   }
 }
@@ -26,10 +22,7 @@
 
   :host-context(.sky-media-container-sm),
   :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg),
-  :host .sky-media-container-sm,
-  :host .sky-media-container-md,
-  :host .sky-media-container-lg {
+  :host-context(.sky-media-container-lg) {
     @content;
   }
 }
@@ -42,9 +35,7 @@
   }
 
   :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg),
-  :host .sky-media-container-md,
-  :host .sky-media-container-lg {
+  :host-context(.sky-media-container-lg) {
     @content;
   }
 }
@@ -56,8 +47,7 @@
     }
   }
 
-  :host-context(.sky-media-container-lg),
-  :host .sky-media-container-lg {
+  :host-context(.sky-media-container-lg) {
     @content;
   }
 }
