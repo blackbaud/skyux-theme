@@ -1,9 +1,9 @@
 @import "../../public/styles/mixins";
 
 :host {
-  height: 200px;
   width: 100%;
   display: flex;
+  border: 3px black solid;
 }
 
 .box-1, .box-2 {

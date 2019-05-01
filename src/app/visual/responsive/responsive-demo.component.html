@@ -2,21 +2,25 @@
   <div
     id="screen-queries"
   >
-    <sky-responsive-container></sky-responsive-container>
+    <h3>Responsive based on screen size</h3>
+    <p>Current screen breakpoint: <b>{{ currentScreenBreakpoint }}</b></p>
+    <sky-responsive-content></sky-responsive-content>
   </div>
   <div
     id="container-queries"
     [ngClass]="{
-      'sky-media-container-xs': currentBreakpoint === 'xs',
-      'sky-media-container-sm': currentBreakpoint === 'sm',
-      'sky-media-container-md': currentBreakpoint === 'md',
-      'sky-media-container-lg': currentBreakpoint === 'lg'
+      'sky-media-container-xs': currentContainerBreakpoint === 'xs',
+      'sky-media-container-sm': currentContainerBreakpoint === 'sm',
+      'sky-media-container-md': currentContainerBreakpoint === 'md',
+      'sky-media-container-lg': currentContainerBreakpoint === 'lg'
     }"
   >
-    <sky-responsive-container></sky-responsive-container>
+    <h3>Responsive based on container class</h3>
+    <p>Current container breakpoint: <b>{{ currentContainerBreakpoint }}</b></p>
+    <sky-responsive-content></sky-responsive-content>
   </div>
 </div>
-<div>
+<div id="button-container">
   <button
     class="sky-btn sky-btn-primary"
     id="xs-toggle"
