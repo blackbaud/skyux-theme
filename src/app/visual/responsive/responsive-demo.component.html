@@ -8,12 +8,7 @@
   </div>
   <div
     id="container-queries"
-    [ngClass]="{
-      'sky-media-container-xs': currentContainerBreakpoint === 'xs',
-      'sky-media-container-sm': currentContainerBreakpoint === 'sm',
-      'sky-media-container-md': currentContainerBreakpoint === 'md',
-      'sky-media-container-lg': currentContainerBreakpoint === 'lg'
-    }"
+    [class]="'sky-responsive-container-' + currentContainerBreakpoint"
   >
     <h3>Responsive based on container class</h3>
     <p>Current container breakpoint: <b>{{ currentContainerBreakpoint }}</b></p>

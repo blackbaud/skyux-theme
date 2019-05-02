@@ -10,7 +10,7 @@
   height: 200px;
 }
 
-@include sky-host-media-container-xs-min() {
+@include sky-host-responsive-container-xs-min() {
   .box-1 {
     flex-basis: 25%;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@include sky-host-media-container-sm-min() {
+@include sky-host-responsive-container-sm-min() {
   .box-1 {
     flex-basis: 40%;
   }
@@ -30,7 +30,7 @@
   }
 }
 
-@include sky-host-media-container-md-min() {
+@include sky-host-responsive-container-md-min() {
   .box-1 {
     flex-basis: 50%;
   }
@@ -40,7 +40,7 @@
   }
 }
 
-@include sky-host-media-container-lg-min() {
+@include sky-host-responsive-container-lg-min() {
   .box-1 {
     flex-basis: 75%;
   }

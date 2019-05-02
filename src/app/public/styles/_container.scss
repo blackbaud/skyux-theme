@@ -21,18 +21,18 @@
   }
 }
 
-.sky-media-container-xs .sky-container {
+.sky-responsive-container-xs .sky-container {
   width: auto;
 }
 
-.sky-media-container-sm .sky-container {
+.sky-responsive-container-sm .sky-container {
   width: $sky-screen-sm-min - 10;
 }
 
-.sky-media-container-md .sky-container {
+.sky-responsive-container-md .sky-container {
   width: $sky-screen-md-min - 20;
 }
 
-.sky-media-container-lg .sky-container {
+.sky-responsive-container-lg .sky-container {
   width: $sky-screen-lg-min - 10;
 }

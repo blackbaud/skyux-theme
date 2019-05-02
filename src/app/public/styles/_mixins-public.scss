@@ -1,53 +1,53 @@
 @import "~@blackbaud/skyux-design-tokens/scss/mixins.scss";
 
-@mixin sky-host-media-container-xs-min() {
+@mixin sky-host-responsive-container-xs-min() {
   :host {
     @content;
   }
 
-  :host-context(.sky-media-container-xs),
-  :host-context(.sky-media-container-sm),
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-responsive-container-xs),
+  :host-context(.sky-responsive-container-sm),
+  :host-context(.sky-responsive-container-md),
+  :host-context(.sky-responsive-container-lg) {
     @content;
   }
 }
 
-@mixin sky-host-media-container-sm-min() {
+@mixin sky-host-responsive-container-sm-min() {
   @media (min-width: $sky-screen-sm-min) {
     :host{
       @content;
     };
   }
 
-  :host-context(.sky-media-container-sm),
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-responsive-container-sm),
+  :host-context(.sky-responsive-container-md),
+  :host-context(.sky-responsive-container-lg) {
     @content;
   }
 }
 
-@mixin sky-host-media-container-md-min() {
+@mixin sky-host-responsive-container-md-min() {
   @media (min-width: $sky-screen-md-min) {
     :host{
       @content;
     }
   }
 
-  :host-context(.sky-media-container-md),
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-responsive-container-md),
+  :host-context(.sky-responsive-container-lg) {
     @content;
   }
 }
 
-@mixin sky-host-media-container-lg-min() {
+@mixin sky-host-responsive-container-lg-min() {
   @media (min-width: $sky-screen-lg-min) {
     :host {
       @content;
     }
   }
 
-  :host-context(.sky-media-container-lg) {
+  :host-context(.sky-responsive-container-lg) {
     @content;
   }
 }
