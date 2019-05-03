@@ -1,6 +1,6 @@
 # 3.6.0 (2019-05-03)
 
-- Added mixins for responsive desings. [#58](https://github.com/blackbaud/skyux-theme/pull/58)
+- Added mixins for responsive designs. [#58](https://github.com/blackbaud/skyux-theme/pull/58)
 - Fixed radio and checkbox labels to have correct spacing. [#62](https://github.com/blackbaud/skyux-theme/pull/62)
 
 # 3.5.0 (2019-04-29)
