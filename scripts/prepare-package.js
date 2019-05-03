@@ -17,8 +17,13 @@ function copyScss() {
 
 function copyDesignTokens() {
   fs.copySync(
-    path.resolve(__dirname, '../node_modules/@blackbaud/skyux-design-tokens/scss'),
-    path.resolve(__dirname, '../dist/scss')
+    path.resolve(__dirname, '../src/app/public/styles/_mixins-public.scss'),
+    path.resolve(__dirname, '../dist/scss/mixins.scss')
+  );
+
+  fs.copySync(
+    path.resolve(__dirname, '../src/app/public/styles/_variables-public.scss'),
+    path.resolve(__dirname, '../dist/scss/variables.scss')
   );
 }
 
