@@ -1,5 +1,36 @@
-@import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
-@import url("https://use.fontawesome.com/releases/v5.8.2/css/v4-shims.css");
+$fabase: "https://use.fontawesome.com/releases/v5.8.2/";
+
+@import url("#{ $fabase }css/all.css");
+
+/* Shim the icon names (provided by FA) */
+@import url("#{ $fabase }css/v4-shims.css");
+
+/* Shim the FontAwesome family name (not provided by FA) */
+@font-face{
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src:  url("#{ $fabase }webfonts/fa-regular-400.eot");
+  src:  url("#{ $fabase }webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+        url("#{ $fabase }webfonts/fa-regular-400.woff2") format("woff2"),
+        url("#{ $fabase }webfonts/fa-regular-400.woff") format("woff"),
+        url("#{ $fabase }webfonts/fa-regular-400.ttf") format("truetype"),
+        url("#{ $fabase }webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+@font-face{
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src:  url("#{ $fabase }webfonts/fa-solid-900.eot");
+  src:  url("#{ $fabase }webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+        url("#{ $fabase }webfonts/fa-solid-900.woff2") format("woff2"),
+        url("#{ $fabase }webfonts/fa-solid-900.woff") format("woff"),
+        url("#{ $fabase }webfonts/fa-solid-900.ttf") format("truetype"),
+        url("#{ $fabase }webfonts/fa-solid-900.svg#fontawesome") format("svg")
+}
 
 @import '~normalize-scss/sass/normalize/import-now';
 
