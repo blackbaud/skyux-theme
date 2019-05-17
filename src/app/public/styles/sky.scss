@@ -1,4 +1,5 @@
-$fabase: "https://use.fontawesome.com/releases/v5.8.2/";
+$faver: "5.8.2";
+$fabase: "https://use.fontawesome.com/releases/v#{$faver}";
 
 @import url("#{ $fabase }css/all.css");
 
@@ -9,15 +10,14 @@ $fabase: "https://use.fontawesome.com/releases/v5.8.2/";
 @mixin fashim($weight) {
   @font-face{
     font-family: "FontAwesome";
+    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot?v=#{$faver}");
+    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot?v=#{$faver}#iefix") format("embedded-opentype"),
+          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff2?v=#{$faver}") format("woff2"),
+          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff?v=#{$faver}") format("woff"),
+          url("#{$fabase}webfonts/fa-regular-#{$weight}.ttf?v=#{$faver}") format("truetype"),
+          url("#{$fabase}webfonts/fa-regular-#{$weight}.svg?v=#{$faver}#fontawesome") format("svg");
     font-style: normal;
     font-weight: $weight;
-    font-display: auto;
-    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot");
-    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot?#iefix") format("embedded-opentype"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff2") format("woff2"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff") format("woff"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.ttf") format("truetype"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.svg#fontawesome") format("svg");
   }
 }
 
