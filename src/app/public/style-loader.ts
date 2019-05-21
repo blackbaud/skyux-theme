@@ -24,7 +24,9 @@ export class SkyAppStyleLoader {
         // when the font is loaded unless a known character with a different width
         // than the default is not specified.
         fontAwesome4.load('\uf0fc', SkyAppStyleLoader.LOAD_TIMEOUT),
-        fontAwesome5.load('\uf2b9', SkyAppStyleLoader.LOAD_TIMEOUT),
+
+        // Choose a "solid" (given weight 900) character only available in FA 5.
+        fontAwesome5.load('\uf5df', SkyAppStyleLoader.LOAD_TIMEOUT),
         blackbaudSans.load(undefined, SkyAppStyleLoader.LOAD_TIMEOUT)
       ])
       .then(() => {
