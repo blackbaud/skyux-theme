@@ -15,7 +15,7 @@ export class SkyAppStyleLoader {
     }
 
     const fontAwesome4 = new FontFaceObserver('FontAwesome');
-    const fontAwesome5 = new FontFaceObserver('Font Awesome 5 Free');
+    const fontAwesome5 = new FontFaceObserver('Font Awesome 5 Free', { weight: 900 });
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
     return Promise
