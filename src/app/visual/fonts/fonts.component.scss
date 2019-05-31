@@ -7,13 +7,18 @@
 }
 
 .login::before {
-  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f007";
 }
 
 .tps::before {
-  font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f1ea";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f1ea";
 }
 
 .twitter::before {
-  font-family: "Font Awesome 5 Brands"; content: "\f099";
+  font-family: "Font Awesome 5 Brands";
+  content: "\f099";
 }
