@@ -7,9 +7,9 @@ import {
 } from '../../public/style-loader';
 
 @Component({
-  selector: 'app-fonts',
-  templateUrl: './fonts.component.html',
-  styleUrls: ['./fonts.component.scss']
+  selector: 'sky-fonts-demo',
+  templateUrl: './fonts-demo.component.html',
+  styleUrls: ['./fonts-demo.component.scss']
 })
 export class FontsComponent {
   public status = 'loading';
