@@ -21,9 +21,9 @@ $fabase: "https://use.fontawesome.com/releases/v#{$faver}/";
   }
 }
 
+@include fashim('solid', 900);
 @include fashim('brands', 400);
 @include fashim('regular', 400);
-@include fashim('solid', 900);
 
 @import '~normalize-scss/sass/normalize/import-now';
 
