@@ -7,22 +7,23 @@ $fabase: "https://use.fontawesome.com/releases/v#{$faver}/";
 @import url("#{ $fabase }css/v4-shims.css");
 
 /* Shim the FontAwesome family name (not provided by FA) */
-@mixin fashim($weight) {
+@mixin fashim($name, $weight) {
   @font-face{
     font-family: "FontAwesome";
-    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot?v=#{$faver}");
-    src:  url("#{$fabase}webfonts/fa-regular-#{$weight}.eot?v=#{$faver}#iefix") format("embedded-opentype"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff2?v=#{$faver}") format("woff2"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.woff?v=#{$faver}") format("woff"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.ttf?v=#{$faver}") format("truetype"),
-          url("#{$fabase}webfonts/fa-regular-#{$weight}.svg?v=#{$faver}#fontawesome") format("svg");
+    src:  url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.eot?v=#{$faver}");
+    src:  url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.eot?v=#{$faver}#iefix") format("embedded-opentype"),
+          url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.woff2?v=#{$faver}") format("woff2"),
+          url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.woff?v=#{$faver}") format("woff"),
+          url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.ttf?v=#{$faver}") format("truetype"),
+          url("#{$fabase}webfonts/fa-#{$name}-#{$weight}.svg?v=#{$faver}#fontawesome") format("svg");
     font-style: normal;
     font-weight: $weight;
   }
 }
 
-@include fashim(400);
-@include fashim(900);
+@include fashim('brands', 400);
+@include fashim('regular', 400);
+@include fashim('solid', 900);
 
 @import '~normalize-scss/sass/normalize/import-now';
 

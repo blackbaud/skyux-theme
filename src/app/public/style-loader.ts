@@ -14,19 +14,16 @@ export class SkyAppStyleLoader {
       return Promise.resolve();
     }
 
-    const fontAwesome4 = new FontFaceObserver('FontAwesome');
-    const fontAwesome5 = new FontFaceObserver('Font Awesome 5 Free', { weight: 900 });
+    const fontAwesome4 = new FontFaceObserver('FontAwesome', { weight: 900 });
+    const fontAwesome5 = new FontFaceObserver('Font Awesome 5 Brands', { weight: 400 });
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
     return Promise
       .all([
-        // Specify a character for FontAwesome since some browsers will fail to detect
-        // when the font is loaded unless a known character with a different width
-        // than the default is not specified.
+        // FA does not contain the latin characters "BESbwy", so we need a custom test string.
+        // https://github.com/bramstein/fontfaceobserver#how-to-use
         fontAwesome4.load('\uf0fc', SkyAppStyleLoader.LOAD_TIMEOUT),
-
-        // Choose a "solid" (given weight 900) character only available in FA 5.
-        fontAwesome5.load('\uf5df', SkyAppStyleLoader.LOAD_TIMEOUT),
+        fontAwesome5.load('\uf415', SkyAppStyleLoader.LOAD_TIMEOUT),
         blackbaudSans.load(undefined, SkyAppStyleLoader.LOAD_TIMEOUT)
       ])
       .then(() => {
