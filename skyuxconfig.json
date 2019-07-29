@@ -3,9 +3,6 @@
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
-  "skyuxModules": [
-    "SkyErrorModule"
-  ],
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
@@ -13,5 +10,13 @@
     "unit": {
       "browserSet": "paranoid"
     }
-  }
+  },
+  "app": {
+    "styles": [
+      "@skyux/theme/css/sky.css"
+    ]
+  },
+  "plugins": [
+    "@skyux-sdk/builder-plugin-skyux"
+  ]
 }
