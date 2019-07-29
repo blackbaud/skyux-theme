@@ -17,7 +17,7 @@
   "author": "Blackbaud",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/core": ">=4.3.6"
+    "@angular/core": "^7.0.0"
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.12",
