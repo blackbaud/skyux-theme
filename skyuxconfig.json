@@ -13,7 +13,7 @@
   },
   "app": {
     "styles": [
-      "@skyux/theme/css/sky.css"
+      "src/app/public/styles/sky.scss"
     ]
   },
   "plugins": [
