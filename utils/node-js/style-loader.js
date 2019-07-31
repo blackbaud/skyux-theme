@@ -12,7 +12,7 @@ const LOAD_TIMEOUT = 30000;
  */
 module.exports = {
   loadStyles: function () {
-    const fontAwesome = new FontFaceObserver('Font Awesome 5 Free');
+    const fontAwesome = new FontFaceObserver('Font Awesome 5 Brands', { weight: 400 });
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
     return Promise.all(
@@ -20,7 +20,7 @@ module.exports = {
         // Specify a character for FontAwesome since some browsers will fail to detect
         // when the font is loaded unless a known character with a different width
         // than the default is not specified.
-        fontAwesome.load('\uf111', LOAD_TIMEOUT),
+        fontAwesome.load('\uf415', LOAD_TIMEOUT),
         blackbaudSans.load(null, LOAD_TIMEOUT)
       ]
     );
