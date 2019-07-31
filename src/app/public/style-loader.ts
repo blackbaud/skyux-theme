@@ -14,7 +14,7 @@ export class SkyAppStyleLoader {
       return Promise.resolve();
     }
 
-    const fontAwesome = new FontFaceObserver('FontAwesome');
+    const fontAwesome = new FontFaceObserver('Font Awesome 5 Free');
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
     return Promise

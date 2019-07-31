@@ -6,9 +6,13 @@ require('style-loader!@skyux/theme/css/sky.css');
 const FontFaceObserver = require('fontfaceobserver');
 const LOAD_TIMEOUT = 30000;
 
+/**
+ * This file is almost identical to src/app/public/style-loader.ts.
+ * It exists separately as Node.JS in order to be used globally in unit tests.
+ */
 module.exports = {
   loadStyles: function () {
-    const fontAwesome = new FontFaceObserver('FontAwesome');
+    const fontAwesome = new FontFaceObserver('Font Awesome 5 Free');
     const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
 
     return Promise.all(

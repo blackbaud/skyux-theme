@@ -13,7 +13,8 @@ describe('Style loader', () => {
     const styleLoader = new SkyAppStyleLoader();
 
     styleLoader.loadStyles()
-      .then(() => {
+      .then((error) => {
+        expect(error).toBeUndefined();
         expect(styleLoader.isLoaded).toBe(true);
         done();
       });

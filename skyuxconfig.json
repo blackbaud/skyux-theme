@@ -3,6 +3,10 @@
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
+  "moduleAliases": {
+    "@skyux/theme/css/sky.css": "src/app/public/styles/sky.scss",
+    "@skyux/theme": "src/app/public/index.ts"
+  },
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
