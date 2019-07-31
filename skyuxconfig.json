@@ -5,6 +5,7 @@
   "compileMode": "aot",
   "moduleAliases": {
     "@skyux/theme/css/sky.css": "src/app/public/styles/sky.scss",
+    "@skyux/theme/utils/node-js/style-loader": "utils/node-js/style-loader.js",
     "@skyux/theme": "src/app/public/index.ts"
   },
   "testSettings": {
