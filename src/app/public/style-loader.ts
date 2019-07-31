@@ -22,7 +22,7 @@ export class SkyAppStyleLoader {
         // Specify a character for FontAwesome since some browsers will fail to detect
         // when the font is loaded unless a known character with a different width
         // than the default is not specified.
-        fontAwesome.load('\uf0fc', SkyAppStyleLoader.LOAD_TIMEOUT),
+        fontAwesome.load('\uf415', SkyAppStyleLoader.LOAD_TIMEOUT),
         blackbaudSans.load(undefined, SkyAppStyleLoader.LOAD_TIMEOUT)
       ])
       .then(() => {
