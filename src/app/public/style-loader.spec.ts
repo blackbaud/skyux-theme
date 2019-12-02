@@ -36,7 +36,7 @@ describe('Style loader', () => {
   it('should resolve the promise if the fonts are not loaded within the timeout', (done) => {
     const sampleObserver = new FontFaceObserver('SampleFont');
 
-    spyOn(Promise, 'all').and.callFake(() => {
+    spyOn(Promise, 'all').and.callFake((): any => {
       return sampleObserver.load(undefined, 1);
     });
 

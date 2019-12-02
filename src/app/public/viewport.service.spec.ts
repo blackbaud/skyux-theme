@@ -4,7 +4,7 @@ import {
 
 import {
   ReplaySubject
-} from 'rxjs/ReplaySubject';
+} from 'rxjs';
 
 describe('Viewport service', () => {
   it('should return an observable when the content is visible', () => {
