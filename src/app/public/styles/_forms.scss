@@ -20,6 +20,10 @@
   &:focus {
     @include sky-field-status(active);
   }
+
+  &:disabled {
+    background-color: $sky-background-color-disabled;
+  }
 }
 
 .sky-form-group {
