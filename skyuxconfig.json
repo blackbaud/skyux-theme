@@ -3,6 +3,14 @@
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
+  "omnibar": {
+    "experimental": true
+  },
+  "params": {
+    "svcid": {
+      "value": "skyux"
+    }
+  },
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
