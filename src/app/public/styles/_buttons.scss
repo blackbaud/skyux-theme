@@ -162,3 +162,7 @@ a.sky-btn {
   }
 
 }
+
+.sky-btn-borderless {
+  @include sky-icon-button-borderless();
+}
