@@ -75,6 +75,22 @@ describe('Buttons', () => {
     });
   });
 
+  it('should match the baseline screenshot while hovering a borderless button', function (done) {
+    hoverMouseOverSelector('.sky-btn-borderless').then(() => {
+      expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
+        screenshotName: 'btn-link-borderless-hover'
+      });
+    });
+  });
+
+  it('should match the baseline screenshot while hovering a borderless inline button', function (done) {
+    hoverMouseOverSelector('.sky-btn-borderless-inline').then(() => {
+      expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
+        screenshotName: 'btn-link-borderless-inline-hover'
+      });
+    });
+  });
+
   it('should match the baseline screenshot while hovering an anchor button', function (done) {
     hoverMouseOverSelector('a.sky-btn').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
