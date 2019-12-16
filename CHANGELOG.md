@@ -1,4 +1,4 @@
-# 3.9.0 (2019-12-14)
+# 3.9.0 (2019-12-16)
 
 - Added a borderless variant for both normal and inline buttons. [#90](https://github.com/blackbaud/skyux-theme/pull/90)
 - Added a danger variant for buttons. [#89](https://github.com/blackbaud/skyux-theme/pull/89)
