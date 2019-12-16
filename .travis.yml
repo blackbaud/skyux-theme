@@ -9,10 +9,6 @@ branches:
     - /^[0-9]+\.[0-9]+\.[0-9]+.*/
     - /^rc-.*$/
 
-cache:
-  directories:
-    - node_modules
-
 before_install:
   - bash <(curl -s https://blackbaud.github.io/skyux-travis/v3/library-before-install.sh)
 
