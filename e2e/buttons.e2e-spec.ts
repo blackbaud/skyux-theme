@@ -43,6 +43,14 @@ describe('Buttons', () => {
     });
   });
 
+  it('should match the baseline screenshot while hovering a danger button', function (done) {
+    hoverMouseOverSelector('.sky-btn-danger').then(() => {
+      expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
+        screenshotName: 'btn-danger-hover'
+      });
+    });
+  });
+
   it('should match the baseline screenshot while hovering a default button', function (done) {
     hoverMouseOverSelector('.sky-btn-default').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
@@ -63,6 +71,22 @@ describe('Buttons', () => {
     hoverMouseOverSelector('.sky-btn-link-inline').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-link-inline-hover'
+      });
+    });
+  });
+
+  it('should match the baseline screenshot while hovering a borderless button', function (done) {
+    hoverMouseOverSelector('.sky-btn-borderless').then(() => {
+      expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
+        screenshotName: 'btn-link-borderless-hover'
+      });
+    });
+  });
+
+  it('should match the baseline screenshot while hovering a borderless inline button', function (done) {
+    hoverMouseOverSelector('.sky-btn-borderless-inline').then(() => {
+      expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
+        screenshotName: 'btn-link-borderless-inline-hover'
       });
     });
   });
