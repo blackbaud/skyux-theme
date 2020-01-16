@@ -12,6 +12,10 @@ import {
 } from '@skyux/docs-tools';
 
 import {
+  SkyCodeModule
+} from '@blackbaud/skyux-lib-code-block';
+
+import {
   SkyAppLinkModule
 } from '@skyux/router';
 
@@ -22,6 +26,7 @@ import {
 @NgModule({
   exports: [
     SkyAppLinkModule,
+    SkyCodeModule,
     SkyDocsToolsModule,
     SkyThemeModule,
     SkyMediaQueryModule
