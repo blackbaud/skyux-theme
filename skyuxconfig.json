@@ -3,6 +3,17 @@
   "name": "skyux-theme",
   "mode": "easy",
   "compileMode": "aot",
+  "host": {
+    "url": "https://developer.blackbaud.com"
+  },
+  "omnibar": {
+    "experimental": true
+  },
+  "params": {
+    "svcid": {
+      "value": "skyux"
+    }
+  },
   "testSettings": {
     "e2e": {
       "browserSet": "speedy"
@@ -13,7 +24,8 @@
   },
   "app": {
     "styles": [
-      "@skyux/theme/css/sky.css"
+      "@skyux/theme/css/sky.css",
+      "@skyux/docs-tools/css/docs-tools.css"
     ]
   },
   "plugins": [
