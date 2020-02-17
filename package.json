@@ -66,8 +66,6 @@
     "@skyux/tabs": "3.2.4",
     "@skyux/theme": "3.9.0",
     "codelyzer": "5.2.1",
-    "css-loader": "3.4.2",
-    "fibers": "4.0.2",
     "normalize-scss": "7.0.1",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
