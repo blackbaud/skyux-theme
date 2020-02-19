@@ -2,6 +2,7 @@
 
 ### New features
 
+- Added support for `@angular/core@^9`. [#94](https://github.com/blackbaud/skyux-theme/pull/94)
 - Updated the pipeline to transpile to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview). [#94](https://github.com/blackbaud/skyux-theme/pull/94)
 
 ### Breaking changes
