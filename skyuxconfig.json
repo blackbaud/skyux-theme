@@ -29,6 +29,11 @@
       "browserSet": "paranoid"
     }
   },
+  "app": {
+    "styles": [
+      "@skyux/docs-tools/css/docs-tools.css"
+    ]
+  },
   "plugins": [
     "@skyux-sdk/builder-plugin-skyux"
   ]
