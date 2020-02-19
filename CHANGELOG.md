@@ -1,3 +1,13 @@
+# 4.0.0-rc.0 (2020-02-19)
+
+### New features
+
+- Updated the pipeline to transpile to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview). [#94](https://github.com/blackbaud/skyux-theme/pull/94)
+
+### Breaking changes
+
+- Dropped support for `rxjs@5`. Consumers may install `rxjs-compat@^6` to support older versions of `rxjs`. [#94](https://github.com/blackbaud/skyux-theme/pull/94)
+
 # 3.9.0 (2019-12-16)
 
 - Added a borderless variant for both normal and inline buttons. [#90](https://github.com/blackbaud/skyux-theme/pull/90)
