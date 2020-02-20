@@ -31,7 +31,8 @@
   },
   "app": {
     "styles": [
-      "@skyux/docs-tools/css/docs-tools.css"
+      "@skyux/docs-tools/css/docs-tools.css",
+      "src/app/public/styles/sky.scss"
     ]
   },
   "plugins": [
