@@ -1,6 +1,6 @@
 # 3.10.0 (2020-03-19)
 
-- Added CSS classes for dark, light and row borders. [#100](https://github.com/blackbaud/skyux-theme/pull/100)
+- Added CSS classes for dark, light, and row borders. [#100](https://github.com/blackbaud/skyux-theme/pull/100)
 
 # 3.9.0 (2019-12-16)
 
