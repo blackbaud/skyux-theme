@@ -18,7 +18,7 @@ module.exports = {
         // when the font is loaded unless a known character with a different width
         // than the default is not specified.
         fontAwesome.load('\uf0fc', LOAD_TIMEOUT),
-        skyuxIcons.load('\ue815', LOAD_TIMEOUT),
+        skyuxIcons.load('\ue808', LOAD_TIMEOUT),
         blackbaudSans.load(null, LOAD_TIMEOUT)
       ]
     );
