@@ -8,6 +8,10 @@ import {
   SkyHostBrowser
 } from '@skyux-sdk/e2e';
 
+import {
+  ThemePlatformHelper
+} from './utils/theme-platform-utils';
+
 describe('Validation', () => {
 
   beforeEach(() => {
@@ -16,6 +20,10 @@ describe('Validation', () => {
   });
 
   it('should match the text input required screenshot', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     // Click on input
     element(by.css('#text-input input')).click();
     // Click off input
@@ -27,6 +35,10 @@ describe('Validation', () => {
   });
 
   it('should match the select input required screenshot', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     // Click on select
     element(by.css('#select-input select')).click();
     // Click off select
