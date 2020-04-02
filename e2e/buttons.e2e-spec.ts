@@ -9,6 +9,10 @@ import {
   SkyHostBrowser
 } from '@skyux-sdk/e2e';
 
+import {
+  ThemePlatformHelper
+} from './utils/theme-platform-utils';
+
 describe('Buttons', () => {
   function hoverMouseOverSelector(selector: string): any {
     return browser.actions()
@@ -22,6 +26,10 @@ describe('Buttons', () => {
   });
 
   it('should match default state screenshot', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     expect('#screenshot-buttons-default-state')
       .toMatchBaselineScreenshot(done, {
         screenshotName: 'default-state'
@@ -29,6 +37,10 @@ describe('Buttons', () => {
   });
 
   it('should match disabled state screenshot', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     expect('#screenshot-buttons-disabled-state')
       .toMatchBaselineScreenshot(done, {
         screenshotName: 'disabled-state'
@@ -36,6 +48,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a primary button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-primary').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-primary-hover'
@@ -44,6 +60,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a danger button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-danger').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-danger-hover'
@@ -52,6 +72,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a default button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-default').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-default-hover'
@@ -60,6 +84,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a link button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-link').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-link-hover'
@@ -68,6 +96,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering an inline link button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-link-inline').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-link-inline-hover'
@@ -76,6 +108,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a borderless button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-borderless').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-link-borderless-hover'
@@ -84,6 +120,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering a borderless inline button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('.sky-btn-borderless-inline').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'btn-link-borderless-inline-hover'
@@ -92,6 +132,10 @@ describe('Buttons', () => {
   });
 
   it('should match the baseline screenshot while hovering an anchor button', function (done) {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     hoverMouseOverSelector('a.sky-btn').then(() => {
       expect('#screenshot-buttons-default-state').toMatchBaselineScreenshot(done, {
         screenshotName: 'anchor-btn-hover'
