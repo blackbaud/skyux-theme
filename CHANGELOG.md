@@ -1,3 +1,7 @@
+# 4.0.0-rc.2 (2020-04-02)
+
+- Updated the development and peer dependencies. [#107](https://github.com/blackbaud/skyux-theme/pull/107)
+
 # 3.12.0 (2020-04-01)
 
 - Updated the SKY UX icon font version to 3.0.0-beta.1. [#105](https://github.com/blackbaud/skyux-theme/pull/105)
