@@ -8,14 +8,14 @@ import {
 export interface SkyThemeSettingsChange {
 
   /**
-   * The theme being applied as a result of the change.
+   * The theme settings being applied as a result of the change.
    */
-  newTheme: SkyThemeSettings;
+  currentSettings: SkyThemeSettings;
 
   /**
-   * The theme being replaced as a result of the change. This is undefined if the theme is being
-   * changed for the first time.
+   * The theme settings being replaced as a result of the change. This is undefined if the theme
+   * settings are being set for the first time.
    */
-  oldTheme: SkyThemeSettings;
+  previousSettings: SkyThemeSettings;
 
 }

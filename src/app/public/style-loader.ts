@@ -30,7 +30,7 @@ export class SkyAppStyleLoader {
     let themePromise: Promise<any>;
 
     if (this.themeSvc) {
-      themePromise = this.themeSvc.themeChange.pipe(
+      themePromise = this.themeSvc.settingsChange.pipe(
         take(1)
       ).toPromise();
     } else {

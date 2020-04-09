@@ -23,10 +23,10 @@ import {
 export class SkyThemeService {
 
   /**
-   * Notifies consumers when the current theme has changed.
+   * Notifies consumers when the current theme settings have changed.
    */
-  public get themeChange(): Observable<SkyThemeSettingsChange> {
-    return this.themeObs;
+  public get settingsChange(): Observable<SkyThemeSettingsChange> {
+    return this.settingsObs;
   }
 
   private current: SkyThemeSettings;
@@ -35,11 +35,14 @@ export class SkyThemeService {
 
   private renderer: Renderer2;
 
-  private theme: ReplaySubject<SkyThemeSettingsChange>;
+  private settings: ReplaySubject<SkyThemeSettingsChange>;
 
-  private themeObs: Observable<SkyThemeSettingsChange>;
+  private settingsObs: Observable<SkyThemeSettingsChange>;
 
-  constructor() { }
+  constructor() {
+    this.settings = new ReplaySubject<SkyThemeSettingsChange>(1);
+    this.settingsObs = this.settings.asObservable();
+  }
 
   /**
    * Initializes the theme service with the specified parameters. This should only be called
@@ -56,9 +59,6 @@ export class SkyThemeService {
     this.hostEl = hostEl;
     this.renderer = renderer;
 
-    this.theme = new ReplaySubject<SkyThemeSettingsChange>(1);
-    this.themeObs = this.theme.asObservable();
-
     this.setTheme(theme);
   }
 
@@ -67,7 +67,7 @@ export class SkyThemeService {
    * provides its own theme to child components.
    */
   public destroy(): void {
-    this.theme.complete();
+    this.settings.complete();
 
     this.hostEl =
       this.renderer =
@@ -75,51 +75,51 @@ export class SkyThemeService {
   }
 
   /**
-   * Updates the current theme.
-   * @param newTheme The new theme to apply.
+   * Updates the current theme settings.
+   * @param settings The new theme settings to apply.
    */
-  public setTheme(newTheme: SkyThemeSettings): void {
-    const oldTheme = this.current;
+  public setTheme(settings: SkyThemeSettings): void {
+    const previousSettings = this.current;
 
-    this.applyTheme(oldTheme, newTheme);
-    this.applyThemeMode(oldTheme, newTheme);
+    this.applySettings(previousSettings, settings);
+    this.applyThemeMode(previousSettings, settings);
 
-    this.theme.next({
-      newTheme,
-      oldTheme
+    this.settings.next({
+      currentSettings: settings,
+      previousSettings
     });
 
-    this.current = newTheme;
+    this.current = settings;
   }
 
-  private applyTheme(oldTheme: SkyThemeSettings, newTheme: SkyThemeSettings): void {
-    const oldClass = oldTheme && oldTheme.config.hostClass;
-    const newClass = newTheme.config.hostClass;
+  private applySettings(previous: SkyThemeSettings, current: SkyThemeSettings): void {
+    const previousClass = previous && previous.config.hostClass;
+    const currentClass = current.config.hostClass;
 
-    const hostClassChanged = !oldClass || oldClass !== newClass;
+    const hostClassChanged = !previousClass || previousClass !== currentClass;
 
     if (hostClassChanged) {
-      if (oldClass) {
-        this.removeHostClass(oldClass);
+      if (previousClass) {
+        this.removeHostClass(previousClass);
       }
 
-      this.addHostClass(newClass);
+      this.addHostClass(currentClass);
     }
   }
 
-  private applyThemeMode(oldTheme: SkyThemeSettings, newTheme: SkyThemeSettings): void {
-    const oldClass = oldTheme && oldTheme.mode.hostClass;
-    const newClass = newTheme.mode.hostClass;
+  private applyThemeMode(previous: SkyThemeSettings, current: SkyThemeSettings): void {
+    const previousClass = previous && previous.mode.hostClass;
+    const currentClass = current.mode.hostClass;
 
-    const hostModeClassChanged = !oldTheme || oldClass !== newClass;
+    const hostModeClassChanged = !previous || previousClass !== currentClass;
 
     if (hostModeClassChanged) {
-      if (oldClass) {
-        this.removeHostClass(oldClass);
+      if (previousClass) {
+        this.removeHostClass(previousClass);
       }
 
-      if (newTheme.config.supportedModes.indexOf(newTheme.mode) >= 0) {
-        this.addHostClass(newClass);
+      if (current.config.supportedModes.indexOf(current.mode) >= 0) {
+        this.addHostClass(currentClass);
       }
     }
   }
