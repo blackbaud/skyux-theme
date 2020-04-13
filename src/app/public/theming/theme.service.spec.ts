@@ -1,9 +1,18 @@
 import {
+  SkyThemeConfig
+} from './theme-config';
+
+import {
+  SkyThemeModeConfig
+} from './theme-mode-config';
+
+import {
   SkyThemeService
 } from './theme.service';
-import { SkyThemeSettings } from './theme-settings';
-import { SkyThemeConfig } from './theme-config';
-import { SkyThemeModeConfig } from './theme-mode-config';
+
+import {
+  SkyThemeSettings
+} from './theme-settings';
 
 describe('Theme service', () => {
 
