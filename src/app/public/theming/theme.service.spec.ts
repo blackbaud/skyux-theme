@@ -1,10 +1,10 @@
 import {
-  SkyThemeConfig
-} from './theme-config';
+  SkyTheme
+} from './theme';
 
 import {
-  SkyThemeModeConfig
-} from './theme-mode-config';
+  SkyThemeMode
+} from './theme-mode';
 
 import {
   SkyThemeService
@@ -25,12 +25,12 @@ describe('Theme service', () => {
   ): void {
     expect(mockRenderer.addClass).toHaveBeenCalledWith(
       mockHostEl,
-      current.config.hostClass
+      current.theme.hostClass
     );
 
     let addModeClassMatcher = expect(mockRenderer.addClass);
 
-    if (current.config.supportedModes.indexOf(current.mode) < 0) {
+    if (current.theme.supportedModes.indexOf(current.mode) < 0) {
       addModeClassMatcher = addModeClassMatcher.not;
     }
 
@@ -42,7 +42,7 @@ describe('Theme service', () => {
     if (previous) {
       expect(mockRenderer.removeClass).toHaveBeenCalledWith(
         mockHostEl,
-        previous.config.hostClass
+        previous.theme.hostClass
       );
     } else {
       expect(mockRenderer.removeClass).not.toHaveBeenCalled();
@@ -67,8 +67,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.modern,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.modern,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(
@@ -89,8 +89,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.modern,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.modern,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(
@@ -110,8 +110,8 @@ describe('Theme service', () => {
     });
 
     const newSettings = new SkyThemeSettings(
-      SkyThemeConfig.presets.default,
-      SkyThemeModeConfig.presets.light
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.light
     );
 
     expectedCurrentSettings = newSettings;
@@ -124,8 +124,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.default,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(
@@ -141,8 +141,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.default,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(
@@ -160,8 +160,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.default,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(
@@ -177,8 +177,8 @@ describe('Theme service', () => {
     const themeSvc = new SkyThemeService();
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.default,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.dark
     );
 
     themeSvc.init(

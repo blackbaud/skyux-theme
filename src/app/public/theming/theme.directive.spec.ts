@@ -30,12 +30,12 @@ import {
 } from './theme.service';
 
 import {
-  SkyThemeConfig
-} from './theme-config';
+  SkyTheme
+} from './theme';
 
 import {
-  SkyThemeModeConfig
-} from './theme-mode-config';
+  SkyThemeMode
+} from './theme-mode';
 
 import {
   SkyThemeSettings
@@ -78,8 +78,8 @@ describe('Theme directive', () => {
       skyThemeDebugEl.nativeElement,
       renderer,
       new SkyThemeSettings(
-        SkyThemeConfig.presets.default,
-        SkyThemeModeConfig.presets.light
+        SkyTheme.presets.default,
+        SkyThemeMode.presets.light
       )
     );
   });
@@ -96,8 +96,8 @@ describe('Theme directive', () => {
     const setThemeSpy = spyOn(themeSvc, 'setTheme');
 
     const settings = new SkyThemeSettings(
-      SkyThemeConfig.presets.modern,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.modern,
+      SkyThemeMode.presets.dark
     );
 
     fixture.componentInstance.themeSettings = settings;
@@ -126,8 +126,8 @@ describe('Theme directive', () => {
     fixture.detectChanges();
 
     const newSettings = new SkyThemeSettings(
-      SkyThemeConfig.presets.modern,
-      SkyThemeModeConfig.presets.dark
+      SkyTheme.presets.modern,
+      SkyThemeMode.presets.dark
     );
 
     fixture.componentInstance.themeSettings = newSettings;

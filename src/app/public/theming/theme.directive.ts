@@ -11,12 +11,12 @@ import {
 } from '@angular/core';
 
 import {
-  SkyThemeConfig
-} from './theme-config';
+  SkyTheme
+} from './theme';
 
 import {
-  SkyThemeModeConfig
-} from './theme-mode-config';
+  SkyThemeMode
+} from './theme-mode';
 
 import {
   SkyThemeSettings
@@ -27,8 +27,8 @@ import {
 } from './theme.service';
 
 const defaultTheme = new SkyThemeSettings(
-  SkyThemeConfig.presets.default,
-  SkyThemeModeConfig.presets.light
+  SkyTheme.presets.default,
+  SkyThemeMode.presets.light
 );
 
 @Directive({

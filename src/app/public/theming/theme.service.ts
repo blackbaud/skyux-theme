@@ -93,8 +93,8 @@ export class SkyThemeService {
   }
 
   private applySettings(previous: SkyThemeSettings, current: SkyThemeSettings): void {
-    const previousClass = previous && previous.config.hostClass;
-    const currentClass = current.config.hostClass;
+    const previousClass = previous && previous.theme.hostClass;
+    const currentClass = current.theme.hostClass;
 
     const hostClassChanged = !previousClass || previousClass !== currentClass;
 
@@ -118,7 +118,7 @@ export class SkyThemeService {
         this.removeHostClass(previousClass);
       }
 
-      if (current.config.supportedModes.indexOf(current.mode) >= 0) {
+      if (current.theme.supportedModes.indexOf(current.mode) >= 0) {
         this.addHostClass(currentClass);
       }
     }
