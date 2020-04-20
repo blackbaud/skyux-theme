@@ -1,0 +1,45 @@
+<div class="selectors">
+  <select id="themeNameSelector" [(ngModel)]="themeName">
+    <option value="default">Default</option>
+    <option value="modern-light">Modern - Light</option>
+    <option value="modern-dark">Modern - Dark</option>
+  </select>
+  <select id="sectionSelector" [(ngModel)]="section">
+    <option value="elevation">Elevation</option>
+    <option value="headers">Headers</option>
+    <option value="padding">Padding</option>
+    <option value="text">Text</option>
+  </select>
+</div>
+
+<div class="theme-container" id="screenshot-theme-container" [skyTheme]="themeSettings">
+  <ng-container *ngIf="section === 'elevation'">
+    <div class="elevation-test sky-elevation-0-bordered">Elevation 0 (bordered)</div>
+    <div class="elevation-test sky-elevation-1">Elevation 1</div>
+    <div class="elevation-test sky-elevation-1-bordered">Elevation 1 (bordered)</div>
+    <div class="elevation-test sky-elevation-3">Elevation 3</div>
+    <div class="elevation-test sky-elevation-4">Elevation 4</div>
+    <div class="elevation-test sky-elevation-8">Elevation 8</div>
+    <div class="elevation-test sky-elevation-16">Elevation 16</div>
+    <div class="elevation-test sky-elevation-24">Elevation 24</div>
+  </ng-container>
+
+  <ng-container *ngIf="section === 'headers'">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+  </ng-container>
+
+  <ng-container *ngIf="section === 'padding'">
+    <div class="padding-test sky-padding-even-default">Padding even default</div>
+    <div class="padding-test sky-padding-even-small">Padding even small</div>
+    <div class="padding-test sky-padding-even-large">Padding even large</div>
+  </ng-container>
+
+  <ng-container *ngIf="section === 'text'">
+    <div class="sky-emphasized">Emphasized text</div>
+    <div class="sky-deemphasized">De-emphasized text</div>
+  </ng-container>
+</div>

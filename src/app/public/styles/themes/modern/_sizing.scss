@@ -1,0 +1,15 @@
+@import '../../variables-public';
+
+.sky-theme-modern {
+  .sky-padding-even-default {
+    padding: $sky-theme-modern-padding-even-md;
+  }
+
+  .sky-padding-even-small {
+    padding: $sky-theme-modern-padding-even-sm;
+  }
+
+  .sky-padding-even-large {
+    padding: $sky-theme-modern-padding-even-lg;
+  }
+}
