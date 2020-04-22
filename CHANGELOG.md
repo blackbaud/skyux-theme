@@ -1,3 +1,19 @@
+# 3.13.0 (2020-04-22)
+
+- Added theming capabilities. [#108](https://github.com/blackbaud/skyux-theme/pull/108)
+
+# 3.12.0 (2020-04-01)
+
+- Updated the SKY UX icon font version to 3.0.0-beta.1. [#105](https://github.com/blackbaud/skyux-theme/pull/105)
+
+# 3.11.0 (2020-03-27)
+
+- Added the beta version of the SKY UX icon font to the list of fonts loaded during bootstrap. [#102](https://github.com/blackbaud/skyux-theme/pull/102)
+
+# 3.10.0 (2020-03-19)
+
+- Added CSS classes for dark, light, and row borders. [#100](https://github.com/blackbaud/skyux-theme/pull/100)
+
 # 3.9.0 (2019-12-16)
 
 - Added a borderless variant for both normal and inline buttons. [#90](https://github.com/blackbaud/skyux-theme/pull/90)

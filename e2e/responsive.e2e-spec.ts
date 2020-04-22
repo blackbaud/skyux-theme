@@ -8,6 +8,10 @@ import {
   SkyHostBrowser
 } from '@skyux-sdk/e2e';
 
+import {
+  ThemePlatformHelper
+} from './utils/theme-platform-utils';
+
 describe('Responsive mixins', () => {
 
   beforeEach(() => {
@@ -16,6 +20,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at lg screen size and xs container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.scrollTo('#xs-toggle');
     element(by.css('#xs-toggle')).click();
     SkyHostBrowser.scrollTo('#screenshot-responsive');
@@ -26,6 +34,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at lg screen size and sm container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.scrollTo('#sm-toggle');
     element(by.css('#sm-toggle')).click();
     SkyHostBrowser.scrollTo('#screenshot-responsive');
@@ -36,6 +48,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at lg screen size and md container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.scrollTo('#md-toggle');
     element(by.css('#md-toggle')).click();
     SkyHostBrowser.scrollTo('#screenshot-responsive');
@@ -46,6 +62,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at lg screen size and lg container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.scrollTo('#lg-toggle');
     element(by.css('#lg-toggle')).click();
     SkyHostBrowser.scrollTo('#screenshot-responsive');
@@ -56,6 +76,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at xs screen size and xs container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.setWindowBreakpoint('xs');
     SkyHostBrowser.scrollTo('#xs-toggle');
     element(by.css('#xs-toggle')).click();
@@ -67,6 +91,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at xs screen size and sm container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.setWindowBreakpoint('xs');
     SkyHostBrowser.scrollTo('#sm-toggle');
     element(by.css('#sm-toggle')).click();
@@ -78,6 +106,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at xs screen size and md container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.setWindowBreakpoint('xs');
     SkyHostBrowser.scrollTo('#md-toggle');
     element(by.css('#md-toggle')).click();
@@ -89,6 +121,10 @@ describe('Responsive mixins', () => {
   });
 
   it('should match screenshot at xs screen size and lg container', (done) => {
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
+
     SkyHostBrowser.setWindowBreakpoint('xs');
     SkyHostBrowser.scrollTo('#lg-toggle');
     element(by.css('#lg-toggle')).click();
