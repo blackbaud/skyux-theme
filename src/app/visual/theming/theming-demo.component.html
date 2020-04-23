@@ -7,6 +7,7 @@
   <select id="sectionSelector" [(ngModel)]="section">
     <option value="elevation">Elevation</option>
     <option value="headers">Headers</option>
+    <option value="margin">Margin</option>
     <option value="padding">Padding</option>
     <option value="text">Text</option>
   </select>
@@ -32,14 +33,40 @@
     <h5>Heading 5</h5>
   </ng-container>
 
+  <ng-container *ngIf="section === 'margin'">
+    <span class="margin-test sky-margin-inline-xs">Margin inline extra-small</span>
+    <span class="margin-test sky-margin-inline-sm">Margin inline small</span>
+    <span class="margin-test sky-margin-inline-xl">Margin inline extra-large</span>
+    <span class="margin-test sky-margin-inline-xxl">Margin inline extra-extra-large</span>
+
+    <div class="margin-test sky-margin-stacked-xs">Margin stacked extra-small</div>
+    <div class="margin-test sky-margin-stacked-md">Margin stacked medium</div>
+    <div class="margin-test sky-margin-stacked-lg">Margin stacked large</div>
+    <div class="margin-test sky-margin-stacked-xl">Margin stacked extra-large</div>
+    <div class="margin-test sky-margin-stacked-xxl">Margin stacked extra-extra large</div>
+
+    <div class="margin-test"></div>
+  </ng-container>
+
   <ng-container *ngIf="section === 'padding'">
-    <div class="padding-test sky-padding-even-default">Padding even default</div>
-    <div class="padding-test sky-padding-even-small">Padding even small</div>
-    <div class="padding-test sky-padding-even-large">Padding even large</div>
+    <div class="padding-test sky-padding-even-sm">Padding even small</div>
+    <div class="padding-test sky-padding-even-md">Padding even medium</div>
+    <div class="padding-test sky-padding-even-lg">Padding even large</div>
+    <div class="padding-test sky-padding-even-xl">Padding even extra-large</div>
+    <div class="padding-test sky-padding-vertical-md">Padding vertical medium</div>
+    <div class="padding-test sky-padding-vertical-lg">Padding vertical large</div>
   </ng-container>
 
   <ng-container *ngIf="section === 'text'">
-    <div class="sky-emphasized">Emphasized text</div>
-    <div class="sky-deemphasized">De-emphasized text</div>
+    <div class="sky-font-body-default">Body default</div>
+    <div class="sky-font-body-sm">Body small</div>
+    <div class="sky-font-body-lg">Body large</div>
+    <div class="sky-font-field-label">Field label</div>
+    <div class="sky-font-display-1">Display 1</div>
+    <div class="sky-font-display-2">Display 2</div>
+    <div class="sky-font-display-3">Display 3</div>
+    <div class="sky-font-display-4">Display 4</div>
+    <div class="sky-font-emphasized">Emphasized text</div>
+    <div class="sky-font-deemphasized">De-emphasized text</div>
   </ng-container>
 </div>

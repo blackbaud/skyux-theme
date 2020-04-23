@@ -61,6 +61,11 @@ describe('Theming', () => {
       validate(done);
     });
 
+    it('margin should match the previous screenshot', (done) => {
+      selectSection('margin');
+      validate(done);
+    });
+
     it('padding should match the previous screenshot', (done) => {
       selectSection('padding');
       validate(done);
@@ -88,6 +93,11 @@ describe('Theming', () => {
         validate(done);
       });
 
+      it('margin should match the previous screenshot', (done) => {
+        selectSection('margin');
+        validate(done);
+      });
+
       it('padding should match the previous screenshot', (done) => {
         selectSection('padding');
         validate(done);
@@ -111,6 +121,11 @@ describe('Theming', () => {
 
       it('headers should match the previous screenshot', (done) => {
         selectSection('headers');
+        validate(done);
+      });
+
+      it('margin should match the previous screenshot', (done) => {
+        selectSection('margin');
         validate(done);
       });
 
