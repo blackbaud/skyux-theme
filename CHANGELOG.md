@@ -1,3 +1,7 @@
+# 4.0.0-rc.3 (2020-04-23)
+
+- Added bug fixes and features from the `master` branch.
+
 # 3.13.1 (2020-04-23)
 
 - Fixed the `.sky-switch-input` styles to correctly position native inputs within `overflow` containers. [#114](https://github.com/blackbaud/skyux-theme/pull/114)
