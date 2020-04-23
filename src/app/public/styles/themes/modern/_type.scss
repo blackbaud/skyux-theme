@@ -16,7 +16,7 @@
     font-weight: $sky-theme-modern-font-body-lg-weight;
   } 
   
-  sky-font-field-label {
+  .sky-font-field-label {
     color: $sky-theme-modern-font-field-label-color;
     font-size: $sky-theme-modern-font-field-label-size;
     font-weight: $sky-theme-modern-font-field-label-weight;
@@ -30,35 +30,6 @@
 
   .sky-font-emphasized {
     font-weight: $sky-theme-modern-font-emphasized-weight;
-  }
-  
-  .sky-font-heading-1 {
-    font-size: $sky-theme-modern-font-heading-1-size;
-    font-weight: $sky-theme-modern-font-heading-1-weight;
-  }
-
-  .sky-font-heading-2 {
-    font-size: $sky-theme-modern-font-heading-2-size;
-    font-weight: $sky-theme-modern-font-heading-2-weight;
-  }
-
-  .sky-font-heading-3 {
-    font-size: $sky-theme-modern-font-heading-3-size;
-    font-weight: $sky-theme-modern-font-heading-3-weight;
-  }
-
-  .sky-font-heading-4 {
-    color: $sky-theme-modern-font-heading-4-color;
-    font-size: $sky-theme-modern-font-heading-4-size;
-    font-weight: $sky-theme-modern-font-heading-4-weight;
-    text-transform: $sky-theme-modern-font-heading-4-transform;
-  }
-
-  .sky-font-heading-5 {
-    color: $sky-theme-modern-font-heading-5-color;
-    font-size: $sky-theme-modern-font-heading-5-size;
-    font-weight: $sky-theme-modern-font-heading-5-weight;
-    text-transform: $sky-theme-modern-font-heading-5-transform;
   }
   
   .sky-font-display-1 {
