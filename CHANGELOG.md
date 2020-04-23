@@ -1,3 +1,7 @@
+# 3.13.1 (2020-04-23)
+
+- Fixed the toggle switch styles to position native inputs correctly within `overflow` containers. [#114](https://github.com/blackbaud/skyux-theme/pull/114)
+
 # 3.13.0 (2020-04-22)
 
 - Added theming capabilities. [#108](https://github.com/blackbaud/skyux-theme/pull/108)
