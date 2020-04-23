@@ -32,12 +32,9 @@
   },
   "app": {
     "styles": [
-      "@skyux/docs-tools/css/docs-tools.css"
-    ],
-    "theming": {
-      "supportedThemes": ["default", "modern"],
-      "theme": "default"
-    }
+      "@skyux/docs-tools/css/docs-tools.css",
+      "src/app/public/styles/sky.scss"
+    ]
   },
   "plugins": [
     "@skyux-sdk/builder-plugin-skyux"
