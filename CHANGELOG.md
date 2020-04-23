@@ -1,6 +1,6 @@
 # 3.14.0 (2020-04-23)
 
-- Added more CSS classes for the modern theme. [#110](https://github.com/blackbaud/skyux-theme/pull/110)
+- Added elevation, heading, spacing and text CSS classes for the modern theme. [#110](https://github.com/blackbaud/skyux-theme/pull/110)
 
 # 3.13.1 (2020-04-23)
 
