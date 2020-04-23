@@ -1,3 +1,11 @@
+# 3.13.1 (2020-04-23)
+
+- Fixed the `.sky-switch-input` styles to correctly position native inputs within `overflow` containers. [#114](https://github.com/blackbaud/skyux-theme/pull/114)
+
+# 3.13.0 (2020-04-22)
+
+- Added theming capabilities. [#108](https://github.com/blackbaud/skyux-theme/pull/108)
+
 # 4.0.0-rc.2 (2020-04-02)
 
 - Updated the development and peer dependencies. [#107](https://github.com/blackbaud/skyux-theme/pull/107)
