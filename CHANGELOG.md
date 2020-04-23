@@ -1,3 +1,7 @@
+# 3.13.0 (2020-04-22)
+
+- Added theming capabilities. [#108](https://github.com/blackbaud/skyux-theme/pull/108)
+
 # 4.0.0-rc.2 (2020-04-02)
 
 - Updated the development and peer dependencies. [#107](https://github.com/blackbaud/skyux-theme/pull/107)
