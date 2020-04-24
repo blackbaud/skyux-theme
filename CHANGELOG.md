@@ -1,3 +1,7 @@
+# 4.0.0-rc.4 (2020-04-24)
+
+- Added bug fixes and features from the `master` branch. [#121](https://github.com/blackbaud/skyux-theme/pull/121)
+
 # 3.14.1 (2020-04-24)
 
 - Restored the bold font style to the `sky-headline` CSS class used by components like key info. [#119](https://github.com/blackbaud/skyux-theme/pull/119)
