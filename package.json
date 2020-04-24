@@ -5,11 +5,13 @@
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
   "scripts": {
-    "test": "skyux test --coverage library",
+    "test": "npm run build:dev-bundle && skyux test --coverage library --logFormat none",
+    "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library --logFormat none && skyux e2e --platform travis --logFormat none && npm run build",
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
     "build:ci": "npm run build",
-    "start": "skyux serve",
-    "visual": "skyux e2e"
+    "build:dev-bundle": "npm run build && node ./scripts/dev-bundle.js",
+    "start": "npm run build:dev-bundle && skyux serve",
+    "visual": "npm run build:dev-bundle && skyux e2e"
   },
   "keywords": [],
   "author": "Blackbaud",
@@ -37,7 +39,7 @@
     "@blackbaud/skyux-lib-code-block": "2.0.0-rc.2",
     "@blackbaud/skyux-lib-media": "2.0.0-rc.0",
     "@blackbaud/skyux-lib-stache": "4.0.0-rc.2",
-    "@skyux-sdk/builder": "4.0.0-rc.5",
+    "@skyux-sdk/builder": "4.0.0-rc.6",
     "@skyux-sdk/builder-plugin-skyux": "1.3.1",
     "@skyux-sdk/e2e": "4.0.0-rc.0",
     "@skyux-sdk/testing": "4.0.0-rc.1",
@@ -59,13 +61,13 @@
     "@skyux/popovers": "4.0.0-rc.2",
     "@skyux/router": "4.0.0-rc.0",
     "@skyux/tabs": "4.0.0-rc.0",
-    "@skyux/theme": "4.0.0-rc.2",
+    "@skyux/theme": "4.0.0-rc.3",
     "codelyzer": "5.2.2",
     "normalize-scss": "7.0.1",
     "rxjs": "6.5.5",
-    "ts-node": "8.6.2",
-    "tslint": "5.20.1",
-    "typescript": "3.6.5",
+    "ts-node": "8.3.0",
+    "tslint": "6.1.0",
+    "typescript": "3.8.3",
     "zone.js": "0.10.3"
   },
   "repository": {
