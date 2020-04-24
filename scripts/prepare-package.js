@@ -3,16 +3,29 @@ const sass = require('sass');
 const tildeImporter = require('node-sass-tilde-importer');
 const path = require('path');
 
-function copyScss() {
+function renderScss(file, target) {
+  file = path.resolve(__dirname, file);
+  target = path.resolve(__dirname, target);
+
   const result = sass.renderSync({
-    file: path.resolve(__dirname, '../src/app/public/styles/sky.scss'),
+    file: file,
     importer: tildeImporter
   });
 
-  const target = path.resolve(__dirname, '../dist/css/sky.css');
-
   fs.ensureFileSync(target);
   fs.writeFileSync(target, result.css);
+}
+
+function copyScss() {
+  renderScss(
+    '../src/app/public/styles/sky.scss',
+    '../dist/css/sky.css'
+  );
+
+  renderScss(
+    '../src/app/public/styles/themes/modern/styles.scss',
+    '../dist/css/themes/modern/styles.css'
+  );
 }
 
 function copyDesignTokens() {
