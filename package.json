@@ -2,8 +2,6 @@
   "name": "@skyux/theme",
   "version": "4.0.0-rc.4",
   "description": "SKY UX Theme",
-  "main": "bundles/bundle.umd.js",
-  "module": "index.ts",
   "scripts": {
     "test": "npm run build:dev-bundle && skyux test --coverage library --logFormat none",
     "test:ci": "npm run build:dev-bundle && skyux test --platform travis --coverage library --logFormat none && skyux e2e --platform travis --logFormat none && npm run build",

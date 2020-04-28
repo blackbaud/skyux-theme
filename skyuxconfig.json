@@ -35,7 +35,10 @@
       "@skyux/docs-tools/css/docs-tools.css"
     ],
     "theming": {
-      "supportedThemes": ["default", "modern"],
+      "supportedThemes": [
+        "default",
+        "modern"
+      ],
       "theme": "default"
     }
   },
