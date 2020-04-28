@@ -1,3 +1,7 @@
+# 4.0.0-rc.5 (2020-04-28)
+
+- Added bug fixes and features from the `master` branch. [#124](https://github.com/blackbaud/skyux-theme/pull/124)
+
 # 3.14.2 (2020-04-27)
 
 - Fixed modern theme header styles by overriding the default theme's `font-family` and `color` CSS properties. [#122](https://github.com/blackbaud/skyux-theme/pull/122)
