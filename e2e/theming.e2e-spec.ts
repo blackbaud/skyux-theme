@@ -51,8 +51,8 @@ describe('Theming', () => {
       selectTheme('default');
     });
 
-    it('elevation should match the previous screenshot', (done) => {
-      selectSection('elevation');
+    it('box/elevation should match the previous screenshot', (done) => {
+      selectSection('box-elevation');
       validate(done);
     });
 
@@ -83,8 +83,8 @@ describe('Theming', () => {
         selectTheme('modern-light');
       });
 
-      it('elevation should match the previous screenshot', (done) => {
-        selectSection('elevation');
+      it('box/elevation should match the previous screenshot', (done) => {
+        selectSection('box-elevation');
         validate(done);
       });
 
@@ -114,8 +114,8 @@ describe('Theming', () => {
         selectTheme('modern-dark');
       });
 
-      it('elevation should match the previous screenshot', (done) => {
-        selectSection('elevation');
+      it('box/elevation should match the previous screenshot', (done) => {
+        selectSection('box-elevation');
         validate(done);
       });
 
