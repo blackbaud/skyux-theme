@@ -1,3 +1,7 @@
+# 4.0.0-rc.6 (2020-05-06)
+
+- Added bug fixes and features from the `master` branch. [#129](https://github.com/blackbaud/skyux-theme/pull/129)
+
 # 3.15.0 (2020-04-30)
 
 - Added the `sky-box` CSS class to the modern theme. [#125](https://github.com/blackbaud/skyux-theme/pull/125)
