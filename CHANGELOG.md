@@ -1,3 +1,7 @@
+# 3.16.0 (2020-05-07)
+
+- Added modern theme styles for tabs. [#128](https://github.com/blackbaud/skyux-theme/pull/128)
+
 # 4.0.0-rc.6 (2020-05-06)
 
 - Added bug fixes and features from the `master` branch. [#129](https://github.com/blackbaud/skyux-theme/pull/129)
