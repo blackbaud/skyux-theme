@@ -49,6 +49,11 @@ function copyCompatMixins() {
     './src/app/public/styles/_compat',
     './dist/scss/_compat'
   );
+
+  fs.copySync(
+    './src/app/public/styles/themes/modern/_compat',
+    './dist/scss/themes/modern/_compat'
+  );
 }
 
 copyScss();
