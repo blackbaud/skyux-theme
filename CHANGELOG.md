@@ -1,4 +1,4 @@
-# 3.15.0 (2020-05-07)
+# 3.16.0 (2020-05-07)
 
 - Added modern theme styles for tabs. [#128](https://github.com/blackbaud/skyux-theme/pull/128)
 
