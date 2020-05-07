@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "3.15.0",
+  "version": "3.16.0",
   "description": "SKY UX Theme",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
