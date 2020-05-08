@@ -1,3 +1,18 @@
+# 4.0.0 (2020-05-08)
+
+### New features
+
+- Added support for `@angular/core@^9`. [#94](https://github.com/blackbaud/skyux-theme/pull/94)
+- Updated the pipeline to transpile to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview). [#94](https://github.com/blackbaud/skyux-theme/pull/94)
+
+### Bug fixes
+
+- Added some CSS overrides to some changes made by `normalize-scss@7` to maintain style consistency with `@skyux/theme@3`. [#95](https://github.com/blackbaud/skyux-theme/pull/95)
+
+### Breaking changes
+
+- Dropped support for `rxjs@5`. Consumers may install `rxjs-compat@^6` to support older versions of `rxjs`. [#94](https://github.com/blackbaud/skyux-theme/pull/94)
+
 # 4.0.0-rc.7 (2020-05-07)
 
 - Added bug fixes and features from the `master` branch. [#131](https://github.com/blackbaud/skyux-theme/pull/131)
