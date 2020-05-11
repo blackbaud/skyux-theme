@@ -7,7 +7,7 @@
 
 ### Bug fixes
 
-- Added some CSS overrides to some changes made by `normalize-scss@7` to maintain style consistency with `@skyux/theme@3`. [#95](https://github.com/blackbaud/skyux-theme/pull/95)
+- Added CSS overrides to changes made by `normalize-scss@7` to maintain style consistency with `@skyux/theme@3`. [#95](https://github.com/blackbaud/skyux-theme/pull/95)
 
 ### Breaking changes
 
@@ -81,7 +81,7 @@
 
 ### Bug fixes
 
-- Added some CSS overrides to some changes made by `normalize-scss@7` to maintain style consistency with `@skyux/theme@3`. [#95](https://github.com/blackbaud/skyux-theme/pull/95)
+- Added CSS overrides to changes made by `normalize-scss@7` to maintain style consistency with `@skyux/theme@3`. [#95](https://github.com/blackbaud/skyux-theme/pull/95)
 
 # 4.0.0-rc.0 (2020-02-19)
 
