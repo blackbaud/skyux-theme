@@ -4,15 +4,23 @@
   "mode": "easy",
   "compileMode": "aot",
   "host": {
-    "url": "https://developer.blackbaud.com"
+    "url": "https://developer.blackbaud.com",
+    "frameOptions": {
+      "none": true
+    }
   },
-  "omnibar": {
-    "experimental": true
-  },
+  "omnibar": {},
   "params": {
     "svcid": {
       "value": "skyux"
     }
+  },
+  "librarySettings": {
+    "whitelistedNonPeerDependencies": [
+      "@blackbaud/skyux-design-tokens",
+      "@types/fontfaceobserver",
+      "fontfaceobserver"
+    ]
   },
   "testSettings": {
     "e2e": {
@@ -27,7 +35,10 @@
       "@skyux/docs-tools/css/docs-tools.css"
     ],
     "theming": {
-      "supportedThemes": ["default", "modern"],
+      "supportedThemes": [
+        "default",
+        "modern"
+      ],
       "theme": "default"
     }
   },
