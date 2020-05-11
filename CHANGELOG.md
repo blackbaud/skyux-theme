@@ -47,7 +47,7 @@
 
 # 4.0.0-rc.3 (2020-04-23)
 
-- Added bug fixes and features from the `master` branch.
+- Added bug fixes and features from the `master` branch. [#121](https://github.com/blackbaud/skyux-theme/pull/121)
 
 # 3.14.0 (2020-04-23)
 
