@@ -1,6 +1,6 @@
 # 4.1.0 (2020-05-28)
 
-- Added styling for error labels to the modern theme's dark mode. [#136](https://github.com/blackbaud/skyux-theme/pull/136)
+- Added error label styling to the modern theme's dark mode. [#136](https://github.com/blackbaud/skyux-theme/pull/136)
 - Updated the SKY UX icon font version to 3.0.0-beta.2. [#137](https://github.com/blackbaud/skyux-theme/pull/137)
 
 # 4.0.0 (2020-05-11)
