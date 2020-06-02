@@ -9,9 +9,6 @@
     font-size: $sky-theme-modern-font-body-default-size;
   }
 
-  // Specify the padding only on these classes rather than on `.sky-btn`, since specifying it
-  // on `sky-btn` in this context makes it more specific than the padding rules on the inline
-  // button classes and overrides them.
   .sky-btn-borderless,
   .sky-btn-danger,
   .sky-btn-default,
