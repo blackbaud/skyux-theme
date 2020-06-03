@@ -14,7 +14,7 @@
   .sky-btn-default,
   .sky-btn-link,
   .sky-btn-primary {
-    padding: 8px 20px;
+    padding: $sky-theme-modern-padding-button-standard;
   }
 
   .sky-btn-default {
@@ -36,6 +36,10 @@
 
   .sky-btn-link {
     color: $sky-theme-modern-text-color-action-primary;
+  }
+
+  .sky-btn-icon {
+    padding: $sky-theme-modern-padding-button-icon;
   }
 
   .sky-btn-tab {
