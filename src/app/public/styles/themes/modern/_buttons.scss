@@ -66,6 +66,10 @@
   }
 
   &.sky-theme-mode-dark {
+    .sky-btn {
+      color: $sky-theme-modern-mode-dark-font-body-default-color;
+    }
+
     .sky-btn-default {
       @include sky-button-variant(
         $sky-theme-modern-mode-dark-font-body-default-color,
