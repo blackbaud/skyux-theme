@@ -1,6 +1,6 @@
 # 4.2.1 (2020-06-05)
 
-- Fixed input group buttons to propely reset `border-radius` CSS property. [#142](https://github.com/blackbaud/skyux-theme/pull/142)
+- Fixed input group buttons to propely reset the `border-radius` CSS property. [#142](https://github.com/blackbaud/skyux-theme/pull/142)
 
 # 4.2.0 (2020-06-03)
 
