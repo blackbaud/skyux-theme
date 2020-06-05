@@ -79,11 +79,10 @@
     </div>
 
     <div
-      class="sky-buttons-demo-screenshot-inline"
+      class="sky-buttons-demo-screenshot-wrapper"
     >
       <div
         class="sky-input-group"
-        style="width:400px;"
       >
         <input
           class="sky-form-control"
@@ -97,21 +96,24 @@
             class="sky-btn sky-btn-default"
             type="button"
           >
-            Input
+            <sky-icon
+              icon="clock-o"
+              size="lg"
+            ></sky-icon>
           </button>
+        </div>
+        <div
+          class="sky-input-group-btn"
+        >
           <button
             aria-haspopup="dialog"
             class="sky-btn sky-btn-default"
             type="button"
           >
-            group
-          </button>
-          <button
-            aria-haspopup="dialog"
-            class="sky-btn sky-btn-default"
-            type="button"
-          >
-            buttons
+            <sky-icon
+              icon="calendar-o"
+              size="lg"
+            ></sky-icon>
           </button>
         </div>
       </div>
@@ -213,6 +215,21 @@
       Anchor button disabled (w/ attribute)
     </a>
 
+    <button
+      class="sky-btn sky-btn-default sky-btn-icon sky-btn-disabled sky-margin-inline-compact"
+      type="button"
+    >
+      <i class="fa fa-angle-double-down"></i>
+    </button>
+
+    <button
+      class="sky-btn sky-btn-default sky-btn-icon sky-margin-inline-compact"
+      type="button"
+      disabled
+    >
+      <i class="fa fa-angle-double-down"></i>
+    </button>
+
     <div class="sky-buttons-demo-screenshot-inline">
       Inline test
       <button
@@ -247,5 +264,48 @@
       inline test.
     </div>
 
+    <div
+      class="sky-buttons-demo-screenshot-wrapper"
+    >
+      <div
+        class="sky-input-group"
+      >
+        <input
+          class="sky-form-control"
+          type="text"
+        >
+        <div
+          class="sky-input-group-btn"
+        >
+          <button
+            aria-haspopup="dialog"
+            class="sky-btn sky-btn-default sky-btn-disabled"
+            type="button"
+          >
+            <sky-icon
+              icon="clock-o"
+              size="lg"
+            ></sky-icon>
+          </button>
+        </div>
+        <div
+          class="sky-input-group-btn"
+        >
+          <button
+            aria-haspopup="dialog"
+            class="sky-btn sky-btn-default"
+            type="button"
+            disabled
+          >
+            <sky-icon
+              icon="calendar-o"
+              size="lg"
+            ></sky-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
