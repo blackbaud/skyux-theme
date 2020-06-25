@@ -1,6 +1,7 @@
 @import '../../variables-public';
 
 .sky-theme-modern {
+  
   .sky-padding-even-sm {
     padding: $sky-theme-modern-padding-even-sm;
   }
@@ -15,6 +16,18 @@
 
   .sky-padding-even-xl {
     padding: $sky-theme-modern-padding-even-xl;
+  }
+
+  .sky-padding-horizontal-sm {
+    padding: $sky-theme-modern-padding-h-sm;
+  }
+
+  .sky-padding-horizontal-md {
+    padding: $sky-theme-modern-padding-h-md;
+  }
+
+  .sky-padding-horizontal-xl {
+    padding: $sky-theme-modern-padding-h-xl;
   }
 
   .sky-padding-vertical-md {
