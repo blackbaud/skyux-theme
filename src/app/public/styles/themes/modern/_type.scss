@@ -24,8 +24,8 @@
 
   .sky-font-deemphasized {
     color: $sky-theme-modern-font-deemphasized-color;
-    font-size: $sky-theme-modern-font-deemphasized-size;
     font-style: $sky-theme-modern-font-deemphasized-style;
+    font-size: inherit;
   }
 
   .sky-font-emphasized {
@@ -33,21 +33,25 @@
   }
 
   .sky-font-display-1 {
+    font-family: $sky-font-family;
     font-size: $sky-theme-modern-font-display-1-size;
     font-weight: $sky-theme-modern-font-display-1-weight;
   }
 
   .sky-font-display-2 {
+    font-family: $sky-font-family;
     font-size: $sky-theme-modern-font-display-2-size;
     font-weight: $sky-theme-modern-font-display-2-weight;
   }
 
   .sky-font-display-3 {
+    font-family: $sky-font-family;
     font-size: $sky-theme-modern-font-display-3-size;
     font-weight: $sky-theme-modern-font-display-3-weight;
   }
 
   .sky-font-display-4 {
+    font-family: $sky-font-family;
     font-size: $sky-theme-modern-font-display-4-size;
     font-weight: $sky-theme-modern-font-display-4-weight;
   }
