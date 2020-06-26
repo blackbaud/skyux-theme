@@ -1,0 +1,11 @@
+{
+  "name": "SKY UX CI Workflow",
+  "description": "The SKY UX CI workflow template.",
+  "iconName": "bbicon",
+  "categories": [
+    "TypeScript"
+  ],
+  "filePatterns": [
+    "skyuxconfig.json"
+  ]
+}
