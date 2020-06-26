@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
-      - uses: Blackbaud-SteveBrush/skyux-libraries-action@v1.0.0-alpha.10
+          node-version: '12.x'
+      - uses: blackbaud/skyux-sdk-actions@v1
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
           browser-stack-username: ${{ secrets.BROWSER_STACK_USERNAME }}
