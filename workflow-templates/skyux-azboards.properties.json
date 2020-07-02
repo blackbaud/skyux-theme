@@ -1,0 +1,11 @@
+{
+  "name": "SKY UX Azure Boards Sync Workflow",
+  "description": "The SKY UX Azure Boards sync workflow template.",
+  "iconName": "bbicon",
+  "categories": [
+    "TypeScript"
+  ],
+  "filePatterns": [
+    "skyuxconfig.json"
+  ]
+}
