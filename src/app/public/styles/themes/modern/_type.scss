@@ -63,10 +63,14 @@
     font-weight: $sky-theme-modern-font-display-4-weight;
   }
 
-
-  /* Experimental; eventually these color values should be moved to design tokens */
   &.sky-theme-mode-dark {
-    .sky-font-emphasized {
+    .sky-font-data-label,
+    .sky-font-display-1,
+    .sky-font-display-2,
+    .sky-font-display-3,
+    .sky-font-display-4,
+    .sky-font-emphasized,
+    .sky-headline {
       color: $sky-theme-modern-mode-dark-font-body-default-color;
     }
   }
