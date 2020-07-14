@@ -6,14 +6,14 @@
   </select>
   <select id="sectionSelector" [(ngModel)]="section">
     <option value="box-elevation">Box/Elevation</option>
-    <option value="headers">Headers</option>
+    <option value="headers" selected>Headers</option>
     <option value="margin">Margin</option>
     <option value="padding">Padding</option>
     <option value="text">Text</option>
   </select>
 </div>
 
-<div class="theme-container" id="screenshot-theme-container" [skyTheme]="themeSettings">
+<div [skyTheme]="themeSettings">
   <ng-container *ngIf="section === 'box-elevation'">
     <div class="elevation-test sky-box sky-elevation-0-bordered">Elevation 0 (bordered)</div>
     <div class="elevation-test sky-box sky-elevation-1">Elevation 1</div>
