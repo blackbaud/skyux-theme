@@ -104,14 +104,14 @@ describe('Buttons', () => {
       validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
     });
 
-    it('should match screenshot when hovering on default button', (done) => {
-      validateButton(
-        done,
-        `${defaultStateSelector} .sky-btn-default`,
-        'btn-default-hover',
-        'hover'
-      );
-    });
+    // it('should match screenshot when hovering on default button', (done) => {
+    //   validateButton(
+    //     done,
+    //     `${defaultStateSelector} .sky-btn-default`,
+    //     'btn-default-hover',
+    //     'hover'
+    //   );
+    // });
 
     // it('should match screenshot when clicking on default button', (done) => {
     //   validateButton(
