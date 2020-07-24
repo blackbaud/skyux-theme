@@ -1,11 +1,11 @@
-import {
-  browser,
-  by,
-  element
-} from 'protractor';
+// import {
+//   browser,
+//   by,
+//   element
+// } from 'protractor';
 
 import {
-  expect,
+  // expect,
   SkyHostBrowser // ,
   // SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
@@ -15,8 +15,8 @@ import {
 } from './utils/theme-platform-utils';
 
 describe('Buttons', () => {
-  let currentTheme: string;
-  let currentThemeMode: string;
+  // let currentTheme: string;
+  // let currentThemeMode: string;
   const defaultStateSelector = '#screenshot-buttons-default-state';
   // const disabledStateSelector = '#screenshot-buttons-disabled-state';
 
@@ -28,42 +28,42 @@ describe('Buttons', () => {
   //   return SkyVisualThemeSelector.selectTheme(theme, mode);
   // }
 
-  function getScreenshotName(name: string): string {
-    if (currentTheme) {
-      name += '-' + currentTheme;
-    }
+  // function getScreenshotName(name: string): string {
+  //   if (currentTheme) {
+  //     name += '-' + currentTheme;
+  //   }
 
-    if (currentThemeMode) {
-      name += '-' + currentThemeMode;
-    }
+  //   if (currentThemeMode) {
+  //     name += '-' + currentThemeMode;
+  //   }
 
-    return name;
-  }
+  //   return name;
+  // }
 
-  async function hoverMouseOverSelector(selector: string): Promise<any> {
-    return browser.actions()
-      .mouseMove(element(by.css(selector)))
-      .perform();
-  }
+  // async function hoverMouseOverSelector(selector: string): Promise<any> {
+  //   return browser.actions()
+  //     .mouseMove(element(by.css(selector)))
+  //     .perform();
+  // }
 
-  async function mouseDownSelector(selector: string): Promise<any> {
-    const el = element(by.css(selector));
+  // async function mouseDownSelector(selector: string): Promise<any> {
+  //   const el = element(by.css(selector));
 
-    return browser.actions()
-      .mouseMove(el)
-      .mouseDown(el)
-      .perform();
-  }
+  //   return browser.actions()
+  //     .mouseMove(el)
+  //     .mouseDown(el)
+  //     .perform();
+  // }
 
-  async function mouseUp(): Promise<any> {
-    return browser.actions()
-      .mouseUp()
-      .perform();
-  }
+  // async function mouseUp(): Promise<any> {
+  //   return browser.actions()
+  //     .mouseUp()
+  //     .perform();
+  // }
 
-  async function scrollToElement(selector: string): Promise<void> {
-    return SkyHostBrowser.scrollTo(selector);
-  }
+  // async function scrollToElement(selector: string): Promise<void> {
+  //   return SkyHostBrowser.scrollTo(selector);
+  // }
 
   async function validateButton(
     done: DoneFn,
@@ -75,27 +75,27 @@ describe('Buttons', () => {
       return done();
     }
 
-    await scrollToElement(selector);
+    // await scrollToElement(selector);
 
-    if (buttonState === 'hover' || buttonState === 'focus') {
-      await hoverMouseOverSelector(selector);
-    }
+    // if (buttonState === 'hover' || buttonState === 'focus') {
+    //   await hoverMouseOverSelector(selector);
+    // }
 
-    if (buttonState === 'active' || buttonState === 'focus') {
-      await mouseDownSelector(selector);
-    }
+    // if (buttonState === 'active' || buttonState === 'focus') {
+    //   await mouseDownSelector(selector);
+    // }
 
-    if (buttonState === 'focus') {
-      await mouseUp();
-    }
+    // if (buttonState === 'focus') {
+    //   await mouseUp();
+    // }
 
-    expect(selector).toMatchBaselineScreenshot(done, {
-      screenshotName: getScreenshotName(screenshotName)
-    });
+    // expect(selector).toMatchBaselineScreenshot(done, {
+    //   screenshotName: getScreenshotName(screenshotName)
+    // });
 
-    if (buttonState === 'active') {
-      await mouseUp();
-    }
+    // if (buttonState === 'active') {
+    //   await mouseUp();
+    // }
   }
 
   function validateAllButtons () {
@@ -459,8 +459,8 @@ describe('Buttons', () => {
   //#endregion
 
   beforeEach(async () => {
-    currentTheme = undefined;
-    currentThemeMode = undefined;
+    // currentTheme = undefined;
+    // currentThemeMode = undefined;
 
     await SkyHostBrowser.get('visual/buttons');
     await SkyHostBrowser.setWindowBreakpoint('md');
