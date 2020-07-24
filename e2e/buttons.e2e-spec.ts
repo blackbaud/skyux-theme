@@ -468,23 +468,23 @@ describe('Buttons', () => {
 
   validateAllButtons();
 
-  describe('when modern theme', () => {
+  // describe('when modern theme', () => {
 
-    beforeEach(async () => {
-      await selectTheme('modern', 'light');
-    });
+  //   beforeEach(async () => {
+  //     await selectTheme('modern', 'light');
+  //   });
 
-    validateAllButtons();
+  //   validateAllButtons();
 
-  });
+  // });
 
-  describe('when modern theme in dark mode', () => {
+  // describe('when modern theme in dark mode', () => {
 
-    beforeEach(async () => {
-      await selectTheme('modern', 'dark');
-    });
+  //   beforeEach(async () => {
+  //     await selectTheme('modern', 'dark');
+  //   });
 
-    validateAllButtons();
-  });
+  //   validateAllButtons();
+  // });
 
 });
