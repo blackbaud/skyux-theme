@@ -18,7 +18,7 @@ describe('Buttons', () => {
   let currentTheme: string;
   let currentThemeMode: string;
   const defaultStateSelector = '#screenshot-buttons-default-state';
-  const disabledStateSelector = '#screenshot-buttons-disabled-state';
+  // const disabledStateSelector = '#screenshot-buttons-disabled-state';
 
   //#region helpers
   // async function selectTheme(theme: string, mode: string): Promise<void> {
