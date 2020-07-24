@@ -10,14 +10,14 @@ import {
   // SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
 
-import {
-  ThemePlatformHelper
-} from './utils/theme-platform-utils';
+// import {
+//   ThemePlatformHelper
+// } from './utils/theme-platform-utils';
 
 describe('Buttons', () => {
   // let currentTheme: string;
   // let currentThemeMode: string;
-  const defaultStateSelector = '#screenshot-buttons-default-state';
+  // const defaultStateSelector = '#screenshot-buttons-default-state';
   // const disabledStateSelector = '#screenshot-buttons-disabled-state';
 
   //#region helpers
@@ -65,44 +65,44 @@ describe('Buttons', () => {
   //   return SkyHostBrowser.scrollTo(selector);
   // }
 
-  async function validateButton(
-    done: DoneFn,
-    selector: string,
-    screenshotName: string,
-    buttonState?: 'active' | 'focus' | 'hover'
-  ): Promise<void> {
-    if (ThemePlatformHelper.shouldSkipVisualTests()) {
-      return done();
-    }
+  // async function validateButton(
+  //   done: DoneFn,
+  //   selector: string,
+  //   screenshotName: string,
+  //   buttonState?: 'active' | 'focus' | 'hover'
+  // ): Promise<void> {
+  //   if (ThemePlatformHelper.shouldSkipVisualTests()) {
+  //     return done();
+  //   }
 
-    // await scrollToElement(selector);
+  //   // await scrollToElement(selector);
 
-    // if (buttonState === 'hover' || buttonState === 'focus') {
-    //   await hoverMouseOverSelector(selector);
-    // }
+  //   // if (buttonState === 'hover' || buttonState === 'focus') {
+  //   //   await hoverMouseOverSelector(selector);
+  //   // }
 
-    // if (buttonState === 'active' || buttonState === 'focus') {
-    //   await mouseDownSelector(selector);
-    // }
+  //   // if (buttonState === 'active' || buttonState === 'focus') {
+  //   //   await mouseDownSelector(selector);
+  //   // }
 
-    // if (buttonState === 'focus') {
-    //   await mouseUp();
-    // }
+  //   // if (buttonState === 'focus') {
+  //   //   await mouseUp();
+  //   // }
 
-    // expect(selector).toMatchBaselineScreenshot(done, {
-    //   screenshotName: getScreenshotName(screenshotName)
-    // });
+  //   // expect(selector).toMatchBaselineScreenshot(done, {
+  //   //   screenshotName: getScreenshotName(screenshotName)
+  //   // });
 
-    // if (buttonState === 'active') {
-    //   await mouseUp();
-    // }
-  }
+  //   // if (buttonState === 'active') {
+  //   //   await mouseUp();
+  //   // }
+  // }
 
   function validateAllButtons () {
     // .sky-btn-default
-    it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
-    });
+    // it('should match screenshot for default button', (done) => {
+    //   validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
+    // });
 
     // it('should match screenshot when hovering on default button', (done) => {
     //   validateButton(
