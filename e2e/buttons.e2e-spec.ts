@@ -6,8 +6,8 @@ import {
 
 import {
   expect,
-  SkyHostBrowser,
-  SkyVisualThemeSelector
+  SkyHostBrowser // ,
+  // SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
 
 import {
@@ -21,12 +21,12 @@ describe('Buttons', () => {
   const disabledStateSelector = '#screenshot-buttons-disabled-state';
 
   //#region helpers
-  async function selectTheme(theme: string, mode: string): Promise<void> {
-    currentTheme = theme;
-    currentThemeMode = mode;
+  // async function selectTheme(theme: string, mode: string): Promise<void> {
+  //   currentTheme = theme;
+  //   currentThemeMode = mode;
 
-    return SkyVisualThemeSelector.selectTheme(theme, mode);
-  }
+  //   return SkyVisualThemeSelector.selectTheme(theme, mode);
+  // }
 
   function getScreenshotName(name: string): string {
     if (currentTheme) {
