@@ -1,8 +1,8 @@
-import {
-  browser,
-  by,
-  element
-} from 'protractor';
+// import {
+//   browser,
+//   by,
+//   element
+// } from 'protractor';
 
 import {
   expect,
@@ -10,9 +10,9 @@ import {
   // SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
 
-import {
-  ThemePlatformHelper
-} from './utils/theme-platform-utils';
+// import {
+//   ThemePlatformHelper
+// } from './utils/theme-platform-utils';
 
 describe('Buttons', () => {
   let currentTheme: string;
@@ -40,30 +40,30 @@ describe('Buttons', () => {
     return name;
   }
 
-  async function hoverMouseOverSelector(selector: string): Promise<any> {
-    return browser.actions()
-      .mouseMove(element(by.css(selector)))
-      .perform();
-  }
+  // async function hoverMouseOverSelector(selector: string): Promise<any> {
+  //   return browser.actions()
+  //     .mouseMove(element(by.css(selector)))
+  //     .perform();
+  // }
 
-  async function mouseDownSelector(selector: string): Promise<any> {
-    const el = element(by.css(selector));
+  // async function mouseDownSelector(selector: string): Promise<any> {
+  //   const el = element(by.css(selector));
 
-    return browser.actions()
-      .mouseMove(el)
-      .mouseDown(el)
-      .perform();
-  }
+  //   return browser.actions()
+  //     .mouseMove(el)
+  //     .mouseDown(el)
+  //     .perform();
+  // }
 
-  async function mouseUp(): Promise<any> {
-    return browser.actions()
-      .mouseUp()
-      .perform();
-  }
+  // async function mouseUp(): Promise<any> {
+  //   return browser.actions()
+  //     .mouseUp()
+  //     .perform();
+  // }
 
-  async function scrollToElement(selector: string): Promise<void> {
-    return SkyHostBrowser.scrollTo(selector);
-  }
+  // async function scrollToElement(selector: string): Promise<void> {
+  //   return SkyHostBrowser.scrollTo(selector);
+  // }
 
   async function validateButton(
     done: DoneFn,
@@ -71,31 +71,31 @@ describe('Buttons', () => {
     screenshotName: string,
     buttonState?: 'active' | 'focus' | 'hover'
   ): Promise<void> {
-    if (ThemePlatformHelper.shouldSkipVisualTests()) {
-      return done();
-    }
+    // if (ThemePlatformHelper.shouldSkipVisualTests()) {
+    //   return done();
+    // }
 
-    await scrollToElement(selector);
+    // await scrollToElement(selector);
 
-    if (buttonState === 'hover' || buttonState === 'focus') {
-      await hoverMouseOverSelector(selector);
-    }
+    // if (buttonState === 'hover' || buttonState === 'focus') {
+    //   await hoverMouseOverSelector(selector);
+    // }
 
-    if (buttonState === 'active' || buttonState === 'focus') {
-      await mouseDownSelector(selector);
-    }
+    // if (buttonState === 'active' || buttonState === 'focus') {
+    //   await mouseDownSelector(selector);
+    // }
 
-    if (buttonState === 'focus') {
-      await mouseUp();
-    }
+    // if (buttonState === 'focus') {
+    //   await mouseUp();
+    // }
 
     expect(selector).toMatchBaselineScreenshot(done, {
       screenshotName: getScreenshotName(screenshotName)
     });
 
-    if (buttonState === 'active') {
-      await mouseUp();
-    }
+    // if (buttonState === 'active') {
+    //   await mouseUp();
+    // }
   }
 
   // .sky-btn-default
@@ -103,14 +103,14 @@ describe('Buttons', () => {
     validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
   });
 
-  it('should match screenshot when hovering on default button', (done) => {
-    validateButton(
-      done,
-      `${defaultStateSelector} .sky-btn-default`,
-      'btn-default-hover',
-      'hover'
-    );
-  });
+  // it('should match screenshot when hovering on default button', (done) => {
+  //   validateButton(
+  //     done,
+  //     `${defaultStateSelector} .sky-btn-default`,
+  //     'btn-default-hover',
+  //     'hover'
+  //   );
+  // });
 
   // function validateAllButtons () {
 
