@@ -46,14 +46,14 @@ describe('Buttons', () => {
       .perform();
   }
 
-  // async function mouseDownSelector(selector: string): Promise<any> {
-  //   const el = element(by.css(selector));
+  async function mouseDownSelector(selector: string): Promise<any> {
+    const el = element(by.css(selector));
 
-  //   return browser.actions()
-  //     .mouseMove(el)
-  //     .mouseDown(el)
-  //     .perform();
-  // }
+    return browser.actions()
+      .mouseMove(el)
+      .mouseDown(el)
+      .perform();
+  }
 
   // async function mouseUp(): Promise<any> {
   //   return browser.actions()
@@ -81,9 +81,9 @@ describe('Buttons', () => {
       await hoverMouseOverSelector(selector);
     }
 
-    // if (buttonState === 'active' || buttonState === 'focus') {
-    //   await mouseDownSelector(selector);
-    // }
+    if (buttonState === 'active' || buttonState === 'focus') {
+      await mouseDownSelector(selector);
+    }
 
     // if (buttonState === 'focus') {
     //   await mouseUp();
