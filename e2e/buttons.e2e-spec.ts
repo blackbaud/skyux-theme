@@ -10,9 +10,9 @@ import {
   // SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
 
-// import {
-//   ThemePlatformHelper
-// } from './utils/theme-platform-utils';
+import {
+  ThemePlatformHelper
+} from './utils/theme-platform-utils';
 
 describe('Buttons', () => {
   let currentTheme: string;
@@ -61,9 +61,9 @@ describe('Buttons', () => {
   //     .perform();
   // }
 
-  // async function scrollToElement(selector: string): Promise<void> {
-  //   return SkyHostBrowser.scrollTo(selector);
-  // }
+  async function scrollToElement(selector: string): Promise<void> {
+    return SkyHostBrowser.scrollTo(selector);
+  }
 
   async function validateButton(
     done: DoneFn,
@@ -71,11 +71,11 @@ describe('Buttons', () => {
     screenshotName: string,
     buttonState?: 'active' | 'focus' | 'hover'
   ): Promise<void> {
-    // if (ThemePlatformHelper.shouldSkipVisualTests()) {
-    //   return done();
-    // }
+    if (ThemePlatformHelper.shouldSkipVisualTests()) {
+      return done();
+    }
 
-    // await scrollToElement(selector);
+    await scrollToElement(selector);
 
     // if (buttonState === 'hover' || buttonState === 'focus') {
     //   await hoverMouseOverSelector(selector);
