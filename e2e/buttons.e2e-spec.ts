@@ -1,8 +1,8 @@
-// import {
-//   browser,
-//   by,
-//   element
-// } from 'protractor';
+import {
+  browser,
+  by,
+  element
+} from 'protractor';
 
 import {
   expect,
@@ -40,11 +40,11 @@ describe('Buttons', () => {
     return name;
   }
 
-  // async function hoverMouseOverSelector(selector: string): Promise<any> {
-  //   return browser.actions()
-  //     .mouseMove(element(by.css(selector)))
-  //     .perform();
-  // }
+  async function hoverMouseOverSelector(selector: string): Promise<any> {
+    return browser.actions()
+      .mouseMove(element(by.css(selector)))
+      .perform();
+  }
 
   // async function mouseDownSelector(selector: string): Promise<any> {
   //   const el = element(by.css(selector));
@@ -77,9 +77,9 @@ describe('Buttons', () => {
 
     await scrollToElement(selector);
 
-    // if (buttonState === 'hover' || buttonState === 'focus') {
-    //   await hoverMouseOverSelector(selector);
-    // }
+    if (buttonState === 'hover' || buttonState === 'focus') {
+      await hoverMouseOverSelector(selector);
+    }
 
     // if (buttonState === 'active' || buttonState === 'focus') {
     //   await mouseDownSelector(selector);
