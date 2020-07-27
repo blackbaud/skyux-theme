@@ -40,8 +40,8 @@ describe('Buttons', () => {
     return name;
   }
 
-  async function hoverMouseOverSelector(selector: string): Promise<any> {
-    return browser.actions()
+  function hoverMouseOverSelector(selector: string): void {
+    browser.actions()
       .mouseMove(element(by.css(selector)))
       .perform();
   }
@@ -78,7 +78,7 @@ describe('Buttons', () => {
     await scrollToElement(selector);
 
     if (buttonState === 'hover' || buttonState === 'focus') {
-      await hoverMouseOverSelector(selector);
+      hoverMouseOverSelector(selector);
     }
 
     // if (buttonState === 'active' || buttonState === 'focus') {
