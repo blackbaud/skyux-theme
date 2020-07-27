@@ -40,16 +40,16 @@ describe('Buttons', () => {
     return name;
   }
 
-  async function hoverMouseOverSelector(selector: string): Promise<any> {
-    return browser.actions()
+  async function hoverMouseOverSelector(selector: string): Promise<void> {
+    await browser.actions()
       .mouseMove(element(by.css(selector)))
       .perform();
   }
 
-  async function mouseDownSelector(selector: string): Promise<any> {
+  async function mouseDownSelector(selector: string): Promise<void> {
     const el = element(by.css(selector));
 
-    return browser.actions()
+    await browser.actions()
       .mouseMove(el)
       .mouseDown(el)
       .perform();
