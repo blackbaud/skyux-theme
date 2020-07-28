@@ -19,5 +19,3 @@ async function runAsync() {
 module.exports = {
   runAsync
 };
-
-runAsync();
