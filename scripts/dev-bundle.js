@@ -2,6 +2,8 @@ const fs = require('fs-extra');
 const rimraf = require('rimraf');
 const crossSpawn = require('cross-spawn');
 
+const preparePackage = require('./prepare-package');
+
 function runAsync() {
   const dest = './node_modules/@skyux/theme';
   rimraf.sync(dest);
@@ -16,6 +18,8 @@ function runAsync() {
 
   fs.ensureDirSync(dest);
   fs.copySync('./dist', dest);
+
+  await preparePackage.runAsync();
 }
 
 module.exports = {
