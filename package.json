@@ -62,6 +62,7 @@
     "@skyux/tabs": "4.2.0",
     "@skyux/theme": "4.4.0",
     "codelyzer": "5.2.2",
+    "cross-spawn": "7.0.3",
     "normalize-scss": "7.0.1",
     "rxjs": "6.6.0",
     "ts-node": "8.3.0",
