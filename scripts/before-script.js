@@ -1,8 +1,5 @@
 const crossSpawn = require('cross-spawn');
 
-const preparePackage = require('./prepare-package');
-const devBundle = require('./dev-bundle');
-
 async function runAsync() {
   crossSpawn.sync('npx', [
     '-p', '@skyux-sdk/cli',
@@ -12,8 +9,8 @@ async function runAsync() {
     stdio: 'inherit'
   });
 
-  await preparePackage.runAsync();
-  await devBundle.runAsync();
+  require('./prepare-package');
+  require('./dev-bundle');
 }
 
 module.exports = {

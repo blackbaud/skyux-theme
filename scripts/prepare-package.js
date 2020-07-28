@@ -56,11 +56,7 @@ function copyCompatMixins() {
   );
 }
 
-module.exports = {
-  runAsync: () => {
-    copyScss();
-    copyDesignTokens();
-    copyCompatMixins();
-    copyScripts();
-  }
-};
+copyScss();
+copyDesignTokens();
+copyCompatMixins();
+copyScripts();
