@@ -26,5 +26,5 @@ jobs:
           npm-token: ${{ secrets.NPM_TOKEN }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           hook-after-build-public-library-success: ./scripts/prepare-package.js
-          hook-before-script: ./scripts/dev-bundle.js
+          hook-before-script: ./scripts/before-script.js
       - uses: codecov/codecov-action@v1
