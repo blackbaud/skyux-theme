@@ -25,4 +25,6 @@ jobs:
           github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           npm-token: ${{ secrets.NPM_TOKEN }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+          hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
+          hook-before-script: ./scripts/before-script.js
       - uses: codecov/codecov-action@v1
