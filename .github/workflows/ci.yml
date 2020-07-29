@@ -23,7 +23,6 @@ jobs:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
           browser-stack-username: ${{ secrets.BROWSER_STACK_USERNAME }}
           github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          npm-dry-run: true
           npm-token: ${{ secrets.NPM_TOKEN }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
