@@ -17,6 +17,8 @@ function renderScss(file, target) {
 }
 
 function copyScss() {
+  console.log('Preparing SCSS and CSS files...');
+
   renderScss(
     '../src/app/public/styles/sky.scss',
     '../dist/css/sky.css'
@@ -26,9 +28,13 @@ function copyScss() {
     '../src/app/public/styles/themes/modern/styles.scss',
     '../dist/css/themes/modern/styles.css'
   );
+
+  console.log('Done.');
 }
 
 function copyDesignTokens() {
+  console.log('Copying design tokens...');
+
   fs.copySync(
     path.resolve(__dirname, '../src/app/public/styles/_mixins-public.scss'),
     path.resolve(__dirname, '../dist/scss/mixins.scss')
@@ -38,22 +44,35 @@ function copyDesignTokens() {
     path.resolve(__dirname, '../src/app/public/styles/_variables-public.scss'),
     path.resolve(__dirname, '../dist/scss/variables.scss')
   );
+
+  console.log('Done.');
 }
 
 function copyScripts() {
-  fs.copySync('./utils', './dist/utils');
+  console.log('Copying scripts...');
+
+  fs.copySync(
+    path.join(process.cwd(), './utils'),
+    path.join(process.cwd(), './dist/utils')
+  );
+
+  console.log('Done.');
 }
 
 function copyCompatMixins() {
+  console.log('Copying compatibility mixins...');
+
   fs.copySync(
-    './src/app/public/styles/_compat',
-    './dist/scss/_compat'
+    path.join(process.cwd(), './src/app/public/styles/_compat'),
+    path.join(process.cwd(), './dist/scss/_compat')
   );
 
   fs.copySync(
-    './src/app/public/styles/themes/modern/_compat',
-    './dist/scss/themes/modern/_compat'
+    path.join(process.cwd(), './src/app/public/styles/themes/modern/_compat'),
+    path.join(process.cwd(), './dist/scss/themes/modern/_compat')
   );
+
+  console.log('Done.');
 }
 
 copyScss();
