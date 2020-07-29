@@ -60,7 +60,7 @@
     "@skyux/popovers": "4.1.1",
     "@skyux/router": "4.0.0",
     "@skyux/tabs": "4.2.0",
-    "@skyux/theme": "4.4.0",
+    "@skyux/theme": "4.7.0",
     "codelyzer": "5.2.2",
     "cross-spawn": "7.0.3",
     "normalize-scss": "7.0.1",

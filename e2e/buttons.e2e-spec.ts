@@ -100,12 +100,12 @@ describe('Buttons', () => {
 
   function validateAllButtons () {
     // .sky-btn-default
-    it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
+    it('should match screenshot for default button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
     });
 
-    it('should match screenshot when hovering on default button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-default`,
         'btn-default-hover',
@@ -113,8 +113,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on default button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-default`,
         'btn-default-active',
@@ -122,8 +122,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on default button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-default`,
         'btn-default-focus',
@@ -131,17 +131,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-default`, 'btn-default-disabled');
+    it('should match screenshot for disabled default button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-default`, 'btn-default-disabled');
     });
 
     // .sky-btn-primary
-    it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-primary`, 'btn-primary');
+    it('should match screenshot for default button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-primary`, 'btn-primary');
     });
 
-    it('should match screenshot when hovering on default button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-primary`,
         'btn-primary-hover',
@@ -149,8 +149,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on default button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-primary`,
         'btn-primary-active',
@@ -158,8 +158,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on default button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-primary`,
         'btn-primary-focus',
@@ -167,17 +167,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-primary`, 'btn-primary-disabled');
+    it('should match screenshot for disabled default button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-primary`, 'btn-primary-disabled');
     });
 
     // .sky-btn-danger
-    it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-danger`, 'btn-danger');
+    it('should match screenshot for default button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-danger`, 'btn-danger');
     });
 
-    it('should match screenshot when hovering on default button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-danger`,
         'btn-danger-hover',
@@ -185,8 +185,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on default button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-danger`,
         'btn-danger-active',
@@ -194,8 +194,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on default button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on default button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-danger`,
         'btn-danger-focus',
@@ -203,17 +203,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-danger`, 'btn-danger-disabled');
+    it('should match screenshot for disabled default button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-danger`, 'btn-danger-disabled');
     });
 
     // .sky-btn-link
-    it('should match screenshot for link button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-link`, 'btn-link');
+    it('should match screenshot for link button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-link`, 'btn-link');
     });
 
-    it('should match screenshot when hovering on link button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link`,
         'btn-link-hover',
@@ -221,8 +221,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on link button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link`,
         'btn-link-avtive',
@@ -230,8 +230,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on link button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link`,
         'btn-link-focus',
@@ -239,17 +239,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-link`, 'btn-link-disabled');
+    it('should match screenshot for disabled default button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-link`, 'btn-link-disabled');
     });
 
     // .sky-btn-borderless
-    it('should match screenshot for borderless button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-borderless`, 'btn-borderless');
+    it('should match screenshot for borderless button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-borderless`, 'btn-borderless');
     });
 
-    it('should match screenshot when hovering on bordeless button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on bordeless button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-borderless`,
         'btn-borderless-hover',
@@ -257,8 +257,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on bordeless button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on bordeless button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-borderless`,
         'btn-borderless-active',
@@ -266,8 +266,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on bordeless button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on bordeless button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-borderless`,
         'btn-borderless-focus',
@@ -275,17 +275,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled borderless button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-borderless`, 'btn-borderless-disabled');
+    it('should match screenshot for disabled borderless button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-borderless`, 'btn-borderless-disabled');
     });
 
     // a.sky-btn
-    it('should match screenshot for anchor button', (done) => {
-      validateButton(done, `${defaultStateSelector} a.sky-btn-primary`, 'btn-anchor');
+    it('should match screenshot for anchor button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} a.sky-btn-primary`, 'btn-anchor');
     });
 
-    it('should match screenshot when hovering on anchor button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on anchor button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} a.sky-btn-primary`,
         'btn-anchor-hover',
@@ -293,8 +293,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on anchor button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on anchor button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} a.sky-btn-primary`,
         'btn-anchor-active',
@@ -302,8 +302,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on anchor button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on anchor button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} a.sky-btn-primary`,
         'btn-anchor-focus',
@@ -311,17 +311,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled anchor button', (done) => {
-      validateButton(done, `${disabledStateSelector} a.sky-btn-primary`, 'btn-anchor-disabled');
+    it('should match screenshot for disabled anchor button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} a.sky-btn-primary`, 'btn-anchor-disabled');
     });
 
     // .sky-btn-icon
-    it('should match screenshot for icon button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-icon`, 'btn-icon');
+    it('should match screenshot for icon button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-icon`, 'btn-icon');
     });
 
-    it('should match screenshot when hovering on icon button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on icon button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-icon`,
         'btn-icon-hover',
@@ -329,8 +329,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on icon button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on icon button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-icon`,
         'btn-icon-active',
@@ -338,8 +338,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on icon button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on icon button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-icon`,
         'btn-icon-focus',
@@ -347,17 +347,17 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled icon button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-icon`, 'btn-icon-disabled');
+    it('should match screenshot for disabled icon button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-icon`, 'btn-icon-disabled');
     });
 
     // .sky-btn-link-inline
-    it('should match screenshot for inline link button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-link-inline`, 'btn-link-inline');
+    it('should match screenshot for inline link button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-link-inline`, 'btn-link-inline');
     });
 
-    it('should match screenshot when hovering on inline link button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on inline link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link-inline`,
         'btn-link-inline-hover',
@@ -365,8 +365,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on inline link button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on inline link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link-inline`,
         'btn-link-inline-active',
@@ -374,8 +374,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on inline link button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on inline link button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-btn-link-inline`,
         'btn-link-inline-focus',
@@ -383,50 +383,50 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled inline link button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-link-inline`, 'btn-link-inline-disabled');
+    it('should match screenshot for disabled inline link button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-link-inline`, 'btn-link-inline-disabled');
     });
 
     // .sky-btn-borderless-inline
-    it('should match screenshot for borderless inline button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline');
+    it('should match screenshot for borderless inline button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline');
     });
 
-    it('should match screenshot when hovering on borderless inline button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on borderless inline button', async (done) => {
+      await validateButton(
         done, `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-hover',
         'hover'
       );
     });
 
-    it('should match screenshot when clicking on borderless inline button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on borderless inline button', async (done) => {
+      await validateButton(
         done, `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-active',
         'active'
       );
     });
 
-    it('should match screenshot when focused on borderless inline button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on borderless inline button', async (done) => {
+      await validateButton(
         done, `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-focus',
         'focus'
       );
     });
 
-    it('should match screenshot for disabled borderless inline button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline-disabled');
+    it('should match screenshot for disabled borderless inline button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline-disabled');
     });
 
     // .sky-input-group-btn
-    it('should match screenshot for input group button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-input-group-btn`, 'btn-input-group');
+    it('should match screenshot for input group button', async (done) => {
+      await validateButton(done, `${defaultStateSelector} .sky-input-group-btn`, 'btn-input-group');
     });
 
-    it('should match screenshot when hovering on input group button', (done) => {
-      validateButton(
+    it('should match screenshot when hovering on input group button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-input-group-btn`,
         'btn-input-group-hover',
@@ -434,8 +434,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when clicking on input group button', (done) => {
-      validateButton(
+    it('should match screenshot when clicking on input group button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-input-group-btn`,
         'btn-input-group-active',
@@ -443,8 +443,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot when focused on input group button', (done) => {
-      validateButton(
+    it('should match screenshot when focused on input group button', async (done) => {
+      await validateButton(
         done,
         `${defaultStateSelector} .sky-input-group-btn`,
         'btn-input-group-focus',
@@ -452,8 +452,8 @@ describe('Buttons', () => {
       );
     });
 
-    it('should match screenshot for disabled input group button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-input-group-btn`, 'btn-input-group-disabled');
+    it('should match screenshot for disabled input group button', async (done) => {
+      await validateButton(done, `${disabledStateSelector} .sky-input-group-btn`, 'btn-input-group-disabled');
     });
   }
   //#endregion
