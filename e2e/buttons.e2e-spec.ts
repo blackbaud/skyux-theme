@@ -455,6 +455,43 @@ describe('Buttons', () => {
     it('should match screenshot for disabled input group button', (done) => {
       validateButton(done, `${disabledStateSelector} .sky-input-group-btn`, 'btn-input-group-disabled');
     });
+
+    // .sky-btn-sm
+    it('should match screenshot for small button', (done) => {
+      validateButton(done, `${defaultStateSelector} .sky-btn-sm`, 'btn-sm');
+    });
+
+    it('should match screenshot when hovering on small button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-sm`,
+        'btn-sm-hover',
+        'hover'
+      );
+    });
+
+    it('should match screenshot when clicking on small button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-sm`,
+        'btn-sm-active',
+        'active'
+      );
+    });
+
+    it('should match screenshot when focused on small button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-sm`,
+        'btn-sm-focus',
+        'focus'
+      );
+    });
+
+    it('should match screenshot for disabled small button', (done) => {
+      validateButton(done, `${disabledStateSelector} .sky-btn-sm`, 'btn-sm-disabled');
+    });
+
   }
   //#endregion
 
