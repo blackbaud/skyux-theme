@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "4.10.0",
+  "version": "4.10.1",
   "description": "SKY UX Theme",
   "scripts": {
     "test": "npm run build:dev-bundle && skyux test --coverage library --logFormat none",
