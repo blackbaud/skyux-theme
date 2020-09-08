@@ -3,6 +3,10 @@ import {
 } from '@angular/core';
 
 import {
+  SkyCodeModule
+} from '@blackbaud/skyux-lib-code-block';
+
+import {
   SkyMediaQueryModule
 } from '@skyux/core';
 
@@ -12,16 +16,16 @@ import {
 } from '@skyux/docs-tools';
 
 import {
-  SkyCodeModule
-} from '@blackbaud/skyux-lib-code-block';
-
-import {
-  SkyAppLinkModule
-} from '@skyux/router';
+  SkyAuthHttpClientModule
+} from '@skyux/http';
 
 import {
   SkyIconModule
 } from '@skyux/indicators';
+
+import {
+  SkyAppLinkModule
+} from '@skyux/router';
 
 import {
   SkyThemeModule
@@ -30,6 +34,7 @@ import {
 @NgModule({
   exports: [
     SkyAppLinkModule,
+    SkyAuthHttpClientModule, // Supports docs pages with `svcid` param.
     SkyCodeModule,
     SkyDocsToolsModule,
     SkyIconModule,
