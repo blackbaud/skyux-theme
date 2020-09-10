@@ -1,3 +1,41 @@
+# 4.10.2 (2020-09-01)
+
+- Fixed modern theme styles shared by the radio button and checkbox components. [#184](https://github.com/blackbaud/skyux-theme/pull/184)
+
+# 4.10.1 (2020-08-28)
+
+- Fixed hyperlink and tab text colors in the modern theme. [#182](https://github.com/blackbaud/skyux-theme/pull/182)
+
+# 4.10.0 (2020-08-21)
+
+- Added modern theme styles shared by the radio button and checkbox components. [#180](https://github.com/blackbaud/skyux-theme/pull/180)
+
+# 4.9.1 (2020-08-20)
+
+- Fixed small button styles in the modern theme. [#178](https://github.com/blackbaud/skyux-theme/pull/178)
+
+# 4.9.0 (2020-08-14)
+
+- Updated elevation background colors in the modern theme's dark mode. [#176](https://github.com/blackbaud/skyux-theme/pull/176)
+- Made header margins overridable in the modern theme. [#176](https://github.com/blackbaud/skyux-theme/pull/176)
+
+# 4.8.0 (2020-07-30)
+
+- Updated responsive mixins to work with components that do not use view encapsulation. [#170](https://github.com/blackbaud/skyux-theme/pull/170)
+- Updated modern theme padding styles for tab buttons. [#172](https://github.com/blackbaud/skyux-theme/pull/172)
+
+# 4.7.0 (2020-07-29)
+
+- Added modern theme button styles for active, focused, and hover states. [#162](https://github.com/blackbaud/skyux-theme/pull/162)
+
+# ~~4.6.0 (2020-07-28)~~
+
+- This version is broken. Upgrade to 4.7.0.
+
+# ~~4.5.0 (2020-07-27)~~
+
+- This version is broken. Upgrade to 4.7.0.
+
 # 4.4.0 (2020-07-06)
 
 - Added additional padding and margin classes to the modern theme. [#148](https://github.com/blackbaud/skyux-theme/pull/148)

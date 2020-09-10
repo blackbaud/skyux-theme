@@ -2,6 +2,12 @@
 @import 'buttons';
 @import 'elevation';
 @import 'forms';
-@import 'sizing';
+@import 'switch';
 @import 'theme';
 @import 'type';
+
+/*
+  Order is important here since rules in these files should supercede rules in previous files.
+*/
+@import 'sizing';
+@import 'borders';
