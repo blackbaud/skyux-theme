@@ -3,6 +3,11 @@ import {
 } from '@angular/core';
 
 import {
+  SkyDocsDemoControlPanelChange,
+  SkyDocsDemoControlPanelRadioChoice
+} from '@skyux/docs-tools';
+
+import {
   SkyTheme,
   SkyThemeMode,
   SkyThemeSettings
@@ -18,5 +23,17 @@ export class BoxDocsComponent {
     SkyTheme.presets.modern,
     SkyThemeMode.presets.light
   );
+
+  public layoutChoices: SkyDocsDemoControlPanelRadioChoice[] = [
+    { value: 'page', label: 'On page background' },
+    { value: 'container', label: 'Inside other containers' }
+  ];
+
+  public onDemoSelectionChange(change: SkyDocsDemoControlPanelChange): void {
+    // if (change.layoutChoices) {
+    // }
+
+    // this.changeRef.markForCheck();
+  }
 
 }
