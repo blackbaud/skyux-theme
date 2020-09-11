@@ -16,10 +16,6 @@ import {
 } from '@skyux/docs-tools';
 
 import {
-  SkyAuthHttpClientModule
-} from '@skyux/http';
-
-import {
   SkyIconModule
 } from '@skyux/indicators';
 
@@ -34,7 +30,6 @@ import {
 @NgModule({
   exports: [
     SkyAppLinkModule,
-    SkyAuthHttpClientModule, // Supports docs pages with `svcid` param.
     SkyCodeModule,
     SkyDocsToolsModule,
     SkyIconModule,
