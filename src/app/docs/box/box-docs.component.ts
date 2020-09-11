@@ -15,7 +15,8 @@ import {
 
 @Component({
   selector: 'app-box-docs',
-  templateUrl: './box-docs.component.html'
+  templateUrl: './box-docs.component.html',
+  styleUrls: ['./box-docs.component.scss']
 })
 export class BoxDocsComponent {
 
