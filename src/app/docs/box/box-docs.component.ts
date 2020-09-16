@@ -7,23 +7,12 @@ import {
   SkyDocsDemoControlPanelRadioChoice
 } from '@skyux/docs-tools';
 
-import {
-  SkyTheme,
-  SkyThemeMode,
-  SkyThemeSettings
-} from '@skyux/theme';
-
 @Component({
   selector: 'app-box-docs',
   templateUrl: './box-docs.component.html',
   styleUrls: ['./box-docs.component.scss']
 })
 export class BoxDocsComponent {
-
-  public modernLightTheme = new SkyThemeSettings(
-    SkyTheme.presets.modern,
-    SkyThemeMode.presets.light
-  );
 
   public layoutChoices: SkyDocsDemoControlPanelRadioChoice[] = [
     { value: 'page', label: 'On page background' },
