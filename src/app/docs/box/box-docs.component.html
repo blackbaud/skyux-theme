@@ -20,9 +20,13 @@
         </sky-docs-demo-control-panel-radio-group>
       </sky-docs-demo-control-panel-section>
     </sky-docs-demo-control-panel>
-    <div
-      class="sky-box sky-elevation-1"
-      style="width: 250px; height: 250px;"
+    <div *ngIf="selectedLayout === 'page'"
+      class="sky-box sky-elevation-1-bordered"
+      style="width: 50%; height: 250px;"
+    ></div>
+    <div *ngIf="selectedLayout === 'container'"
+      class="sky-box sky-elevation-0-bordered"
+      style="width: 50%; height: 250px;"
     ></div>
   </sky-docs-demo>
 
@@ -32,6 +36,7 @@
   <sky-docs-code-examples>
     <sky-docs-code-example
       sourceCodePath="src/app/public/plugin-resources/code-examples/box"
+      theme="modern"
     >
     </sky-docs-code-example>
   </sky-docs-code-examples>

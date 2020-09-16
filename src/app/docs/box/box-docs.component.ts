@@ -30,11 +30,12 @@ export class BoxDocsComponent {
     { value: 'container', label: 'Inside other containers' }
   ];
 
-  public onDemoSelectionChange(change: SkyDocsDemoControlPanelChange): void {
-    // if (change.layoutChoices) {
-    // }
+  public selectedLayout: string;
 
-    // this.changeRef.markForCheck();
+  public onDemoSelectionChange(change: SkyDocsDemoControlPanelChange): void {
+    if (change.layout) {
+      this.selectedLayout = change.layout;
+    }
   }
 
 }
