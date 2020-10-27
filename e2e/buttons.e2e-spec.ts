@@ -351,6 +351,42 @@ describe('Buttons', () => {
       validateButton(done, `${disabledStateSelector} .sky-btn-icon`, 'btn-icon-disabled');
     });
 
+    // .sky-btn-icon-borderless
+    it('should match screenshot for borderless icon button', (done) => {
+      validateButton(done, `${defaultStateSelector} .sky-btn-icon-borderless`, 'btn-icon-borderless');
+    });
+
+    it('should match screenshot when hovering on icon button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-icon-borderless`,
+        'btn-icon-borderless-hover',
+        'hover'
+      );
+    });
+
+    it('should match screenshot when clicking on icon button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-icon-borderless`,
+        'btn-icon-borderless-active',
+        'active'
+      );
+    });
+
+    it('should match screenshot when focused on icon button', (done) => {
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-icon-borderless`,
+        'btn-icon-borderless-focus',
+        'focus'
+      );
+    });
+
+    it('should match screenshot for disabled icon button', (done) => {
+      validateButton(done, `${disabledStateSelector} .sky-btn-icon-borderless`, 'btn-icon-borderless-disabled');
+    });
+
     // .sky-btn-link-inline
     it('should match screenshot for inline link button', (done) => {
       validateButton(done, `${defaultStateSelector} .sky-btn-link-inline`, 'btn-link-inline');

@@ -77,6 +77,16 @@
     );
   }
 
+  .sky-btn-icon-borderless {
+    @include sky-theme-modern-button-variant(
+      $sky-theme-modern-font-deemphasized-color,
+      transparent,
+      transparent,
+      $sky-theme-modern-background-color-primary-dark,
+      $sky-theme-modern-padding-button-icon-borderless
+    );
+  }
+
   .sky-btn-sm {
     padding: $sky-padding-half $sky-padding;
     font-size: 12px;
@@ -130,6 +140,7 @@
     }
 
     .sky-btn-borderless,
+    .sky-btn-icon-borderless,
     .sky-btn-link {
       @include sky-theme-modern-btn-disabled(
         $sky-theme-modern-font-deemphasized-color,
