@@ -1,3 +1,7 @@
+# 4.13.1 (2020-11-06)
+
+- Fixed missing CSS import. [#194](https://github.com/blackbaud/skyux-theme/pull/194)
+
 # 4.13.0 (2020-11-02)
 
 - Added the `sky-btn-icon-borderless` CSS class. [#194](https://github.com/blackbaud/skyux-theme/pull/194)
