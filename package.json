@@ -17,7 +17,11 @@
   "peerDependencies": {
     "@angular/core": "^9.1.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@blackbaud/skyux-design-tokens": "0.0.22",
+    "@types/fontfaceobserver": "0.0.6",
+    "fontfaceobserver": "2.1.0"
+  },
   "devDependencies": {
     "@angular/animations": "9.1.12",
     "@angular/common": "9.1.12",
