@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v1
       - uses: blackbaud/skyux-sdk-actions@master
         with:
@@ -27,4 +29,5 @@ jobs:
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
           hook-before-script: ./scripts/before-script.js
-      - uses: codecov/codecov-action@v1
+      - name: Upload coverage report
+        run: bash <(curl -s https://codecov.io/bash)
