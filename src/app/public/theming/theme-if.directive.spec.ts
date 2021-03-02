@@ -75,4 +75,34 @@ describe('ThemeIf directive', () => {
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
   });
+
+  it('should reflect theme changes', () => {
+    let elements: NodeList;
+    fixture.componentInstance.themeSettings = modernThemeSettings;
+    fixture.detectChanges();
+    elements = getElements();
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
+    fixture.componentInstance.themeSettings = defaultThemeSettings;
+    fixture.detectChanges();
+    elements = getElements();
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe('default theme');
+  });
+
+  it('should work with theme service', () => {
+    let elements: NodeList;
+
+    themeService.setTheme(defaultThemeSettings);
+    fixture.detectChanges();
+    elements = getElements();
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe('default theme');
+
+    themeService.setTheme(modernThemeSettings);
+    fixture.detectChanges();
+    elements = getElements();
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
+  });
 });
