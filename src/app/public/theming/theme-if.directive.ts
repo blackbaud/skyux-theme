@@ -7,14 +7,6 @@ import {
 } from '@angular/core';
 
 import {
-  SkyThemeSettings
-} from './theme-settings';
-
-import {
-  SkyThemeService
-} from './theme.service';
-
-import {
   Subject
 } from 'rxjs';
 
@@ -22,8 +14,17 @@ import {
   takeUntil
 } from 'rxjs/operators';
 
+import {
+  SkyThemeSettings
+} from './theme-settings';
+
+import {
+  SkyThemeService
+} from './theme.service';
+
 @Directive({
-  selector: '[skyThemeIf]'
+  selector: '[skyThemeIf]',
+  providers: [SkyThemeService]
 })
 export class SkyThemeIfDirective implements OnDestroy {
   private context: string;
@@ -52,6 +53,12 @@ export class SkyThemeIfDirective implements OnDestroy {
   @Input()
   set skyThemeIf(themeName: string) {
     this.context = themeName;
+    this.updateView();
+  }
+
+  @Input()
+  set themeSettings(settings: SkyThemeSettings) {
+    this.currentTheme = settings;
     this.updateView();
   }
 

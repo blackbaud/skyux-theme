@@ -52,7 +52,7 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the default theme', () => {
-    fixture.componentInstance.themeService.setTheme(defaultThemeSettings);
+    fixture.componentInstance.themeSettings = defaultThemeSettings;
     fixture.detectChanges();
     const elements = getElements();
     expect(elements.length).toBe(1);
@@ -60,7 +60,7 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the modern theme', () => {
-    fixture.componentInstance.themeService.setTheme(modernThemeSettings);
+    fixture.componentInstance.themeSettings = modernThemeSettings;
     fixture.detectChanges();
     const elements = getElements();
     expect(elements.length).toBe(1);
@@ -70,12 +70,12 @@ describe('ThemeIf directive', () => {
   it('should reflect theme changes', () => {
     let elements: NodeList;
     for (let i = 1; i <= 2; i++) {
-      fixture.componentInstance.themeService.setTheme(defaultThemeSettings);
+      fixture.componentInstance.themeSettings = defaultThemeSettings;
       fixture.detectChanges();
       elements = getElements();
       expect(elements.length).toBe(1);
       expect((elements[0] as HTMLElement).innerText).toBe('default theme');
-      fixture.componentInstance.themeService.setTheme(modernThemeSettings);
+      fixture.componentInstance.themeSettings = modernThemeSettings;
       fixture.detectChanges();
       elements = getElements();
       expect(elements.length).toBe(1);

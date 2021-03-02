@@ -1,5 +1,4 @@
 import {
-  ClassProvider,
   Injectable,
   Renderer2
 } from '@angular/core';
@@ -20,13 +19,8 @@ import {
 /**
  * Provides methods for updating and handling changes to the current theme.
  */
-@Injectable({
-  providedIn: 'any'
-})
-export class SkyThemeService implements ClassProvider {
-
-  public useClass = SkyThemeService;
-  public provide = SkyThemeService;
+@Injectable()
+export class SkyThemeService {
 
   /**
    * Notifies consumers when the current theme settings have changed.
