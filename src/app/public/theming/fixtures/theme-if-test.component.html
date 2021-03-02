@@ -1,12 +1,8 @@
 <section>
-  <ng-template [skyThemeIf]="'modern'"
-               [themeSettings]="themeSettings"
-  >
-    <div class="sky-theme-if-test">modern theme</div>
-  </ng-template>
-  <ng-template [skyThemeIf]="'default'"
-               [themeSettings]="themeSettings"
-  >
-    <div class="sky-theme-if-test">default theme</div>
-  </ng-template>
+  <div *skyThemeIf="'modern'" class="sky-theme-if-test">modern theme</div>
+  <div *skyThemeIf="'default'" class="sky-theme-if-test">default theme</div>
 </section>
+<div [skyTheme]="themeSettings">
+  <div *skyThemeIf="'modern'" class="sky-theme-if-wrapped-test">wrapped in modern theme</div>
+  <div *skyThemeIf="'default'" class="sky-theme-if-wrapped-test">wrapped in default theme</div>
+</div>

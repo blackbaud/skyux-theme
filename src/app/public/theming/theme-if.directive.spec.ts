@@ -39,6 +39,9 @@ describe('ThemeIf directive', () => {
   const getElements = (): NodeList => {
     return fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test');
   };
+  const getWrappedElements = (): NodeList => {
+    return fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-wrapped-test');
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -61,16 +64,18 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the default theme', () => {
-    fixture.componentInstance.themeSettings = defaultThemeSettings;
+    themeService.setTheme(defaultThemeSettings);
     fixture.detectChanges();
+    fixture.whenStable();
     const elements = getElements();
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('default theme');
   });
 
   it('should work with the modern theme', () => {
-    fixture.componentInstance.themeSettings = modernThemeSettings;
+    themeService.setTheme(modernThemeSettings);
     fixture.detectChanges();
+    fixture.whenStable();
     const elements = getElements();
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
@@ -78,31 +83,34 @@ describe('ThemeIf directive', () => {
 
   it('should reflect theme changes', () => {
     let elements: NodeList;
-    fixture.componentInstance.themeSettings = modernThemeSettings;
+    themeService.setTheme(modernThemeSettings);
     fixture.detectChanges();
+    fixture.whenStable();
     elements = getElements();
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
-    fixture.componentInstance.themeSettings = defaultThemeSettings;
+    themeService.setTheme(defaultThemeSettings);
     fixture.detectChanges();
+    fixture.whenStable();
     elements = getElements();
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('default theme');
   });
 
-  it('should work with theme service', () => {
+  it('should work when wrapped in Theme directive', () => {
     let elements: NodeList;
 
-    themeService.setTheme(defaultThemeSettings);
     fixture.detectChanges();
-    elements = getElements();
+    fixture.whenStable();
+    elements = getWrappedElements();
     expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('default theme');
+    expect((elements[0] as HTMLElement).innerText).toBe('wrapped in default theme');
 
-    themeService.setTheme(modernThemeSettings);
+    fixture.componentInstance.useModernTheme();
     fixture.detectChanges();
-    elements = getElements();
+    fixture.whenStable();
+    elements = getWrappedElements();
     expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
+    expect((elements[0] as HTMLElement).innerText).toBe('wrapped in modern theme');
   });
 });

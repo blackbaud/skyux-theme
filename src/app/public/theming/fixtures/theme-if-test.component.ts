@@ -1,44 +1,41 @@
 import {
-  Component,
-  OnDestroy
+  Component
 } from '@angular/core';
 
 import {
-  takeUntil
-} from 'rxjs/operators';
+  SkyTheme
+} from '../theme';
 
 import {
-  Subject
-} from 'rxjs';
+  SkyThemeMode
+} from '../theme-mode';
 
 import {
   SkyThemeSettings
 } from '../theme-settings';
 
-import {
-  SkyThemeService
-} from '../theme.service';
-
 @Component({
   selector: 'app-theme-if-test',
   templateUrl: './theme-if-test.component.html'
 })
-export class SkyThemeIfTestComponent implements OnDestroy {
+export class SkyThemeIfTestComponent {
   public themeSettings: SkyThemeSettings;
-  private ngUnsubscribe = new Subject();
 
-  constructor(
-    private themeSvc: SkyThemeService
-  ) {
-    this.themeSvc.settingsChange
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(settingsChange => {
-        this.themeSettings = settingsChange.currentSettings;
-      });
+  constructor() {
+    this.useDefaultTheme();
   }
 
-  public ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+  public useDefaultTheme(): void {
+    this.themeSettings = new SkyThemeSettings(
+      SkyTheme.presets.default,
+      SkyThemeMode.presets.light
+    );
+  }
+
+  public useModernTheme(): void {
+    this.themeSettings = new SkyThemeSettings(
+      SkyTheme.presets.modern,
+      SkyThemeMode.presets.light
+    );
   }
 }

@@ -1,7 +1,7 @@
 import {
-  Directive,
+  Directive, Host,
   Input,
-  OnDestroy,
+  OnDestroy, Optional,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -22,6 +22,10 @@ import {
   SkyThemeService
 } from './theme.service';
 
+import {
+  SkyThemeDirective
+} from './theme.directive';
+
 @Directive({
   selector: '[skyThemeIf]'
 })
@@ -32,10 +36,14 @@ export class SkyThemeIfDirective implements OnDestroy {
   private hasView: boolean = false;
 
   constructor(
+    @Optional() @Host() public skyTheme: SkyThemeDirective,
     private themeSvc: SkyThemeService,
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
   ) {
+    if (skyTheme) {
+      this.themeSettings = skyTheme.skyTheme;
+    }
     this.themeSvc.settingsChange
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(settingsChange => {
@@ -54,8 +62,7 @@ export class SkyThemeIfDirective implements OnDestroy {
     this.updateView();
   }
 
-  @Input()
-  set themeSettings(settings: SkyThemeSettings) {
+  private set themeSettings(settings: SkyThemeSettings) {
     this.currentTheme = settings;
     this.updateView();
   }
