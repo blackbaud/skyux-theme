@@ -40,19 +40,18 @@ export class SkyThemeIfDirective implements OnDestroy {
     this.themeSvc.settingsChange
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(settingsChange => {
-        this.currentTheme = settingsChange.currentSettings;
-        this.updateView();
+        this.themeSettings = settingsChange.currentSettings;
       });
   }
 
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
 
   @Input()
   set skyThemeIf(themeName: string) {
-    this.context = themeName;
+    this.context = themeName.toLowerCase();
     this.updateView();
   }
 

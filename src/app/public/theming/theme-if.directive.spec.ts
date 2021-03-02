@@ -27,10 +27,15 @@ import {
   SkyThemeMode
 } from './theme-mode';
 
+import {
+  SkyThemeService
+} from './theme.service';
+
 describe('ThemeIf directive', () => {
   let fixture: ComponentFixture<SkyThemeIfTestComponent>;
   const defaultThemeSettings = new SkyThemeSettings(SkyTheme.presets.default, SkyThemeMode.presets.light);
   const modernThemeSettings = new SkyThemeSettings(SkyTheme.presets.modern, SkyThemeMode.presets.dark);
+  const themeService = new SkyThemeService();
   const getElements = (): NodeList => {
     return fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test');
   };
@@ -42,8 +47,12 @@ describe('ThemeIf directive', () => {
       ],
       imports: [
         SkyThemeModule
+      ],
+      providers: [
+        { provide: SkyThemeService, useValue: themeService }
       ]
     });
+    TestBed.inject(SkyThemeService);
     fixture = TestBed.createComponent(SkyThemeIfTestComponent);
   });
 
@@ -65,21 +74,5 @@ describe('ThemeIf directive', () => {
     const elements = getElements();
     expect(elements.length).toBe(1);
     expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
-  });
-
-  it('should reflect theme changes', () => {
-    let elements: NodeList;
-    for (let i = 1; i <= 2; i++) {
-      fixture.componentInstance.themeSettings = defaultThemeSettings;
-      fixture.detectChanges();
-      elements = getElements();
-      expect(elements.length).toBe(1);
-      expect((elements[0] as HTMLElement).innerText).toBe('default theme');
-      fixture.componentInstance.themeSettings = modernThemeSettings;
-      fixture.detectChanges();
-      elements = getElements();
-      expect(elements.length).toBe(1);
-      expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
-    }
   });
 });
