@@ -36,12 +36,6 @@ describe('ThemeIf directive', () => {
   const defaultThemeSettings = new SkyThemeSettings(SkyTheme.presets.default, SkyThemeMode.presets.light);
   const modernThemeSettings = new SkyThemeSettings(SkyTheme.presets.modern, SkyThemeMode.presets.dark);
   const themeService = new SkyThemeService();
-  const getElements = (): NodeList => {
-    return fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test');
-  };
-  const getWrappedElements = (): NodeList => {
-    return fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-wrapped-test');
-  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -59,58 +53,48 @@ describe('ThemeIf directive', () => {
     fixture = TestBed.createComponent(SkyThemeIfTestComponent);
   });
 
-  it('should initialize the theme service with default settings', () => {
-    expect(getElements().length).toBe(0);
+  it('should display nothing if no theme is set', () => {
+    expect(fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test').length).toBe(0);
   });
 
-  it('should work with the default theme', () => {
+  it('should work with the default theme', async () => {
     themeService.setTheme(defaultThemeSettings);
-    fixture.detectChanges();
-    fixture.whenStable();
-    const elements = getElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('default theme');
+    return testForElementShowing('default theme');
   });
 
-  it('should work with the modern theme', () => {
+  it('should work with the modern theme', async () => {
     themeService.setTheme(modernThemeSettings);
-    fixture.detectChanges();
-    fixture.whenStable();
-    const elements = getElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
+    return testForElementShowing('modern theme');
   });
 
-  it('should reflect theme changes', () => {
-    let elements: NodeList;
-    themeService.setTheme(modernThemeSettings);
-    fixture.detectChanges();
-    fixture.whenStable();
-    elements = getElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('modern theme');
+  // Test the scenario where settings change and previously displayed elements need to be hidden.
+  it('should reflect theme changes', async () => {
     themeService.setTheme(defaultThemeSettings);
-    fixture.detectChanges();
-    fixture.whenStable();
-    elements = getElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('default theme');
+    await testForElementShowing('default theme');
+    themeService.setTheme(modernThemeSettings);
+    return testForElementShowing('modern theme');
   });
 
-  it('should work when wrapped in Theme directive', () => {
-    let elements: NodeList;
-
-    fixture.detectChanges();
-    fixture.whenStable();
-    elements = getWrappedElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('wrapped in default theme');
-
+  // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
+  it('should work when wrapped in Theme directive', async () => {
+    await testForWrappedElementShowing('wrapped in default theme');
     fixture.componentInstance.useModernTheme();
-    fixture.detectChanges();
-    fixture.whenStable();
-    elements = getWrappedElements();
-    expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe('wrapped in modern theme');
+    return testForWrappedElementShowing('wrapped in modern theme');
   });
+
+  async function testForElementShowing(expected: string) {
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const elements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test');
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe(expected);
+  }
+
+  async function testForWrappedElementShowing(expected: string) {
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const elements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-wrapped-test');
+    expect(elements.length).toBe(1);
+    expect((elements[0] as HTMLElement).innerText).toBe(expected);
+  }
 });

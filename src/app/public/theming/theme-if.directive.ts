@@ -1,7 +1,9 @@
 import {
-  Directive, Host,
+  Directive,
+  Host,
   Input,
-  OnDestroy, Optional,
+  OnDestroy,
+  Optional,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -26,6 +28,11 @@ import {
   SkyThemeDirective
 } from './theme.directive';
 
+/**
+ * Component that works like `ngIf` to show markup for matching theme.
+ *
+ * If the directive is within a `skyTheme` directive, it uses settings from that directive.
+ */
 @Directive({
   selector: '[skyThemeIf]'
 })
@@ -56,6 +63,11 @@ export class SkyThemeIfDirective implements OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
+  /**
+   * A string that should match the name of a theme, such as `'default'` or `'modern'`.
+   *
+   * @param themeName
+   */
   @Input()
   set skyThemeIf(themeName: string) {
     this.context = themeName.toLowerCase();
@@ -67,7 +79,7 @@ export class SkyThemeIfDirective implements OnDestroy {
     this.updateView();
   }
 
-  private updateView() {
+  private updateView(): void {
     const condition = this.context && this.currentTheme?.theme.name === this.context;
     if (condition && !this.hasView) {
       this.viewContainer.createEmbeddedView(this.templateRef);
