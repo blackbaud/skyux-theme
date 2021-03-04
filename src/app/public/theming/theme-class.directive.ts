@@ -1,0 +1,134 @@
+import {
+  Directive,
+  ElementRef,
+  Input,
+  OnDestroy,
+  Renderer2
+} from '@angular/core';
+
+import {
+  Subject
+} from 'rxjs';
+
+import {
+  takeUntil
+} from 'rxjs/operators';
+
+import {
+  SkyThemeSettings
+} from './theme-settings';
+
+import {
+  SkyThemeService
+} from './theme.service';
+
+type SkyThemeClassMap = {[key: string]: string};
+
+/**
+ * Component to add classes conditionally based on the current theme.
+ *
+ * If the directive is within a `skyTheme` directive, it uses settings from that directive.
+ */
+@Directive({
+  selector: '[skyThemeClass]'
+})
+export class SkyThemeClassDirective implements OnDestroy {
+  private currentTheme: SkyThemeSettings | undefined;
+  private ngUnsubscribe = new Subject();
+  private initialClasses: string[] = [];
+  private skyThemeClassMap: SkyThemeClassMap;
+
+  constructor(
+    private ngEl: ElementRef,
+    private renderer: Renderer2,
+    private themeSvc: SkyThemeService
+  ) {
+    this.themeSvc.settingsChange
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(settingsChange => {
+        this.themeSettings = settingsChange.currentSettings;
+      });
+  }
+
+  public ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  /**
+   * The HTML class attribute.
+   *
+   * @param value
+   */
+  @Input('class')
+  set className(value: string) {
+    this.removeInitialClasses(this.initialClasses);
+    this.initialClasses = typeof value === 'string' ? value.split(/\s+/) : [];
+    this.applyInitialClasses(this.initialClasses);
+    this.applySkyThemeClassMap(this.skyThemeClassMap);
+  }
+
+  /**
+   * An object with class names in a string for keys, and theme names (e.g. 'default' or 'modern') as values.
+   *
+   * @param value
+   */
+  @Input('skyThemeClass')
+  set skyThemeClass(value: SkyThemeClassMap) {
+    this.removeSkyThemeClassMap(this.skyThemeClassMap);
+    this.applyInitialClasses(this.initialClasses);
+
+    this.skyThemeClassMap = value as SkyThemeClassMap;
+
+    if (this.skyThemeClassMap) {
+      this.applySkyThemeClassMap(this.skyThemeClassMap);
+    }
+  }
+
+  private set themeSettings(settings: SkyThemeSettings) {
+    this.currentTheme = settings;
+    this.removeSkyThemeClassMap(this.skyThemeClassMap);
+    this.applyInitialClasses(this.initialClasses);
+    this.applySkyThemeClassMap(this.skyThemeClassMap);
+  }
+
+  private applySkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap) {
+    if (skyThemeClassMap) {
+      Object.keys(skyThemeClassMap).forEach(className => {
+        const enabled = this.currentTheme?.theme.name === skyThemeClassMap[className];
+        this.toggleClass(className, enabled);
+      });
+    }
+  }
+
+  private applyInitialClasses(classes: string[]) {
+    if (classes) {
+      classes.forEach(className => this.toggleClass(className, true));
+    }
+  }
+
+  private removeSkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap) {
+    if (skyThemeClassMap) {
+      Object.keys(skyThemeClassMap).forEach(className => this.toggleClass(className, false));
+    }
+  }
+
+  private removeInitialClasses(classes: string[]) {
+    if (classes) {
+      classes.forEach(className => this.toggleClass(className, false));
+    }
+  }
+
+  private toggleClass(className: string, enabled: boolean): void {
+    className = className.trim();
+    if (className) {
+      className.split(/\s+/g).forEach(classNameItem => {
+        if (enabled) {
+          this.renderer.addClass(this.ngEl.nativeElement, classNameItem);
+        } else {
+          this.renderer.removeClass(this.ngEl.nativeElement, classNameItem);
+        }
+      });
+    }
+  }
+}

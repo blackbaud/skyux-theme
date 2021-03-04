@@ -35,9 +35,10 @@ describe('ThemeIf directive', () => {
   let fixture: ComponentFixture<SkyThemeIfTestComponent>;
   const defaultThemeSettings = new SkyThemeSettings(SkyTheme.presets.default, SkyThemeMode.presets.light);
   const modernThemeSettings = new SkyThemeSettings(SkyTheme.presets.modern, SkyThemeMode.presets.dark);
-  const themeService = new SkyThemeService();
+  let themeService: SkyThemeService;
 
   beforeEach(() => {
+    themeService = new SkyThemeService();
     TestBed.configureTestingModule({
       declarations: [
         SkyThemeIfTestComponent
@@ -49,7 +50,6 @@ describe('ThemeIf directive', () => {
         { provide: SkyThemeService, useValue: themeService }
       ]
     });
-    TestBed.inject(SkyThemeService);
     fixture = TestBed.createComponent(SkyThemeIfTestComponent);
   });
 
@@ -87,7 +87,7 @@ describe('ThemeIf directive', () => {
     await fixture.whenStable();
     const elements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test');
     expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe(expected);
+    expect(elements[0]).toHaveText(expected);
   }
 
   async function testForWrappedElementShowing(expected: string) {
@@ -95,6 +95,6 @@ describe('ThemeIf directive', () => {
     await fixture.whenStable();
     const elements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-wrapped-test');
     expect(elements.length).toBe(1);
-    expect((elements[0] as HTMLElement).innerText).toBe(expected);
+    expect(elements[0]).toHaveText(expected);
   }
 });

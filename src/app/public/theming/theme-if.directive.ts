@@ -1,9 +1,7 @@
 import {
   Directive,
-  Host,
   Input,
   OnDestroy,
-  Optional,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -24,10 +22,6 @@ import {
   SkyThemeService
 } from './theme.service';
 
-import {
-  SkyThemeDirective
-} from './theme.directive';
-
 /**
  * Component that works like `ngIf` to show markup for matching theme.
  *
@@ -40,17 +34,13 @@ export class SkyThemeIfDirective implements OnDestroy {
   private context: string;
   private currentTheme: SkyThemeSettings | undefined;
   private ngUnsubscribe = new Subject();
-  private hasView: boolean = false;
+  private hasView = false;
 
   constructor(
-    @Optional() @Host() public skyTheme: SkyThemeDirective,
     private themeSvc: SkyThemeService,
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
   ) {
-    if (skyTheme) {
-      this.themeSettings = skyTheme.skyTheme;
-    }
     this.themeSvc.settingsChange
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(settingsChange => {
@@ -64,13 +54,13 @@ export class SkyThemeIfDirective implements OnDestroy {
   }
 
   /**
-   * A string that should match the name of a theme, such as `'default'` or `'modern'`.
+   * A string that should match the name of a theme, `'default'` or `'modern'`.
    *
-   * @param themeName
+   * @param value
    */
   @Input()
-  set skyThemeIf(themeName: string) {
-    this.context = themeName.toLowerCase();
+  set skyThemeIf(value: 'default' | 'modern') {
+    this.context = value;
     this.updateView();
   }
 

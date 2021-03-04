@@ -1,0 +1,21 @@
+<section>
+  <div
+    [skyThemeClass]="{
+      'example-modern':'modern',
+      'example-default':'default'
+    }"
+    [class]="'sky-theme-class-test '+exampleString"
+    [ngClass]="{'added-ng-class': true}"
+  >this is a test
+  </div>
+</section>
+<div [skyTheme]="themeSettings">
+  <div
+    [skyThemeClass]="{
+      'example-modern':'modern',
+      'example-default':'default'
+    }"
+    class="sky-theme-class-wrapped-test"
+  >this is a test
+  </div>
+</div>
