@@ -31,6 +31,22 @@ import {
   selector: '[skyThemeIf]'
 })
 export class SkyThemeIfDirective implements OnDestroy {
+  /**
+   * A string that should match the name of a theme, `'default'` or `'modern'`.
+   *
+   * @param value
+   */
+  @Input()
+  public set skyThemeIf(value: 'default' | 'modern') {
+    this.context = value;
+    this.updateView();
+  }
+
+  private set themeSettings(settings: SkyThemeSettings) {
+    this.currentTheme = settings;
+    this.updateView();
+  }
+
   private context: string;
   private currentTheme: SkyThemeSettings | undefined;
   private ngUnsubscribe = new Subject();
@@ -51,22 +67,6 @@ export class SkyThemeIfDirective implements OnDestroy {
   public ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
-  }
-
-  /**
-   * A string that should match the name of a theme, `'default'` or `'modern'`.
-   *
-   * @param value
-   */
-  @Input()
-  public set skyThemeIf(value: 'default' | 'modern') {
-    this.context = value;
-    this.updateView();
-  }
-
-  private set themeSettings(settings: SkyThemeSettings) {
-    this.currentTheme = settings;
-    this.updateView();
   }
 
   private updateView(): void {

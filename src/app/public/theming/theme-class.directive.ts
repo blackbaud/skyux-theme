@@ -33,28 +33,6 @@ type SkyThemeClassMap = {[key: string]: string};
   selector: '[skyThemeClass]'
 })
 export class SkyThemeClassDirective implements OnDestroy {
-  private currentTheme: SkyThemeSettings | undefined;
-  private ngUnsubscribe = new Subject();
-  private initialClasses: string[] = [];
-  private skyThemeClassMap: SkyThemeClassMap;
-
-  constructor(
-    private ngEl: ElementRef,
-    private renderer: Renderer2,
-    private themeSvc: SkyThemeService
-  ) {
-    this.themeSvc.settingsChange
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(settingsChange => {
-        this.themeSettings = settingsChange.currentSettings;
-      });
-  }
-
-  public ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
   /**
    * The HTML class attribute.
    *
@@ -92,6 +70,34 @@ export class SkyThemeClassDirective implements OnDestroy {
     this.applySkyThemeClassMap(this.skyThemeClassMap);
   }
 
+  private currentTheme: SkyThemeSettings | undefined;
+  private ngUnsubscribe = new Subject();
+  private initialClasses: string[] = [];
+  private skyThemeClassMap: SkyThemeClassMap;
+
+  constructor(
+    private ngEl: ElementRef,
+    private renderer: Renderer2,
+    private themeSvc: SkyThemeService
+  ) {
+    this.themeSvc.settingsChange
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(settingsChange => {
+        this.themeSettings = settingsChange.currentSettings;
+      });
+  }
+
+  public ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  private applyInitialClasses(classes: string[]): void {
+    if (classes) {
+      classes.forEach(className => this.toggleClass(className, true));
+    }
+  }
+
   private applySkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap): void {
     if (skyThemeClassMap) {
       Object.keys(skyThemeClassMap).forEach(className => {
@@ -101,21 +107,15 @@ export class SkyThemeClassDirective implements OnDestroy {
     }
   }
 
-  private applyInitialClasses(classes: string[]): void {
+  private removeInitialClasses(classes: string[]): void {
     if (classes) {
-      classes.forEach(className => this.toggleClass(className, true));
+      classes.forEach(className => this.toggleClass(className, false));
     }
   }
 
   private removeSkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap): void {
     if (skyThemeClassMap) {
       Object.keys(skyThemeClassMap).forEach(className => this.toggleClass(className, false));
-    }
-  }
-
-  private removeInitialClasses(classes: string[]): void {
-    if (classes) {
-      classes.forEach(className => this.toggleClass(className, false));
     }
   }
 
