@@ -4,41 +4,61 @@ import {
 } from '@angular/core/testing';
 
 import {
-  expect
-} from '@skyux-sdk/testing';
+  BehaviorSubject
+} from 'rxjs';
 
 import {
-  SkyThemeSettings
-} from './theme-settings';
+  expect
+} from '@skyux-sdk/testing';
 
 import {
   SkyTheme
 } from './theme';
 
 import {
-  SkyThemeMode
-} from './theme-mode';
+  SkyThemeClassTestComponent
+} from './fixtures/theme-class-test.component';
 
 import {
-  SkyThemeService
-} from './theme.service';
+  SkyThemeMode
+} from './theme-mode';
 
 import {
   SkyThemeModule
 } from '../theme.module';
 
 import {
-  SkyThemeClassTestComponent
-} from './fixtures/theme-class-test.component';
+  SkyThemeService
+} from './theme.service';
+
+import {
+  SkyThemeSettings
+} from './theme-settings';
+
+import {
+  SkyThemeSettingsChange
+} from './theme-settings-change';
 
 describe('ThemeClass directive', () => {
   let fixture: ComponentFixture<SkyThemeClassTestComponent>;
   const defaultThemeSettings = new SkyThemeSettings(SkyTheme.presets.default, SkyThemeMode.presets.light);
   const modernThemeSettings = new SkyThemeSettings(SkyTheme.presets.modern, SkyThemeMode.presets.dark);
-  let themeService: SkyThemeService;
+  let mockThemeSvc: {
+    settingsChange: BehaviorSubject<SkyThemeSettingsChange>
+  };
 
   beforeEach(() => {
-    themeService = new SkyThemeService();
+    mockThemeSvc = {
+      settingsChange: new BehaviorSubject<SkyThemeSettingsChange>(
+        {
+          currentSettings: new SkyThemeSettings(
+            SkyTheme.presets.default,
+            SkyThemeMode.presets.light
+          ),
+          previousSettings: undefined
+        }
+      )
+    };
     TestBed.configureTestingModule({
       declarations: [
         SkyThemeClassTestComponent
@@ -47,7 +67,7 @@ describe('ThemeClass directive', () => {
         SkyThemeModule
       ],
       providers: [
-        { provide: SkyThemeService, useValue: themeService }
+        { provide: SkyThemeService, useValue: mockThemeSvc }
       ]
     });
     fixture = TestBed.createComponent(SkyThemeClassTestComponent);
@@ -58,20 +78,32 @@ describe('ThemeClass directive', () => {
   });
 
   it('should work with the default theme', async () => {
-    themeService.setTheme(defaultThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: defaultThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     return testForElementWithClasses('sky-theme-class-test added-ng-class example-default');
   });
 
   it('should work with the modern theme', async () => {
-    themeService.setTheme(modernThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: modernThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     return testForElementWithClasses('sky-theme-class-test added-ng-class example-modern');
   });
 
   // Test the scenario where settings change and previous classes are removed.
   it('should reflect both theme and class changes', async () => {
-    themeService.setTheme(defaultThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: defaultThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     await testForElementWithClasses('sky-theme-class-test added-ng-class example-default');
-    themeService.setTheme(modernThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: modernThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     await testForElementWithClasses('sky-theme-class-test added-ng-class example-modern');
     fixture.componentInstance.exampleString = 'hello-world';
     return testForElementWithClasses('added-ng-class example-modern hello-world sky-theme-class-test');

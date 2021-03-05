@@ -4,41 +4,61 @@ import {
 } from '@angular/core/testing';
 
 import {
+  BehaviorSubject
+} from 'rxjs';
+
+import {
   expect
 } from '@skyux-sdk/testing';
-
-import {
-  SkyThemeModule
-} from '../theme.module';
-
-import {
-  SkyThemeIfTestComponent
-} from './fixtures/theme-if-test.component';
-
-import {
-  SkyThemeSettings
-} from './theme-settings';
 
 import {
   SkyTheme
 } from './theme';
 
 import {
+  SkyThemeIfTestComponent
+} from './fixtures/theme-if-test.component';
+
+import {
   SkyThemeMode
 } from './theme-mode';
+
+import {
+  SkyThemeModule
+} from '../theme.module';
 
 import {
   SkyThemeService
 } from './theme.service';
 
+import {
+  SkyThemeSettings
+} from './theme-settings';
+
+import {
+  SkyThemeSettingsChange
+} from './theme-settings-change';
+
 describe('ThemeIf directive', () => {
   let fixture: ComponentFixture<SkyThemeIfTestComponent>;
   const defaultThemeSettings = new SkyThemeSettings(SkyTheme.presets.default, SkyThemeMode.presets.light);
   const modernThemeSettings = new SkyThemeSettings(SkyTheme.presets.modern, SkyThemeMode.presets.dark);
-  let themeService: SkyThemeService;
+  let mockThemeSvc: {
+    settingsChange: BehaviorSubject<SkyThemeSettingsChange>
+  };
 
   beforeEach(() => {
-    themeService = new SkyThemeService();
+    mockThemeSvc = {
+      settingsChange: new BehaviorSubject<SkyThemeSettingsChange>(
+        {
+          currentSettings: new SkyThemeSettings(
+            SkyTheme.presets.default,
+            SkyThemeMode.presets.light
+          ),
+          previousSettings: undefined
+        }
+      )
+    };
     TestBed.configureTestingModule({
       declarations: [
         SkyThemeIfTestComponent
@@ -47,7 +67,7 @@ describe('ThemeIf directive', () => {
         SkyThemeModule
       ],
       providers: [
-        { provide: SkyThemeService, useValue: themeService }
+        { provide: SkyThemeService, useValue: mockThemeSvc }
       ]
     });
     fixture = TestBed.createComponent(SkyThemeIfTestComponent);
@@ -58,20 +78,32 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the default theme', async () => {
-    themeService.setTheme(defaultThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: defaultThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     return testForElementShowing('default theme');
   });
 
   it('should work with the modern theme', async () => {
-    themeService.setTheme(modernThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: modernThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     return testForElementShowing('modern theme');
   });
 
   // Test the scenario where settings change and previously displayed elements need to be hidden.
   it('should reflect theme changes', async () => {
-    themeService.setTheme(defaultThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: defaultThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     await testForElementShowing('default theme');
-    themeService.setTheme(modernThemeSettings);
+    mockThemeSvc.settingsChange.next({
+      currentSettings: modernThemeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
     return testForElementShowing('modern theme');
   });
 

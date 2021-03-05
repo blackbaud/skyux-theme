@@ -125,14 +125,10 @@ export class SkyThemeService {
   }
 
   private addHostClass(className: string): void {
-    if (this.renderer && this.hostEl) {
-      this.renderer.addClass(this.hostEl, className);
-    }
+    this.renderer.addClass(this.hostEl, className);
   }
 
   private removeHostClass(className: string): void {
-    if (this.renderer && this.hostEl) {
-      this.renderer.removeClass(this.hostEl, className);
-    }
+    this.renderer.removeClass(this.hostEl, className);
   }
 }
