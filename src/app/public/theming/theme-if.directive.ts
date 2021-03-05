@@ -59,7 +59,7 @@ export class SkyThemeIfDirective implements OnDestroy {
    * @param value
    */
   @Input()
-  set skyThemeIf(value: 'default' | 'modern') {
+  public set skyThemeIf(value: 'default' | 'modern') {
     this.context = value;
     this.updateView();
   }

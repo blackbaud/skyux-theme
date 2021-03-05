@@ -61,7 +61,7 @@ export class SkyThemeClassDirective implements OnDestroy {
    * @param value
    */
   @Input('class')
-  set className(value: string) {
+  public set className(value: string) {
     this.removeInitialClasses(this.initialClasses);
     this.initialClasses = typeof value === 'string' ? value.split(/\s+/) : [];
     this.applyInitialClasses(this.initialClasses);
@@ -74,7 +74,7 @@ export class SkyThemeClassDirective implements OnDestroy {
    * @param value
    */
   @Input('skyThemeClass')
-  set skyThemeClass(value: SkyThemeClassMap) {
+  public set skyThemeClass(value: SkyThemeClassMap) {
     this.removeSkyThemeClassMap(this.skyThemeClassMap);
     this.applyInitialClasses(this.initialClasses);
 
@@ -92,7 +92,7 @@ export class SkyThemeClassDirective implements OnDestroy {
     this.applySkyThemeClassMap(this.skyThemeClassMap);
   }
 
-  private applySkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap) {
+  private applySkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap): void {
     if (skyThemeClassMap) {
       Object.keys(skyThemeClassMap).forEach(className => {
         const enabled = this.currentTheme?.theme.name === skyThemeClassMap[className];
@@ -101,19 +101,19 @@ export class SkyThemeClassDirective implements OnDestroy {
     }
   }
 
-  private applyInitialClasses(classes: string[]) {
+  private applyInitialClasses(classes: string[]): void {
     if (classes) {
       classes.forEach(className => this.toggleClass(className, true));
     }
   }
 
-  private removeSkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap) {
+  private removeSkyThemeClassMap(skyThemeClassMap: SkyThemeClassMap): void {
     if (skyThemeClassMap) {
       Object.keys(skyThemeClassMap).forEach(className => this.toggleClass(className, false));
     }
   }
 
-  private removeInitialClasses(classes: string[]) {
+  private removeInitialClasses(classes: string[]): void {
     if (classes) {
       classes.forEach(className => this.toggleClass(className, false));
     }
