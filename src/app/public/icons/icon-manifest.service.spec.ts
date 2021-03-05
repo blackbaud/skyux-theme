@@ -1,18 +1,18 @@
 import {
-  SkyIconManifest
+  SkyThemeIconManifest
 } from './icon-manifest';
 
 import {
-  SkyIconManifestService
+  SkyThemeIconManifestService
 } from './icon-manifest.service';
 
-const manifest: SkyIconManifest = require('@skyux/icons/assets/manifest.json');
+const manifest: SkyThemeIconManifest = require('@skyux/icons/assets/manifest.json');
 
-describe('SKY icon manifest service', () => {
-  let manifestSvc: SkyIconManifestService;
+describe('SKY theme icon manifest service', () => {
+  let manifestSvc: SkyThemeIconManifestService;
 
   beforeEach(() => {
-    manifestSvc = new SkyIconManifestService();
+    manifestSvc = new SkyThemeIconManifestService();
   });
 
   it('should return the manifest file from the @skyux/icons package', () => {

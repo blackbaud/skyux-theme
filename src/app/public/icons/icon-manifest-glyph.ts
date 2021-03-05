@@ -1,7 +1,7 @@
 /**
  * Metadata about a SKY UX icon glyph.
  */
-export interface SkyIconManifestGlyph {
+export interface SkyThemeIconManifestGlyph {
 
   /**
    * The character code of the glyph.

@@ -3,23 +3,23 @@ import {
 } from '@angular/core';
 
 import {
-  SkyIconManifest
+  SkyThemeIconManifest
 } from './icon-manifest';
 
-const manifest: SkyIconManifest = require('@skyux/icons/assets/manifest.json');
+const manifest: SkyThemeIconManifest = require('@skyux/icons/assets/manifest.json');
 
 /**
  * Provides a method for retrieving metadata about the SKY UX icon font.
  */
 @Injectable()
-export class SkyIconManifestService {
+export class SkyThemeIconManifestService {
 
   constructor() { }
 
   /**
    * Gets metadata about the SKY UX icon font.
    */
-  public getManifest(): SkyIconManifest {
+  public getManifest(): SkyThemeIconManifest {
     return manifest;
   }
 }
