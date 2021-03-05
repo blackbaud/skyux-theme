@@ -18,6 +18,7 @@
   "librarySettings": {
     "whitelistedNonPeerDependencies": [
       "@blackbaud/skyux-design-tokens",
+      "@skyux/icons",
       "@types/fontfaceobserver",
       "fontfaceobserver"
     ]
