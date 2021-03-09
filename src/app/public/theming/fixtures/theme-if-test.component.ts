@@ -27,7 +27,8 @@ import {
 })
 export class SkyThemeIfTestComponent implements OnInit {
   public themeSettings: SkyThemeSettings;
-  @ViewChildren(SkyThemeIfDirective) private testDirectives!: QueryList<SkyThemeIfDirective>;
+  @ViewChildren(SkyThemeIfDirective)
+  private testDirectives!: QueryList<SkyThemeIfDirective>;
 
   public doCheck(): void {
     if (this.testDirectives?.length) {

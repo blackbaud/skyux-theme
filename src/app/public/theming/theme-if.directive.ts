@@ -43,12 +43,8 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
    *
    * @param value
    */
-  @Input()
-  public set skyThemeIf(value: 'default' | 'modern') {
-    this.context = value;
-  }
+  @Input() public skyThemeIf: 'default' | 'modern';
 
-  private context: string;
   private currentTheme: SkyThemeSettings | undefined;
   private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
@@ -77,7 +73,7 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private updateView(): void {
-    const condition = this.context && this.currentTheme?.theme.name === this.context;
+    const condition = this.skyThemeIf && this.currentTheme?.theme.name === this.skyThemeIf;
     if (condition && !this.embeddedView) {
       this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
     } else if (!condition && this.embeddedView) {
