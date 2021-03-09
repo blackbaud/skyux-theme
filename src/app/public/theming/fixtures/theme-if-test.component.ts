@@ -30,16 +30,16 @@ export class SkyThemeIfTestComponent implements OnInit {
   @ViewChildren(SkyThemeIfDirective)
   private testDirectives!: QueryList<SkyThemeIfDirective>;
 
+  public ngOnInit(): void {
+    this.useDefaultTheme();
+  }
+
   public doCheck(): void {
     if (this.testDirectives?.length) {
       this.testDirectives.forEach(testDirective => {
         testDirective.ngOnChanges();
       });
     }
-  }
-
-  public ngOnInit(): void {
-    this.useDefaultTheme();
   }
 
   public useDefaultTheme(): void {

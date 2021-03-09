@@ -33,7 +33,7 @@ export class SkyTheme {
    * @param name The name of the theme.
    * @param hostClass The class on the host element which child components should reference when
    * adusting for a specified theme.
-   * @param supportsDarkMode A flag indicating whether the theme supports dark mode.
+   * @param supportedModes array of supported SkyThemeModes
    */
   constructor(
     public readonly name: string,
