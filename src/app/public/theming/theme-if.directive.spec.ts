@@ -102,13 +102,22 @@ describe('ThemeIf directive', () => {
 
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show initial theme when wrapped in Theme directive', async () => {
+    fixture.detectChanges();
+    await fixture.whenRenderingDone();
+    fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
   });
 
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show changes when wrapped in Theme directive', async () => {
+    fixture.detectChanges();
+    await fixture.whenRenderingDone();
+    fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
     fixture.componentInstance.useModernTheme();
+    fixture.detectChanges();
+    await fixture.whenRenderingDone();
+    fixture.componentInstance.doCheck();
     return testForWrappedElementShowing('wrapped in modern theme');
   });
 

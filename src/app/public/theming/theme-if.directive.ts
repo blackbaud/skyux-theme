@@ -5,7 +5,6 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -53,7 +52,6 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
   private currentTheme: SkyThemeSettings | undefined;
   private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
-  private hasView = false;
 
   constructor(
     private themeSvc: SkyThemeService,
@@ -61,19 +59,13 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
     private viewContainer: ViewContainerRef
   ) {}
 
-  /**
-   * Called from test fixture.
-   *
-   * @internal
-   */
-  public doCheck(): void {
+  public ngOnChanges(): void {
     this.updateView();
   }
 
-  public ngOnChanges(changes: SimpleChanges): void {
-    if (changes.hasOwnProperty('skyThemeIf')) {
-      this.updateView();
-    }
+  public ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 
   public ngOnInit(): void {
@@ -84,20 +76,14 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
       });
   }
 
-  public ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
   private updateView(): void {
     const condition = this.context && this.currentTheme?.theme.name === this.context;
-    if (condition && !this.hasView) {
+    if (condition && !this.embeddedView) {
       this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
-      this.hasView = true;
-    } else if (!condition && this.hasView) {
+    } else if (!condition && this.embeddedView) {
       this.viewContainer.clear();
       this.embeddedView.destroy();
-      this.hasView = false;
+      this.embeddedView = undefined;
     }
   }
 }
