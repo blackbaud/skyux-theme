@@ -40,8 +40,6 @@ import {
 export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
-   *
-   * @param value
    */
   @Input() public skyThemeIf: 'default' | 'modern';
 
