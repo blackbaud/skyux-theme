@@ -51,10 +51,7 @@ describe('ThemeIf directive', () => {
     mockThemeSvc = {
       settingsChange: new BehaviorSubject<SkyThemeSettingsChange>(
         {
-          currentSettings: new SkyThemeSettings(
-            SkyTheme.presets.default,
-            SkyThemeMode.presets.light
-          ),
+          currentSettings: defaultThemeSettings,
           previousSettings: undefined
         }
       )
@@ -78,41 +75,51 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the default theme', async () => {
-    mockThemeSvc.settingsChange.next({
-      currentSettings: defaultThemeSettings,
-      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
-    });
+    fixture.detectChanges();
+    await fixture.whenStable();
+    await switchThemeSettingsTo(defaultThemeSettings);
     return testForElementShowing('default theme');
   });
 
   it('should work with the modern theme', async () => {
-    mockThemeSvc.settingsChange.next({
-      currentSettings: modernThemeSettings,
-      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
-    });
+    fixture.detectChanges();
+    await fixture.whenStable();
+    await switchThemeSettingsTo(modernThemeSettings);
     return testForElementShowing('modern theme');
   });
 
   // Test the scenario where settings change and previously displayed elements need to be hidden.
   it('should reflect theme changes', async () => {
-    mockThemeSvc.settingsChange.next({
-      currentSettings: defaultThemeSettings,
-      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
-    });
+    fixture.detectChanges();
+    await fixture.whenStable();
+    await switchThemeSettingsTo(modernThemeSettings);
+    await testForElementShowing('modern theme');
+    await switchThemeSettingsTo(defaultThemeSettings);
     await testForElementShowing('default theme');
-    mockThemeSvc.settingsChange.next({
-      currentSettings: modernThemeSettings,
-      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
-    });
+    await switchThemeSettingsTo(modernThemeSettings);
     return testForElementShowing('modern theme');
   });
 
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
-  it('should work when wrapped in Theme directive', async () => {
+  it('should show initial theme when wrapped in Theme directive', async () => {
+    await testForWrappedElementShowing('wrapped in default theme');
+  });
+
+  // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
+  it('should show changes when wrapped in Theme directive', async () => {
     await testForWrappedElementShowing('wrapped in default theme');
     fixture.componentInstance.useModernTheme();
     return testForWrappedElementShowing('wrapped in modern theme');
   });
+
+  async function switchThemeSettingsTo(themeSettings: SkyThemeSettings) {
+    mockThemeSvc.settingsChange.next({
+      currentSettings: themeSettings,
+      previousSettings: mockThemeSvc.settingsChange.getValue().currentSettings
+    });
+    fixture.componentInstance.doCheck();
+    return Promise.resolve();
+  }
 
   async function testForElementShowing(expected: string) {
     fixture.detectChanges();

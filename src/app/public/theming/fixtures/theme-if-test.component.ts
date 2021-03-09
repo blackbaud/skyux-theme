@@ -1,5 +1,8 @@
 import {
-  Component
+  Component,
+  OnInit,
+  QueryList,
+  ViewChildren
 } from '@angular/core';
 
 import {
@@ -14,14 +17,27 @@ import {
   SkyThemeSettings
 } from '../theme-settings';
 
+import {
+  SkyThemeIfDirective
+} from '../theme-if.directive';
+
 @Component({
   selector: 'app-theme-if-test',
   templateUrl: './theme-if-test.component.html'
 })
-export class SkyThemeIfTestComponent {
+export class SkyThemeIfTestComponent implements OnInit {
   public themeSettings: SkyThemeSettings;
+  @ViewChildren(SkyThemeIfDirective) testDirectives!: QueryList<SkyThemeIfDirective>;
 
-  constructor() {
+  public doCheck(): void {
+    if (this.testDirectives?.length) {
+      this.testDirectives.forEach(testDirective => {
+        testDirective.doCheck();
+      });
+    }
+  }
+
+  public ngOnInit(): void {
     this.useDefaultTheme();
   }
 
