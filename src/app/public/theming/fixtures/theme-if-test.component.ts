@@ -37,7 +37,7 @@ export class SkyThemeIfTestComponent implements OnInit {
   public doCheck(): void {
     if (this.testDirectives?.length) {
       this.testDirectives.forEach(testDirective => {
-        testDirective.ngOnChanges();
+        testDirective.ngDoCheck();
       });
     }
   }

@@ -1,10 +1,10 @@
 import {
+  AfterContentInit,
   Directive,
+  DoCheck,
   EmbeddedViewRef,
   Input,
-  OnChanges,
   OnDestroy,
-  OnInit,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -37,7 +37,7 @@ import {
 @Directive({
   selector: '[skyThemeIf]'
 })
-export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
+export class SkyThemeIfDirective implements AfterContentInit, DoCheck, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
    */
@@ -47,6 +47,7 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
   private currentTheme: SkyThemeSettings | undefined;
   private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
+  private previousCondition = false;
 
   constructor(
     private themeSvc: SkyThemeService,
@@ -54,7 +55,15 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
     private viewContainer: ViewContainerRef
   ) {}
 
-  public ngOnChanges(): void {
+  public ngAfterContentInit(): void {
+    this.themeSvc.settingsChange
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe((settingsChange: SkyThemeSettingsChange) => {
+        this.currentTheme = settingsChange.currentSettings;
+      });
+  }
+
+  public ngDoCheck(): void {
     this.updateView();
   }
 
@@ -63,22 +72,19 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  public ngOnInit(): void {
-    this.themeSvc.settingsChange
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((settingsChange: SkyThemeSettingsChange) => {
-        this.currentTheme = settingsChange.currentSettings;
-      });
-  }
-
   private updateView(): void {
     const condition = this.skyThemeIf && this.currentTheme?.theme.name === this.skyThemeIf;
-    if (condition && !this.embeddedView) {
-      this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
-    } else if (!condition && this.embeddedView) {
-      this.viewContainer.clear();
-      this.embeddedView.destroy();
-      this.embeddedView = undefined;
+    if (condition !== this.previousCondition) {
+      this.previousCondition = condition;
+      if (condition && !this.embeddedView) {
+        this.embeddedView = this.templateRef.createEmbeddedView({});
+        this.viewContainer.clear();
+        this.viewContainer.insert(this.embeddedView);
+      } else if (!condition && this.embeddedView) {
+        this.viewContainer.clear();
+        this.embeddedView.destroy();
+        this.embeddedView = undefined;
+      }
     }
   }
 }
