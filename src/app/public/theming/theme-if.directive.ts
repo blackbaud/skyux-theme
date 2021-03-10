@@ -41,7 +41,8 @@ export class SkyThemeIfDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
    */
-  @Input() public skyThemeIf: 'default' | 'modern';
+  @Input()
+  public skyThemeIf: 'default' | 'modern';
 
   private currentTheme: SkyThemeSettings | undefined;
   private embeddedView: EmbeddedViewRef<any> | undefined;
