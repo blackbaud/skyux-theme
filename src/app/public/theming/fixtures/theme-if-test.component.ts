@@ -1,6 +1,6 @@
 import {
+  AfterContentInit,
   Component,
-  OnInit,
   QueryList,
   ViewChildren
 } from '@angular/core';
@@ -25,12 +25,12 @@ import {
   selector: 'app-theme-if-test',
   templateUrl: './theme-if-test.component.html'
 })
-export class SkyThemeIfTestComponent implements OnInit {
+export class SkyThemeIfTestComponent implements AfterContentInit {
   public themeSettings: SkyThemeSettings;
   @ViewChildren(SkyThemeIfDirective)
   private testDirectives!: QueryList<SkyThemeIfDirective>;
 
-  public ngOnInit(): void {
+  public ngAfterContentInit(): void {
     this.useDefaultTheme();
   }
 
