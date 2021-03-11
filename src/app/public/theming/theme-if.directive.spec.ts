@@ -71,6 +71,7 @@ describe('ThemeIf directive', () => {
   });
 
   it('should display nothing if no theme is set', () => {
+    fixture.componentInstance.doCheck();
     expect(fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-test').length).toBe(0);
   });
 
@@ -103,7 +104,7 @@ describe('ThemeIf directive', () => {
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show initial theme when wrapped in Theme directive', async () => {
     fixture.detectChanges();
-    await fixture.whenRenderingDone();
+    await fixture.whenStable();
     fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
   });
@@ -111,14 +112,26 @@ describe('ThemeIf directive', () => {
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show changes when wrapped in Theme directive', async () => {
     fixture.detectChanges();
-    await fixture.whenRenderingDone();
+    await fixture.whenStable();
     fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
     fixture.componentInstance.useModernTheme();
     fixture.detectChanges();
-    await fixture.whenRenderingDone();
+    await fixture.whenStable();
     fixture.componentInstance.doCheck();
     return testForWrappedElementShowing('wrapped in modern theme');
+  });
+
+  it('should reflect input changes', async () => {
+    fixture.componentInstance.testThemeName = 'default';
+    fixture.detectChanges();
+    await fixture.whenStable();
+    await testForInputElementShowing('This text shown for default theme.');
+    await switchThemeSettingsTo(modernThemeSettings);
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const inputTestElements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-input-test');
+    expect(inputTestElements.length).toBe(0);
   });
 
   async function switchThemeSettingsTo(themeSettings: SkyThemeSettings) {
@@ -144,5 +157,12 @@ describe('ThemeIf directive', () => {
     const elements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-wrapped-test');
     expect(elements.length).toBe(1);
     expect(elements[0]).toHaveText(expected);
+  }
+
+  async function testForInputElementShowing(expected: string) {
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const element = fixture.debugElement.nativeElement.querySelector('.sky-theme-if-input-test');
+    expect(element).toHaveText(expected);
   }
 });

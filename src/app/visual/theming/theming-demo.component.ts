@@ -26,7 +26,7 @@ export class ThemingDemoComponent implements OnInit {
     return this._themeName;
   }
 
-  public section = 'elevation';
+  public section = 'conditional';
 
   public themeSettings: SkyThemeSettings;
 

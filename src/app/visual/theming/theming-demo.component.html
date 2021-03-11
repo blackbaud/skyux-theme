@@ -27,8 +27,9 @@
   </ng-container>
 
   <ng-container *ngIf="section === 'conditional'">
-    <h1 *skyThemeIf="'modern'">Modern Theme Element</h1>
-    <h1 *skyThemeIf="'default'">Default Theme Element</h1>
+    <h1>*ngIf Block</h1>
+    <h2 *skyThemeIf="'modern'">Modern Theme Element</h2>
+    <h2 *skyThemeIf="'default'">Default Theme Element</h2>
     <sky-icon *skyThemeIf="'modern'"
       icon="check"
       iconType="skyux"
@@ -37,6 +38,19 @@
       icon="check"
     ></sky-icon>
   </ng-container>
+
+  <div [style.display]="section === 'conditional' ? '' : 'none'">
+    <h1>CSS Block</h1>
+    <h2 *skyThemeIf="'modern'">Modern Theme Element</h2>
+    <h2 *skyThemeIf="'default'">Default Theme Element</h2>
+    <sky-icon *skyThemeIf="'modern'"
+              icon="check"
+              iconType="skyux"
+    ></sky-icon>
+    <sky-icon *skyThemeIf="'default'"
+              icon="check"
+    ></sky-icon>
+  </div>
 
   <ng-container *ngIf="section === 'headers'">
     <h1>Heading 1</h1>

@@ -1,7 +1,7 @@
 import {
   AfterContentInit,
+  ChangeDetectorRef,
   Directive,
-  DoCheck,
   EmbeddedViewRef,
   Input,
   OnDestroy,
@@ -37,30 +37,26 @@ import {
 @Directive({
   selector: '[skyThemeIf]'
 })
-export class SkyThemeIfDirective implements AfterContentInit, DoCheck, OnDestroy {
+export class SkyThemeIfDirective implements AfterContentInit, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
    */
   @Input()
   public set skyThemeIf(value: 'default' | 'modern') {
-    if (value !== this.themeCriteria) {
-      this.themeCriteria = value;
-      this.hasChanges = true;
-      this.loaded = !!(this.currentTheme?.theme.name);
-    }
+    this.themeCriteria = value;
+    setTimeout(() => this.updateView(), 0);
   }
 
   private currentTheme: SkyThemeSettings | undefined;
   private themeCriteria: 'default' | 'modern';
   private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
-  private loaded = false;
-  private hasChanges = false;
 
   constructor(
     private themeSvc: SkyThemeService,
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
+    private changeDetector: ChangeDetectorRef
   ) {}
 
   public ngAfterContentInit(): void {
@@ -69,17 +65,9 @@ export class SkyThemeIfDirective implements AfterContentInit, DoCheck, OnDestroy
       .subscribe((settingsChange: SkyThemeSettingsChange) => {
         if (this.currentTheme?.theme.name !== settingsChange.currentSettings.theme.name) {
           this.currentTheme = settingsChange.currentSettings;
-          this.hasChanges = true;
-          this.loaded = !!(this.themeCriteria);
+          setTimeout(() => this.updateView(), 0);
         }
       });
-  }
-
-  public ngDoCheck(): void {
-    if (this.hasChanges && this.loaded) {
-      this.hasChanges = false;
-      this.updateView();
-    }
   }
 
   public ngOnDestroy(): void {
@@ -87,12 +75,15 @@ export class SkyThemeIfDirective implements AfterContentInit, DoCheck, OnDestroy
     this.ngUnsubscribe.complete();
   }
 
-  private updateView(): void {
+  public updateView(): void {
     const condition = this.themeCriteria && this.currentTheme?.theme.name === this.themeCriteria;
     if (condition && !this.embeddedView) {
-      this.embeddedView = this.templateRef.createEmbeddedView({});
-      this.viewContainer.clear();
-      this.viewContainer.insert(this.embeddedView);
+      this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
+      /* istanbul ignore next */
+      if (this.viewContainer.length > 1) {
+        this.viewContainer.detach(0);
+      }
+      this.changeDetector.detectChanges();
     } else if (!condition && this.embeddedView) {
       this.viewContainer.clear();
       this.embeddedView.destroy();

@@ -29,6 +29,7 @@ export class SkyThemeIfTestComponent implements AfterContentInit {
   public themeSettings: SkyThemeSettings;
   @ViewChildren(SkyThemeIfDirective)
   private testDirectives!: QueryList<SkyThemeIfDirective>;
+  public testThemeName: 'default' | 'modern' = 'default';
 
   public ngAfterContentInit(): void {
     this.useDefaultTheme();
@@ -37,7 +38,7 @@ export class SkyThemeIfTestComponent implements AfterContentInit {
   public doCheck(): void {
     if (this.testDirectives?.length) {
       this.testDirectives.forEach(testDirective => {
-        testDirective.ngDoCheck();
+        testDirective.updateView();
       });
     }
   }
