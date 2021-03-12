@@ -76,23 +76,17 @@ describe('ThemeIf directive', () => {
   });
 
   it('should work with the default theme', async () => {
-    fixture.detectChanges();
-    await fixture.whenStable();
     await switchThemeSettingsTo(defaultThemeSettings);
     return testForElementShowing('default theme');
   });
 
   it('should work with the modern theme', async () => {
-    fixture.detectChanges();
-    await fixture.whenStable();
     await switchThemeSettingsTo(modernThemeSettings);
     return testForElementShowing('modern theme');
   });
 
   // Test the scenario where settings change and previously displayed elements need to be hidden.
   it('should reflect theme changes', async () => {
-    fixture.detectChanges();
-    await fixture.whenStable();
     await switchThemeSettingsTo(modernThemeSettings);
     await testForElementShowing('modern theme');
     await switchThemeSettingsTo(defaultThemeSettings);
@@ -103,29 +97,19 @@ describe('ThemeIf directive', () => {
 
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show initial theme when wrapped in Theme directive', async () => {
-    fixture.detectChanges();
-    await fixture.whenStable();
     fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
   });
 
   // Test the scenario where `skyTheme` directive sets a theme and those settings are inherited.
   it('should show changes when wrapped in Theme directive', async () => {
-    fixture.detectChanges();
-    await fixture.whenStable();
-    fixture.componentInstance.doCheck();
     await testForWrappedElementShowing('wrapped in default theme');
     fixture.componentInstance.useModernTheme();
-    fixture.detectChanges();
-    await fixture.whenStable();
-    fixture.componentInstance.doCheck();
     return testForWrappedElementShowing('wrapped in modern theme');
   });
 
   it('should reflect input changes', async () => {
     fixture.componentInstance.testThemeName = 'default';
-    fixture.detectChanges();
-    await fixture.whenStable();
     await testForInputElementShowing('This text shown for default theme.');
     await switchThemeSettingsTo(modernThemeSettings);
     fixture.detectChanges();

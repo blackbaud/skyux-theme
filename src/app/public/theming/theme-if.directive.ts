@@ -1,19 +1,22 @@
 import {
-  AfterContentInit,
   ChangeDetectorRef,
   Directive,
   EmbeddedViewRef,
   Input,
   OnDestroy,
+  OnInit,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
 
 import {
+  interval,
+  ReplaySubject,
   Subject
 } from 'rxjs';
 
 import {
+  debounce,
   takeUntil
 } from 'rxjs/operators';
 
@@ -37,20 +40,21 @@ import {
 @Directive({
   selector: '[skyThemeIf]'
 })
-export class SkyThemeIfDirective implements AfterContentInit, OnDestroy {
+export class SkyThemeIfDirective implements OnInit, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
    */
   @Input()
   public set skyThemeIf(value: 'default' | 'modern') {
-    this.themeCriteria = value;
-    setTimeout(() => this.updateView(), 0);
+    this.context = value;
+    this.updates?.next();
   }
 
   private currentTheme: SkyThemeSettings | undefined;
-  private themeCriteria: 'default' | 'modern';
+  private context: 'default' | 'modern';
   private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
+  private updates: ReplaySubject<undefined>;
 
   constructor(
     private themeSvc: SkyThemeService,
@@ -59,14 +63,17 @@ export class SkyThemeIfDirective implements AfterContentInit, OnDestroy {
     private changeDetector: ChangeDetectorRef
   ) {}
 
-  public ngAfterContentInit(): void {
+  public ngOnInit(): void {
+    this.updates = new ReplaySubject(1, 1);
+    this.updates.asObservable()
+      .pipe(debounce(() => interval(10)))
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(() => this.updateView());
     this.themeSvc.settingsChange
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((settingsChange: SkyThemeSettingsChange) => {
-        if (this.currentTheme?.theme.name !== settingsChange.currentSettings.theme.name) {
-          this.currentTheme = settingsChange.currentSettings;
-          setTimeout(() => this.updateView(), 0);
-        }
+        this.currentTheme = settingsChange.currentSettings;
+        this.updates.next();
       });
   }
 
@@ -75,14 +82,10 @@ export class SkyThemeIfDirective implements AfterContentInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  public updateView(): void {
-    const condition = this.themeCriteria && this.currentTheme?.theme.name === this.themeCriteria;
-    if (condition && !this.embeddedView) {
+  public updateView() {
+    const condition = this.context && this.currentTheme?.theme.name === this.context;
+    if (condition && this.viewContainer.length === 0) {
       this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
-      /* istanbul ignore next */
-      if (this.viewContainer.length > 1) {
-        this.viewContainer.detach(0);
-      }
       this.changeDetector.detectChanges();
     } else if (!condition && this.embeddedView) {
       this.viewContainer.clear();
