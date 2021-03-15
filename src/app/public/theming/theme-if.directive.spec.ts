@@ -125,6 +125,12 @@ describe('ThemeIf directive', () => {
     await fixture.whenStable();
     const inputTestElements = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-input-test');
     expect(inputTestElements.length).toBe(0);
+
+    fixture.componentInstance.testThemeName = 'modern';
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const inputTestElementsUpdated = fixture.debugElement.nativeElement.querySelectorAll('.sky-theme-if-input-test');
+    expect(inputTestElementsUpdated.length).toBe(1);
   });
 
   async function testForElementShowing(expected: string) {
