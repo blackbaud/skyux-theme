@@ -1,6 +1,6 @@
 # 4.15.2 (2021-03-15)
 
-- Trigger change detection in `skyThemeIf`. [#213](https://github.com/blackbaud/skyux-theme/pull/213)
+- Added change detection to `skyThemeIf`. [#213](https://github.com/blackbaud/skyux-theme/pull/213)
 
 # 4.15.1 (2021-03-10)
 
