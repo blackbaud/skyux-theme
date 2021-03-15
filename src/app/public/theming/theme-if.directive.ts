@@ -1,5 +1,7 @@
 import {
+  ChangeDetectorRef,
   Directive,
+  EmbeddedViewRef,
   Input,
   OnDestroy,
   TemplateRef,
@@ -49,13 +51,15 @@ export class SkyThemeIfDirective implements OnDestroy {
 
   private context: string;
   private currentTheme: SkyThemeSettings | undefined;
+  private embeddedView: EmbeddedViewRef<any> | undefined;
   private ngUnsubscribe = new Subject();
   private hasView = false;
 
   constructor(
     private themeSvc: SkyThemeService,
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
+    private changeDetector: ChangeDetectorRef
   ) {
     this.themeSvc.settingsChange
       .pipe(takeUntil(this.ngUnsubscribe))
@@ -72,11 +76,14 @@ export class SkyThemeIfDirective implements OnDestroy {
   private updateView(): void {
     const condition = this.context && this.currentTheme?.theme.name === this.context;
     if (condition && !this.hasView) {
-      this.viewContainer.createEmbeddedView(this.templateRef);
       this.hasView = true;
+      this.embeddedView = this.viewContainer.createEmbeddedView(this.templateRef);
+      this.changeDetector.detectChanges();
     } else if (!condition && this.hasView) {
-      this.viewContainer.clear();
       this.hasView = false;
+      this.viewContainer.clear();
+      this.embeddedView.destroy();
+      this.embeddedView = undefined;
     }
   }
 }
