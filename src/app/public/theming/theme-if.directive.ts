@@ -1,6 +1,7 @@
 import {
   ChangeDetectorRef,
   Directive,
+  DoCheck,
   Input,
   OnDestroy,
   TemplateRef,
@@ -31,7 +32,7 @@ import {
 @Directive({
   selector: '[skyThemeIf]'
 })
-export class SkyThemeIfDirective implements OnDestroy {
+export class SkyThemeIfDirective implements DoCheck, OnDestroy {
   /**
    * A string that should match the name of a theme, `'default'` or `'modern'`.
    *
@@ -40,18 +41,19 @@ export class SkyThemeIfDirective implements OnDestroy {
   @Input()
   public set skyThemeIf(value: 'default' | 'modern') {
     this.context = value;
-    this.updateView();
+    this.updateShouldHaveView();
   }
 
   private set themeSettings(settings: SkyThemeSettings) {
     this.currentTheme = settings;
-    this.updateView();
+    this.updateShouldHaveView();
   }
 
   private context: string;
   private currentTheme: SkyThemeSettings | undefined;
   private ngUnsubscribe = new Subject();
   private hasView = false;
+  private shouldHaveView = false;
 
   constructor(
     private themeSvc: SkyThemeService,
@@ -66,18 +68,27 @@ export class SkyThemeIfDirective implements OnDestroy {
       });
   }
 
+  public ngDoCheck(): void {
+    if (this.shouldHaveView !== this.hasView) {
+      this.updateView();
+    }
+  }
+
   public ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
 
+  private updateShouldHaveView() {
+    this.shouldHaveView = this.context && this.currentTheme?.theme.name === this.context;
+  }
+
   private updateView(): void {
-    const condition = this.context && this.currentTheme?.theme.name === this.context;
-    if (condition && !this.hasView) {
+    if (this.shouldHaveView && !this.hasView) {
       this.viewContainer.createEmbeddedView(this.templateRef);
       this.hasView = true;
       this.changeDetector.detectChanges();
-    } else if (!condition && this.hasView) {
+    } else if (!this.shouldHaveView && this.hasView) {
       this.viewContainer.clear();
       this.hasView = false;
     }
