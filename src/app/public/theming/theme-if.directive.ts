@@ -61,19 +61,19 @@ export class SkyThemeIfDirective implements OnDestroy {
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
-    @Optional() themeSvc: SkyThemeService,
+    @Optional() themeSvc: SkyThemeService
   ) {
-    if (!themeSvc) {
-      this.themeSettings = new SkyThemeSettings(
-        SkyTheme.presets.default,
-        SkyThemeMode.presets.light
-      );
-    } else {
+    if (themeSvc) {
       themeSvc.settingsChange
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe(settingsChange => {
           this.themeSettings = settingsChange.currentSettings;
         });
+    } else {
+      this.themeSettings = new SkyThemeSettings(
+        SkyTheme.presets.default,
+        SkyThemeMode.presets.light
+      );
     }
   }
 
