@@ -2,9 +2,15 @@ import {
   Directive,
   Input,
   OnDestroy,
+  Optional,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
+
+import {
+  SkyTheme,
+  SkyThemeMode
+} from '@skyux/theme';
 
 import {
   Subject
@@ -53,15 +59,22 @@ export class SkyThemeIfDirective implements OnDestroy {
   private hasView = false;
 
   constructor(
-    private themeSvc: SkyThemeService,
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
+    @Optional() themeSvc: SkyThemeService,
   ) {
-    this.themeSvc.settingsChange
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(settingsChange => {
-        this.themeSettings = settingsChange.currentSettings;
-      });
+    if (!themeSvc) {
+      this.themeSettings = new SkyThemeSettings(
+        SkyTheme.presets.default,
+        SkyThemeMode.presets.light
+      );
+    } else {
+      themeSvc.settingsChange
+        .pipe(takeUntil(this.ngUnsubscribe))
+        .subscribe(settingsChange => {
+          this.themeSettings = settingsChange.currentSettings;
+        });
+    }
   }
 
   public ngOnDestroy(): void {

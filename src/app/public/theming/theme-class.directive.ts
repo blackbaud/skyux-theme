@@ -3,8 +3,14 @@ import {
   ElementRef,
   Input,
   OnDestroy,
+  Optional,
   Renderer2
 } from '@angular/core';
+
+import {
+  SkyTheme,
+  SkyThemeMode
+} from '@skyux/theme';
 
 import {
   Subject
@@ -78,13 +84,20 @@ export class SkyThemeClassDirective implements OnDestroy {
   constructor(
     private ngEl: ElementRef,
     private renderer: Renderer2,
-    private themeSvc: SkyThemeService
+    @Optional() themeSvc: SkyThemeService
   ) {
-    this.themeSvc.settingsChange
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(settingsChange => {
-        this.themeSettings = settingsChange.currentSettings;
-      });
+    if (!themeSvc) {
+      this.themeSettings = new SkyThemeSettings(
+        SkyTheme.presets.default,
+        SkyThemeMode.presets.light
+      );
+    } else {
+      themeSvc.settingsChange
+        .pipe(takeUntil(this.ngUnsubscribe))
+        .subscribe(settingsChange => {
+          this.themeSettings = settingsChange.currentSettings;
+        });
+    }
   }
 
   public ngOnDestroy(): void {
