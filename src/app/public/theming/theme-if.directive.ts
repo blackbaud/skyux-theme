@@ -8,17 +8,20 @@ import {
 } from '@angular/core';
 
 import {
-  SkyTheme,
-  SkyThemeMode
-} from '@skyux/theme';
-
-import {
   Subject
 } from 'rxjs';
 
 import {
   takeUntil
 } from 'rxjs/operators';
+
+import {
+  SkyTheme
+} from './theme';
+
+import {
+  SkyThemeMode
+} from './theme-mode';
 
 import {
   SkyThemeSettings
