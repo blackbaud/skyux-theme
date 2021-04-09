@@ -172,7 +172,7 @@ describe('ThemeIf directive', () => {
           SkyThemeModule
         ],
         providers: [
-          {provide: SkyThemeService, useValue: mockThemeSvc}
+          { provide: SkyThemeService, useValue: mockThemeSvc }
         ]
       }).compileComponents();
       fixture = TestBed.createComponent(SkyThemeIfTestComponent);
