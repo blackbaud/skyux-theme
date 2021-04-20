@@ -1,5 +1,5 @@
-@import "~@skyux/theme/scss/mixins";
-@import "~@skyux/theme/scss/_compat/mixins";
+@import "node_modules/@skyux/theme/scss/mixins.scss";
+@import "node_modules/@skyux/theme/scss/_compat/mixins.scss";
 
 .app-demo {
   ::ng-deep {
