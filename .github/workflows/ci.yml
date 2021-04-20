@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 2
       - uses: actions/setup-node@v1
-      - uses: blackbaud/skyux-sdk-actions@master
+      - uses: blackbaud/skyux-sdk-actions@log-errors
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
           browser-stack-username: ${{ secrets.BROWSER_STACK_USERNAME }}
