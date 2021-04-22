@@ -16,7 +16,7 @@
     "@angular/core": "^9.1.5"
   },
   "dependencies": {
-    "@blackbaud/skyux-design-tokens": "0.0.22",
+    "@blackbaud/skyux-design-tokens": "0.0.23",
     "@skyux/icons": "4.0.0-beta.2",
     "@types/fontfaceobserver": "0.0.6",
     "fontfaceobserver": "2.1.0"
@@ -32,7 +32,7 @@
     "@angular/platform-browser-dynamic": "9.1.13",
     "@angular/router": "9.1.13",
     "@blackbaud/auth-client": "2.45.0",
-    "@blackbaud/skyux-design-tokens": "0.0.22",
+    "@blackbaud/skyux-design-tokens": "0.0.23",
     "@blackbaud/skyux-lib-clipboard": "4.0.0",
     "@blackbaud/skyux-lib-code-block": "4.0.2",
     "@blackbaud/skyux-lib-media": "4.0.0",
