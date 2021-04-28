@@ -50,7 +50,8 @@ import {
 } from '@skyux/lists';
 
 import {
-  SkyCheckboxModule
+  SkyCheckboxModule,
+  SkyInputBoxModule
 } from '@skyux/forms';
 
 @NgModule({
@@ -64,6 +65,7 @@ import {
     SkyFluidGridModule,
     SkyGridModule,
     SkyIconModule,
+    SkyInputBoxModule,
     SkySortModule,
     SkyThemeModule,
     SkyMediaQueryModule
