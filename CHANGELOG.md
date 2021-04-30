@@ -1,6 +1,6 @@
 # 4.16.2 (2021-04-30)
 
-- Fixed input placeholder text styles in modern theme. [#226](https://github.com/blackbaud/skyux-theme/pull/226)
+- Fixed placeholder text styles in modern theme. [#226](https://github.com/blackbaud/skyux-theme/pull/226)
 
 # 4.16.1 (2021-04-22)
 
