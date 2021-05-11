@@ -17,8 +17,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - uses: actions/setup-node@v1
-      - uses: blackbaud/skyux-sdk-actions@master
+      - uses: actions/setup-node@v2
+      - uses: blackbaud/skyux-sdk-actions@fix-build-steps
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
           browser-stack-username: ${{ secrets.BROWSER_STACK_USERNAME }}
