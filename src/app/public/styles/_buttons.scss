@@ -37,7 +37,7 @@ button {
   }
 }
 
-a.sky-btn {
+a.sky-btn:not(.sky-href) {
   &:hover {
     text-decoration: none;
   }
