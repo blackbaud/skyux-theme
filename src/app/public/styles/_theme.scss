@@ -63,7 +63,8 @@ h1 {
   display: none !important;
 }
 
-a {
+a:not(.sky-href),
+a.sky-href[href]:not([href=""]) {
   color: $sky-text-color-action-primary;
   text-decoration: none;
 

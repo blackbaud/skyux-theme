@@ -76,7 +76,8 @@
       color: $sky-theme-modern-mode-dark-font-deemphasized-color;
     }
 
-    a {
+    a:not(.sky-href),
+    a.sky-href[href]:not([href=""]) {
       color: $sky-theme-modern-mode-dark-text-color-action-primary;
     }
   }
