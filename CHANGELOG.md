@@ -1,6 +1,6 @@
 # 4.16.3 (2021-05-19)
 
-- Added a CSS class for omitting link style on an `<a>` that does not have an `href` attribute. [#229](https://github.com/blackbaud/skyux-theme/pull/229)
+- Added a CSS class to omit the link style on `<a>` tags that do not have `href` attributes. [#229](https://github.com/blackbaud/skyux-theme/pull/229)
 
 # 4.16.2 (2021-04-30)
 
