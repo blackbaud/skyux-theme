@@ -1,3 +1,7 @@
+# 5.0.0-alpha.0 (2021-05-19)
+
+- Removed `SkyAppStyleLoader` and `SkyAppViewportService` from the `providers` section of `SkyThemeModule` and added `providedIn: 'root'` to those services. [#232](https://github.com/blackbaud/skyux-theme/pull/232)
+
 # 4.16.2 (2021-04-30)
 
 - Fixed placeholder text styles in modern theme. [#226](https://github.com/blackbaud/skyux-theme/pull/226)
