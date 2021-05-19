@@ -63,14 +63,22 @@ h1 {
   display: none !important;
 }
 
-a:not(.sky-href),
-a.sky-href[href]:not([href=""]) {
+a {
   color: $sky-text-color-action-primary;
   text-decoration: none;
 
   &:hover {
     color: darken($sky-text-color-action-primary, 10%);
     text-decoration: underline;
+  }
+
+  &.sky-href[href=""],
+  &.sky-href:not([href]) {
+    &,
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }
 
