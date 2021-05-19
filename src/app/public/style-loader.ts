@@ -13,7 +13,9 @@ import {
   SkyThemeService
 } from './theming/theme.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SkyAppStyleLoader {
   public static readonly LOAD_TIMEOUT = 3000;
   public isLoaded = false;

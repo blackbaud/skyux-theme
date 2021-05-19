@@ -3,14 +3,6 @@ import {
 } from '@angular/core';
 
 import {
-  SkyAppStyleLoader
-} from './style-loader';
-
-import {
-  SkyAppViewportService
-} from './viewport.service';
-
-import {
   SkyThemeClassDirective
 } from './theming/theme-class.directive';
 
@@ -27,10 +19,6 @@ import {
     SkyThemeClassDirective,
     SkyThemeDirective,
     SkyThemeIfDirective
-  ],
-  providers: [
-    SkyAppStyleLoader,
-    SkyAppViewportService
   ],
   exports: [
     SkyThemeClassDirective,

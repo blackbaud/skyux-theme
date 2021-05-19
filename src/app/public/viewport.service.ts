@@ -9,7 +9,9 @@ import {
 /**
  * Provides information about the state of the application's viewport.
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SkyAppViewportService {
   /**
    * Updated when the viewport becomes visible.  While the page is rendered, the
