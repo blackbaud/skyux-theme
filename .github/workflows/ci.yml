@@ -9,6 +9,7 @@ on:
       - master
     tags:
       - '*.*.*'
+      - '*.*.*-alpha.*'
 
 jobs:
   ci:
@@ -17,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
       - uses: blackbaud/skyux-sdk-actions@master
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
