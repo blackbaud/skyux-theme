@@ -2,13 +2,5 @@ import {
   NgModule
 } from '@angular/core';
 
-import {
-  SkyThemeIconManifestService
-} from './icon-manifest.service';
-
-@NgModule({
-  providers: [
-    SkyThemeIconManifestService
-  ]
-})
+@NgModule()
 export class SkyThemeIconManifestModule { }
