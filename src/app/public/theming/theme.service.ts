@@ -19,7 +19,9 @@ import {
 /**
  * Provides methods for updating and handling changes to the current theme.
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SkyThemeService {
 
   /**

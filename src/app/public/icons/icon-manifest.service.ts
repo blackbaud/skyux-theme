@@ -6,12 +6,14 @@ import {
   SkyThemeIconManifest
 } from './icon-manifest';
 
-const manifest: SkyThemeIconManifest = require('@skyux/icons/assets/manifest.json');
+import manifest from '@skyux/icons/assets/manifest.json';
 
 /**
  * Provides a method for retrieving metadata about the SKY UX icon font.
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SkyThemeIconManifestService {
 
   constructor() { }
