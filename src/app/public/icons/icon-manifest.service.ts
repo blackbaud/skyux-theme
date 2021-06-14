@@ -6,7 +6,7 @@ import {
   SkyThemeIconManifest
 } from './icon-manifest';
 
-import manifest from '@skyux/icons/assets/manifest.json';
+const manifest: SkyThemeIconManifest = require('@skyux/icons/assets/manifest.json');
 
 /**
  * Provides a method for retrieving metadata about the SKY UX icon font.

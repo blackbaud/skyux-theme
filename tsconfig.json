@@ -1,9 +1,7 @@
 {
   "extends": "./node_modules/@skyux-sdk/builder/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "resolveJsonModule": true
+    "module": "commonjs"
   },
   "exclude": [
     "node_modules"
