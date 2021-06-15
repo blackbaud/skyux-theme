@@ -20,6 +20,10 @@ import {
 } from './theme';
 
 import {
+  MockThemeService
+} from './fixtures/mock-theme.service';
+
+import {
   SkyThemeIfTestComponent
 } from './fixtures/theme-if-test.component';
 
@@ -42,7 +46,6 @@ import {
 import {
   SkyThemeSettingsChange
 } from './theme-settings-change';
-import { MockThemeService } from './fixtures/mock-theme.service';
 
 @Component({
   selector: 'app-theme-if-test-projection',

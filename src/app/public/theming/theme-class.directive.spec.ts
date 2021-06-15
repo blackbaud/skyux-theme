@@ -16,6 +16,10 @@ import {
 } from './theme';
 
 import {
+  MockThemeService
+} from './fixtures/mock-theme.service';
+
+import {
   SkyThemeClassTestComponent
 } from './fixtures/theme-class-test.component';
 
@@ -38,7 +42,6 @@ import {
 import {
   SkyThemeSettingsChange
 } from './theme-settings-change';
-import { MockThemeService } from './fixtures/mock-theme.service';
 
 const DEFAULT_THEME = new SkyThemeSettings(
   SkyTheme.presets.default,
@@ -88,10 +91,8 @@ describe('ThemeClass directive', () => {
           SkyThemeModule
         ]
       });
-
       fixture = TestBed.createComponent(SkyThemeClassTestComponent);
       fixture.detectChanges();
-
       await fixture.whenStable();
     });
 
@@ -130,10 +131,8 @@ describe('ThemeClass directive', () => {
           { provide: SkyThemeService, useValue: mockThemeSvc }
         ]
       });
-
       fixture = TestBed.createComponent(SkyThemeClassTestComponent);
       fixture.detectChanges();
-
       await fixture.whenStable();
     });
 

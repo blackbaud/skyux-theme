@@ -1,4 +1,6 @@
-import { BehaviorSubject } from 'rxjs';
+import {
+  BehaviorSubject
+} from 'rxjs';
 
 import {
   SkyThemeSettings

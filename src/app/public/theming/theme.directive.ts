@@ -1,5 +1,6 @@
 import {
-  Directive, Optional
+  Directive,
+  Optional
 } from '@angular/core';
 
 import {
