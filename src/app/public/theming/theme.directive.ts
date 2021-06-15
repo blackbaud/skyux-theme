@@ -1,6 +1,5 @@
 import {
-  Directive,
-  Optional
+  Directive
 } from '@angular/core';
 
 import {
@@ -32,8 +31,13 @@ const defaultTheme = new SkyThemeSettings(
   SkyThemeMode.presets.light
 );
 
+/**
+ * Creates a new instance of `SkyThemeService` to allow a container
+ * to have its own theme.
+ */
 @Directive({
-  selector: '[skyTheme]'
+  selector: '[skyTheme]',
+  providers: [SkyThemeService]
 })
 export class SkyThemeDirective implements OnInit, OnDestroy {
 
@@ -57,25 +61,21 @@ export class SkyThemeDirective implements OnInit, OnDestroy {
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2,
-    @Optional() private themeSvc?: SkyThemeService
+    private themeSvc: SkyThemeService
   ) { }
 
   public ngOnInit(): void {
-    if (this.themeSvc) {
-      this.themeSvc.init(
-        this.elRef.nativeElement,
-        this.renderer,
-        this.skyTheme
-      );
+    this.themeSvc.init(
+      this.elRef.nativeElement,
+      this.renderer,
+      this.skyTheme
+    );
 
-      this.initialized = true;
-    }
+    this.initialized = true;
   }
 
   public ngOnDestroy(): void {
-    if (this.themeSvc) {
-      this.themeSvc.destroy();
-    }
+    this.themeSvc.destroy();
   }
 
 }
