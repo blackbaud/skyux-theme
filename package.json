@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.23",
-    "@skyux/icons": "4.0.0-beta.2",
+    "@skyux/icons": "4.0.0-beta.3",
     "fontfaceobserver": "2.1.0"
   },
   "devDependencies": {
@@ -61,6 +61,7 @@
     "@skyux/router": "4.2.2",
     "@skyux/tabs": "4.6.7",
     "@skyux/theme": "4.16.3",
+    "@types/fontfaceobserver": "0.0.6",
     "codelyzer": "5.2.2",
     "cross-spawn": "7.0.3",
     "normalize-scss": "7.0.1",
