@@ -1,5 +1,5 @@
 import {
-  Directive
+  Directive, Optional
 } from '@angular/core';
 
 import {
@@ -32,8 +32,7 @@ const defaultTheme = new SkyThemeSettings(
 );
 
 @Directive({
-  selector: '[skyTheme]',
-  providers: [SkyThemeService]
+  selector: '[skyTheme]'
 })
 export class SkyThemeDirective implements OnInit, OnDestroy {
 
@@ -57,21 +56,25 @@ export class SkyThemeDirective implements OnInit, OnDestroy {
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2,
-    private themeSvc: SkyThemeService
+    @Optional() private themeSvc?: SkyThemeService
   ) { }
 
   public ngOnInit(): void {
-    this.themeSvc.init(
-      this.elRef.nativeElement,
-      this.renderer,
-      this.skyTheme
-    );
+    if (this.themeSvc) {
+      this.themeSvc.init(
+        this.elRef.nativeElement,
+        this.renderer,
+        this.skyTheme
+      );
 
-    this.initialized = true;
+      this.initialized = true;
+    }
   }
 
   public ngOnDestroy(): void {
-    this.themeSvc.destroy();
+    if (this.themeSvc) {
+      this.themeSvc.destroy();
+    }
   }
 
 }
