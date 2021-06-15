@@ -11,9 +11,7 @@ const manifest: SkyThemeIconManifest = require('@skyux/icons/assets/manifest.jso
 /**
  * Provides a method for retrieving metadata about the SKY UX icon font.
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SkyThemeIconManifestService {
 
   constructor() { }
