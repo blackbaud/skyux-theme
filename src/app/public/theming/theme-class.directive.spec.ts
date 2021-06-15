@@ -38,10 +38,7 @@ import {
 import {
   SkyThemeSettingsChange
 } from './theme-settings-change';
-
-class MockThemeService {
-  public settingsChange: BehaviorSubject<SkyThemeSettingsChange>;
-}
+import { MockThemeService } from './fixtures/mock-theme.service';
 
 const DEFAULT_THEME = new SkyThemeSettings(
   SkyTheme.presets.default,
@@ -100,9 +97,8 @@ describe('ThemeClass directive', () => {
 
     // Establish that our test is set up correctly.
     it('should not have a SkyThemeService provider', () => {
-      const themeService = TestBed.inject(SkyThemeService);
-
-      expect(themeService).toBeUndefined();
+      expect(() => TestBed.inject(SkyThemeService))
+        .toThrowError(/No provider for SkyThemeService/);
     });
 
     it('should show default class', () => {
@@ -115,14 +111,13 @@ describe('ThemeClass directive', () => {
     let mockThemeSvc: MockThemeService;
 
     beforeEach(async () => {
-      mockThemeSvc = {
-        settingsChange: new BehaviorSubject<SkyThemeSettingsChange>(
-          {
-            currentSettings: DEFAULT_THEME,
-            previousSettings: undefined
-          }
-        )
-      };
+      mockThemeSvc = new MockThemeService();
+      mockThemeSvc.settingsChange = new BehaviorSubject<SkyThemeSettingsChange>(
+        {
+          currentSettings: DEFAULT_THEME,
+          previousSettings: undefined
+        }
+      );
 
       TestBed.configureTestingModule({
         declarations: [
@@ -144,9 +139,8 @@ describe('ThemeClass directive', () => {
 
     // Establish that our test is set up correctly.
     it('should have a SkyThemeService provider', () => {
-      const themeService = TestBed.inject(SkyThemeService);
-
-      expect(themeService).not.toBeUndefined();
+      expect(() => TestBed.inject(SkyThemeService))
+        .not.toThrowError(/No provider for SkyThemeService/);
     });
 
     it('should not change provided class and ngClass values', () => {

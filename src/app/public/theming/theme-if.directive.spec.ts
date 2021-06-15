@@ -42,6 +42,7 @@ import {
 import {
   SkyThemeSettingsChange
 } from './theme-settings-change';
+import { MockThemeService } from './fixtures/mock-theme.service';
 
 @Component({
   selector: 'app-theme-if-test-projection',
@@ -54,21 +55,6 @@ import {
   `
 })
 class TestProjectionComponent {}
-
-class MockThemeService {
-  public settingsChange: BehaviorSubject<SkyThemeSettingsChange>;
-
-  public destroy(): void {}
-
-  public init(): void {}
-
-  public setTheme(settings: SkyThemeSettings): void {
-    this.settingsChange.next({
-      currentSettings: settings,
-      previousSettings: this.settingsChange.getValue().currentSettings
-    });
-  }
-}
 
 const DEFAULT_THEME = new SkyThemeSettings(
   SkyTheme.presets.default,
