@@ -89,13 +89,12 @@ describe('ThemeClass directive', () => {
         ],
         imports: [
           SkyThemeModule
-        ],
-        providers: [
-          { provide: SkyThemeService, useValue: undefined }
         ]
       });
+
       fixture = TestBed.createComponent(SkyThemeClassTestComponent);
       fixture.detectChanges();
+
       await fixture.whenStable();
     });
 
@@ -124,6 +123,7 @@ describe('ThemeClass directive', () => {
           }
         )
       };
+
       TestBed.configureTestingModule({
         declarations: [
           SkyThemeClassTestComponent
@@ -135,8 +135,10 @@ describe('ThemeClass directive', () => {
           { provide: SkyThemeService, useValue: mockThemeSvc }
         ]
       });
+
       fixture = TestBed.createComponent(SkyThemeClassTestComponent);
       fixture.detectChanges();
+
       await fixture.whenStable();
     });
 
