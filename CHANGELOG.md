@@ -1,5 +1,19 @@
+# 5.0.0-beta.0 (2021-06-15)
+
+- Initial beta release.
+- Updated `5.0.0-next` branch with features from the `master` branch. [#236](https://github.com/blackbaud/skyux-theme/pull/236)
+
+# 4.17.0 (2021-06-15)
+
+- Updated the SKY UX icon font version to 4.0.0-beta.3. [#238](https://github.com/blackbaud/skyux-theme/pull/238)
+
+# 4.16.3 (2021-05-19)
+
+- Added a CSS class to omit the link style on `<a>` tags that do not have `href` attributes. [#229](https://github.com/blackbaud/skyux-theme/pull/229)
+
 # 5.0.0-alpha.0 (2021-05-19)
 
+- Added support for `@angular/core@^12`. [#232](https://github.com/blackbaud/skyux-theme/pull/232)
 - Removed `SkyAppStyleLoader` and `SkyAppViewportService` from the `providers` section of `SkyThemeModule` and added `providedIn: 'root'` to those services. [#232](https://github.com/blackbaud/skyux-theme/pull/232)
 
 # 4.16.2 (2021-04-30)
