@@ -166,7 +166,7 @@
         <p>
           <strong>&lt;Verb&gt;</strong>
         </p>
-        <sky-docs-design-guideline-thumbnail  *skyThemeIf="'default'"
+        <sky-docs-design-guideline-thumbnail *skyThemeIf="'default'"
           imageSource="~/assets/img/guidelines/button/buttons-usage-1.png"
           >
         </sky-docs-design-guideline-thumbnail>
@@ -177,16 +177,21 @@
       </sky-docs-design-guideline>
 
       <sky-docs-design-guideline>
-        <p class="sky-docs-text-block">
-          For buttons with multiple possible direct objects such as <strong *skyThemeIf="'default'">Add alert</strong><strong *skyThemeIf="'modern'">New alert</strong> buttons in page summary toolbars, use the following format for button text:
+        <p *skyThemeIf="'default'" class="sky-docs-text-block">
+          For buttons with multiple possible direct objects such as <strong >Add alert</strong> buttons in page summary toolbars, use the following format for button text:
+        </p>
+        <p *skyThemeIf="'modern'" class="sky-docs-text-block">
+          For buttons with multiple possible direct objects such as <strong>Edit goals</strong> or <strong>Email contact</strong> buttons in page header, use the following format for button text:
         </p>
         <p>
           <strong>&lt;Verb&gt; &lt;direct object&gt;</strong>
         </p>
-        <sky-docs-design-guideline-thumbnail
+        <sky-docs-design-guideline-thumbnail *skyThemeIf="'default'"
           imageSource="~/assets/img/guidelines/button/buttons-usage-2.png"
-        >
-        </sky-docs-design-guideline-thumbnail>
+        ></sky-docs-design-guideline-thumbnail>
+        <sky-docs-design-guideline-thumbnail *skyThemeIf="'modern'"
+          imageSource="~/assets/img/guidelines/button/buttons-usage-2-modern.png"
+        ></sky-docs-design-guideline-thumbnail>
       </sky-docs-design-guideline>
 
       <sky-docs-design-guideline>
