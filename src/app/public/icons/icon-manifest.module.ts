@@ -2,13 +2,9 @@ import {
   NgModule
 } from '@angular/core';
 
-import {
-  SkyThemeIconManifestService
-} from './icon-manifest.service';
-
-@NgModule({
-  providers: [
-    SkyThemeIconManifestService
-  ]
-})
+/**
+ * @deprecated The `SkyThemeIconManifestService` no longer needs the `SkyThemeIconManifestModule`.
+ * The `SkyThemeIconManifestModule` can be removed from your project.
+ */
+@NgModule()
 export class SkyThemeIconManifestModule { }
