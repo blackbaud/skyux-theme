@@ -41,7 +41,7 @@ export class SkyAppStyleLoader {
 
     const fontAwesome = new FontFaceObserver('FontAwesome');
     const skyuxIcons = new FontFaceObserver('skyux-icons');
-    const blackbaudSans = new FontFaceObserver('Blackbaud Sans');
+    const blackbaudSans = new FontFaceObserver('BLKB Sans');
 
     return Promise
       .all([
