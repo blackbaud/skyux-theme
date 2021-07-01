@@ -1,3 +1,7 @@
+
+# 5.0.0-beta.2 (2021-07-01)
+
+- Fixed the `styles/_compat/_variables.scss` file to use `math.div()` when dividing number values. []()
 # 5.0.0-beta.1 (2021-06-24)
 
 - Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
