@@ -1,0 +1,7 @@
+@import 'mixins';
+
+.sky-box {
+  background-color: #fff;
+  @include sky-border(dark, top, bottom, left, right);
+  box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.3);
+}
