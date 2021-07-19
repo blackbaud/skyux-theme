@@ -1,6 +1,6 @@
 # 4.18.0 (2021-07-19)
 
-- Added default theme sytles for box and elevation classes. [#246](https://github.com/blackbaud/skyux-theme/pull/246)
+- Added default theme styles for the box and elevation classes. [#246](https://github.com/blackbaud/skyux-theme/pull/246)
 
 # 4.17.0 (2021-06-15)
 
