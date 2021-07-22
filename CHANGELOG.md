@@ -1,4 +1,4 @@
-# 4.19.0 (2021-07-19)
+# 4.19.0 (2021-07-22)
 
 - Added modern theme styles for the text highlight directive. [#248](https://github.com/blackbaud/skyux-theme/pull/248)
 
