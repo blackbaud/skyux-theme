@@ -52,7 +52,7 @@
         "default",
         "modern"
       ],
-      "theme": "modern"
+      "theme": "default"
     }
   },
   "plugins": [
