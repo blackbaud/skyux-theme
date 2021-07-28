@@ -212,7 +212,7 @@ public shareButtonInfo: {label: string, value: string}[] = [
   },
   {
     label: 'Icon',
-    value: 'sky-i-share'
+    value: 'sky-i-share-line'
   },
   {
     label: 'Dropdown',
