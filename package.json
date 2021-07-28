@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "4.19.0",
+  "version": "4.20.0",
   "description": "SKY UX Theme",
   "scripts": {
     "test": "npm run build:dev-bundle && skyux test --coverage library --logFormat none",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.23",
-    "@skyux/icons": "4.0.0-beta.3",
+    "@skyux/icons": "4.0.0-beta.5",
     "@types/fontfaceobserver": "0.0.6",
     "fontfaceobserver": "2.1.0"
   },
@@ -46,11 +46,11 @@
     "@skyux/config": "4.4.0",
     "@skyux/core": "4.6.2",
     "@skyux/docs-tools": "4.9.1",
-    "@skyux/forms": "4.20.0",
+    "@skyux/forms": "4.20.1",
     "@skyux/grids": "4.0.6",
     "@skyux/http": "4.2.0",
     "@skyux/i18n": "4.2.1",
-    "@skyux/indicators": "4.10.0",
+    "@skyux/indicators": "4.11.0",
     "@skyux/inline-form": "4.1.1",
     "@skyux/layout": "4.7.1",
     "@skyux/list-builder-common": "4.0.1",
@@ -60,8 +60,8 @@
     "@skyux/omnibar-interop": "4.0.1",
     "@skyux/popovers": "4.5.3",
     "@skyux/router": "4.2.2",
-    "@skyux/tabs": "4.6.7",
-    "@skyux/theme": "4.17.0",
+    "@skyux/tabs": "4.6.8",
+    "@skyux/theme": "4.19.0",
     "codelyzer": "5.2.2",
     "cross-spawn": "7.0.3",
     "normalize-scss": "7.0.1",
