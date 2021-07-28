@@ -1,6 +1,6 @@
 {
   "name": "@skyux/theme",
-  "version": "4.19.0",
+  "version": "4.20.0",
   "description": "SKY UX Theme",
   "scripts": {
     "test": "npm run build:dev-bundle && skyux test --coverage library --logFormat none",
@@ -61,7 +61,7 @@
     "@skyux/popovers": "4.5.3",
     "@skyux/router": "4.2.2",
     "@skyux/tabs": "4.6.8",
-    "@skyux/theme": "4.20.0",
+    "@skyux/theme": "4.20.0",r
     "codelyzer": "5.2.2",
     "cross-spawn": "7.0.3",
     "normalize-scss": "7.0.1",
