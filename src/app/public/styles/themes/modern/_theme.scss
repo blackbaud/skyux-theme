@@ -55,6 +55,11 @@
     line-height: $sky-theme-modern-font-paragraph-line-height;
   }
 
+  mark.sky-highlight-mark {
+    background-color: $sky-background-color-danger-dark;
+    color: $sky-text-color-on-dark;
+  }
+
   &.sky-theme-mode-dark {
     background-color: $sky-theme-modern-mode-dark-background-color-page-default;
 
@@ -78,6 +83,11 @@
 
     a {
       color: $sky-theme-modern-mode-dark-text-color-action-primary;
+
+      &.sky-href[href=""],
+      &.sky-href:not([href]) {
+        color: inherit;
+      }
     }
   }
 }

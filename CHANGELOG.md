@@ -1,3 +1,31 @@
+# 4.19.0 (2021-07-22)
+
+- Added modern theme styles for the text highlight directive. [#248](https://github.com/blackbaud/skyux-theme/pull/248)
+
+# 4.18.0 (2021-07-19)
+
+- Added default theme styles for the box and elevation classes. [#246](https://github.com/blackbaud/skyux-theme/pull/246)
+
+# 4.17.0 (2021-06-15)
+
+- Updated the SKY UX icon font version to 4.0.0-beta.3. [#238](https://github.com/blackbaud/skyux-theme/pull/238)
+
+# 4.16.3 (2021-05-19)
+
+- Added a CSS class to omit the link style on `<a>` tags that do not have `href` attributes. [#229](https://github.com/blackbaud/skyux-theme/pull/229)
+
+# 4.16.2 (2021-04-30)
+
+- Fixed placeholder text styles in modern theme. [#226](https://github.com/blackbaud/skyux-theme/pull/226)
+
+# 4.16.1 (2021-04-22)
+
+- Fixed the NPM release.
+
+# 4.16.0 (2021-04-22)
+
+- Added additional spacing classes for templates. [#222](https://github.com/blackbaud/skyux-theme/pull/222)
+
 # 4.15.5 (2021-04-09)
 
 - Fixed the `skyThemeIf` and `skyThemeClass` directives to work properly when `SkyThemeService` is provided but not initialized. [#220](https://github.com/blackbaud/skyux-theme/pull/220)
