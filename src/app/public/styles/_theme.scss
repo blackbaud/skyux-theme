@@ -88,9 +88,11 @@ a {
 
 .sky-list-unstyled {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 
-  li {
+  li:not(:last-of-type) {
     padding-bottom: $sky-padding-half;
   }
 }

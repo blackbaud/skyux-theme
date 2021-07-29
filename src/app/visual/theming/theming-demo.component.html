@@ -11,6 +11,7 @@
     <option value="margin">Margin</option>
     <option value="padding">Padding</option>
     <option value="text">Text</option>
+    <option value="unstyled-list">Unstyled list</option>
   </select>
 </div>
 
@@ -100,5 +101,15 @@
     <div id="placeholder-test">
       <input type="text" name="fname" class="sky-form-control" placeholder="Enter a name.">
     </div>
+  </ng-container>
+
+  <ng-container *ngIf="section === 'unstyled-list'">
+    <div class="sky-font-body-default">Text above</div>
+    <ul class="sky-list-unstyled">
+      <li>Unstyled list item 1</li>
+      <li>Unstyled list item 2</li>
+      <li>Unstyled list item 3</li>
+    </ul>
+    <div class="sky-font-body-default">Text below</div>
   </ng-container>
 </div>
