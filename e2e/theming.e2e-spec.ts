@@ -75,6 +75,11 @@ describe('Theming', () => {
       selectSection('text');
       validate(done);
     });
+
+    it('unstyled list should match the previous screenshot', (done) => {
+      selectSection('unstyled-list');
+      validate(done);
+    });
   });
 
   describe('when modern theme', () => {
@@ -107,6 +112,11 @@ describe('Theming', () => {
         selectSection('text');
         validate(done);
       });
+
+      it('unstyled list should match the previous screenshot', (done) => {
+        selectSection('unstyled-list');
+        validate(done);
+      });
     });
 
     describe('in dark mode', () => {
@@ -136,6 +146,11 @@ describe('Theming', () => {
 
       it('text should match the previous screenshot', (done) => {
         selectSection('text');
+        validate(done);
+      });
+
+      it('unstyled list should match the previous screenshot', (done) => {
+        selectSection('unstyled-list');
         validate(done);
       });
     });
