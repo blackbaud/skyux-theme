@@ -1,6 +1,7 @@
 # 5.0.0-beta.2 (2021-07-29)
 
 - Merged bug fixes from the 4.x branch into the 5.x branch.
+- Removed extra space around unstyled list. [#250](https://github.com/blackbaud/skyux-theme/pull/250)
 
 # 4.20.1 (2021-07-29)
 
