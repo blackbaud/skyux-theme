@@ -71,6 +71,11 @@ describe('Theming', () => {
       validate(done);
     });
 
+    it('paragraph should match the previous screenshot', (done) => {
+      selectSection('paragraph');
+      validate(done);
+    });
+
     it('text should match the previous screenshot', (done) => {
       selectSection('text');
       validate(done);
@@ -108,6 +113,11 @@ describe('Theming', () => {
         validate(done);
       });
 
+      it('paragraph should match the previous screenshot', (done) => {
+        selectSection('paragraph');
+        validate(done);
+      });
+
       it('text should match the previous screenshot', (done) => {
         selectSection('text');
         validate(done);
@@ -141,6 +151,11 @@ describe('Theming', () => {
 
       it('padding should match the previous screenshot', (done) => {
         selectSection('padding');
+        validate(done);
+      });
+
+      it('paragraph should match the previous screenshot', (done) => {
+        selectSection('paragraph');
         validate(done);
       });
 

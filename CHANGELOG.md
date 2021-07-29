@@ -1,3 +1,24 @@
+# 5.0.0-beta.2 (2021-07-29)
+
+- Added bug fixes and features from the `master` branch. [#255](https://github.com/blackbaud/skyux-theme/pull/255)
+- Removed extra space around unstyled list. [#250](https://github.com/blackbaud/skyux-theme/pull/250)
+
+# 4.20.1 (2021-07-29)
+
+- Added paragraph line height class `.sky-paragraph` for default theme. [#253](https://github.com/blackbaud/skyux-theme/pull/253)
+
+# 4.20.0 (2021-07-28)
+
+- Updated the SKY UX icon font version to 4.0.0-beta.5. [#252](https://github.com/blackbaud/skyux-theme/pull/252)
+
+# 4.19.0 (2021-07-22)
+
+- Added modern theme styles for the text highlight directive. [#248](https://github.com/blackbaud/skyux-theme/pull/248)
+
+# 4.18.0 (2021-07-19)
+
+- Added default theme styles for the box and elevation classes. [#246](https://github.com/blackbaud/skyux-theme/pull/246)
+
 # 5.0.0-beta.1 (2021-06-24)
 
 - Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
