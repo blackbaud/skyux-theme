@@ -1,11 +1,6 @@
-# 5.0.0-beta.1 (2021-06-24)
+# 5.0.0-beta.2 (2021-07-29)
 
-- Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
-
-# 5.0.0-beta.0 (2021-06-15)
-
-- Initial beta release.
-- Updated `5.0.0-next` branch with features from the `master` branch. [#236](https://github.com/blackbaud/skyux-theme/pull/236)
+- Merged bug fixes from the 4.x branch into the 5.x branch.
 
 # 4.20.1 (2021-07-29)
 
@@ -22,6 +17,10 @@
 # 4.18.0 (2021-07-19)
 
 - Added default theme styles for the box and elevation classes. [#246](https://github.com/blackbaud/skyux-theme/pull/246)
+
+# 5.0.0-beta.1 (2021-06-24)
+
+- Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
 
 # 5.0.0-beta.0 (2021-06-15)
 
