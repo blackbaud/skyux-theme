@@ -4,7 +4,12 @@ $sky-switch-size-modern: 26px !default;
 
 .sky-theme-modern {
   .sky-switch-input:not(:disabled) {
-    &:checked + .sky-switch-control,
+
+    &:checked + .sky-switch-control {
+      border: solid 1px $sky-theme-modern-background-color-primary-dark;
+      color: $sky-theme-modern-background-color-primary-dark;
+    }
+
     &:hover + .sky-switch-control {
       border: solid 1px $sky-theme-modern-background-color-primary-dark;
     }
@@ -23,6 +28,7 @@ $sky-switch-size-modern: 26px !default;
   }
 
   .sky-switch-control {
+    border: none;
     transition: box-shadow $sky-transition-time-short;
 
     &:not(.sky-switch-control-icon) {
@@ -39,10 +45,39 @@ $sky-switch-size-modern: 26px !default;
 
   .sky-switch-input:disabled + .sky-switch-control {
     background-color: $sky-theme-modern-background-color-neutral-medium;
-    border: solid 1px $sky-theme-modern-background-color-disabled;
+    border: none;
+    color: $sky-theme-modern-font-deemphasized-color;
+  }
+
+  .sky-switch-input:disabled:checked + .sky-switch-control {
+    color: $sky-theme-modern-background-color-primary-dark;
   }
 
   .sky-switch-disabled {
     cursor: not-allowed;
+  }
+
+  .sky-switch-icon-group {
+    .sky-switch-control {
+      border-radius: $sky-theme-modern-box-border-radius-default;
+
+      &.sky-switch-control-icon {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    sky-checkbox .sky-switch-control-icon {
+      margin-right: $sky-theme-modern-space-sm;
+    }
+
+    sky-checkbox:last-of-type .sky-switch-control-icon {
+      margin-right: 0;
+    }
+
+    sky-radio .sky-switch-control-icon {
+      border-radius: $sky-theme-modern-box-border-radius-default;
+    }
   }
 }
