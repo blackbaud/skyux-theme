@@ -8,10 +8,10 @@ import {
 } from '@skyux/theme';
 
 @Component({
-  selector: 'app-switch-demo',
-  templateUrl: './switch-demo.component.html'
+  selector: 'app-icon-group-controls-demo',
+  templateUrl: './icon-group-controls-demo.component.html'
 })
-export class SwitchDemoComponent {
+export class IconGropudControlsDemoComponent {
 
   constructor(
     private themeSvc: SkyThemeService

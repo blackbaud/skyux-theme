@@ -4,10 +4,12 @@
 
 <div
   class="sky-switch-icon-group sky-margin-stacked-default"
+  id="screenshot-checkbox-icon-group"
 >
   <sky-checkbox
     icon="bold"
     label="Bold"
+    [checked]="true"
   >
   </sky-checkbox>
   <sky-checkbox
@@ -16,6 +18,7 @@
   >
   </sky-checkbox>
   <sky-checkbox
+    class="last"
     icon="underline"
     label="Underline"
   >
@@ -23,6 +26,7 @@
 </div>
 <div
   class="sky-switch-icon-group sky-margin-stacked-default"
+  id="screenshot-checkbox-icon-group-disabled"
 >
   <sky-checkbox
     icon="bold"
@@ -40,6 +44,7 @@
 </div>
 <div
   class="sky-switch-icon-group sky-margin-stacked-default"
+  id="screenshot-radio-icon-group"
 >
   <sky-radio-group
     name="radioDemo"
@@ -55,6 +60,7 @@
     >
     </sky-radio>
     <sky-radio
+      class="last"
       icon="align-right"
       label="Right align"
     >
@@ -66,6 +72,7 @@
 >
   <div
     class="sky-switch-icon-group sky-margin-stacked-default"
+    id="screenshot-radio-icon-group-disabled"
   >
     <sky-radio
       icon="align-left"
