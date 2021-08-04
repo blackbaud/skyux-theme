@@ -5,13 +5,10 @@ $sky-switch-size-modern: 26px !default;
 .sky-theme-modern {
   .sky-switch-input:not(:disabled) {
 
-    &:checked + .sky-switch-control {
-      border: solid 1px $sky-theme-modern-background-color-primary-dark;
-      color: $sky-theme-modern-background-color-primary-dark;
-    }
-
+    &:checked + .sky-switch-control,
     &:hover + .sky-switch-control {
       border: solid 1px $sky-theme-modern-background-color-primary-dark;
+      color: $sky-theme-modern-background-color-primary-dark;
     }
 
     &:focus + .sky-switch-control,
@@ -28,7 +25,6 @@ $sky-switch-size-modern: 26px !default;
   }
 
   .sky-switch-control {
-    border: none;
     transition: box-shadow $sky-transition-time-short;
 
     &:not(.sky-switch-control-icon) {
@@ -45,12 +41,7 @@ $sky-switch-size-modern: 26px !default;
 
   .sky-switch-input:disabled + .sky-switch-control {
     background-color: $sky-theme-modern-background-color-neutral-medium;
-    border: none;
-    color: $sky-theme-modern-font-deemphasized-color;
-  }
-
-  .sky-switch-input:disabled:checked + .sky-switch-control {
-    color: $sky-theme-modern-background-color-primary-dark;
+    border: solid 1px $sky-theme-modern-background-color-disabled;
   }
 
   .sky-switch-disabled {
@@ -58,7 +49,20 @@ $sky-switch-size-modern: 26px !default;
   }
 
   .sky-switch-icon-group {
+
+    .sky-switch-input {
+      &:disabled + .sky-switch-control {
+        border: none;
+        color: $sky-theme-modern-font-deemphasized-color;
+      }
+
+      &:disabled:checked + .sky-switch-control {
+        color: $sky-theme-modern-background-color-primary-dark;
+      }
+    }
+
     .sky-switch-control {
+      border: none;
       border-radius: $sky-theme-modern-box-border-radius-default;
 
       &.sky-switch-control-icon {
