@@ -47,9 +47,17 @@ $sky-switch-size-modern: 26px !default;
   }
 
   .sky-switch-icon-group {
+    .sky-switch-control {
+      background-color: transparent;
+    }
 
     .sky-switch-input {
+      &:checked + .sky-switch-control {
+        background-color: $sky-background-color-info-light;
+      }
+
       &:disabled + .sky-switch-control {
+        background-color: $sky-theme-modern-background-color-neutral-medium;
         border: none;
         color: $sky-theme-modern-font-deemphasized-color;
       }
@@ -81,6 +89,19 @@ $sky-switch-size-modern: 26px !default;
 
     sky-radio .sky-switch-control-icon {
       border-radius: $sky-theme-modern-box-border-radius-default;
+    }
+  }
+
+  &.sky-theme-mode-dark {
+    .sky-switch-input:disabled + .sky-switch-control {
+      background-color: $sky-theme-modern-mode-dark-background-color-elevation-3;
+      border-color: $sky-theme-modern-mode-dark-border-color-neutral-medium;
+      color: $sky-theme-modern-mode-dark-font-deemphasized-color;
+    }
+    .sky-switch-icon-group {
+      .sky-switch-control {
+        color: $sky-theme-modern-mode-dark-font-body-default-color;
+      }
     }
   }
 }
