@@ -4,7 +4,6 @@ $sky-switch-size-modern: 26px !default;
 
 .sky-theme-modern {
   .sky-switch-input:not(:disabled) {
-
     &:checked + .sky-switch-control,
     &:hover + .sky-switch-control {
       border: solid 1px $sky-theme-modern-background-color-primary-dark;
@@ -51,6 +50,10 @@ $sky-switch-size-modern: 26px !default;
   .sky-switch-icon-group {
 
     .sky-switch-input {
+      &:hover + .sky-switch-control {
+        color: $sky-theme-modern-background-color-primary-dark;
+      }
+
       &:disabled + .sky-switch-control {
         border: none;
         color: $sky-theme-modern-font-deemphasized-color;
