@@ -1,3 +1,7 @@
+# 5.0.0-beta.3 (2021-08-05)
+
+- Added bug fixes and features from the `master` branch. [#259](https://github.com/blackbaud/skyux-theme/pull/259)
+
 # 4.21.0 (2021-08-05)
 
 - Added modern theme styles for radio icon groups and checkbox icon groups. [#257](https://github.com/blackbaud/skyux-theme/pull/257)
