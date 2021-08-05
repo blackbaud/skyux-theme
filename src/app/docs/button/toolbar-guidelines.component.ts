@@ -36,7 +36,7 @@ public newButtonInfo: {label: string, value: string}[] = [
   },
   {
     label: 'Dropdown',
-    value: 'Optional. Allows users to add more than one type of new item.'
+    value: 'Optional. Allows users to add more than one type of item.'
   },
   {
     label: 'Notes',
