@@ -1,6 +1,6 @@
 # 5.0.0-beta.4 (2021-08-11)
 
-- Added bug fixes and features from the `master` branch.
+- Added bug fixes and features from the `master` branch. [#263](https://github.com/blackbaud/skyux-theme/pull/263)
 
 # 4.21.1 (2021-08-11)
 
