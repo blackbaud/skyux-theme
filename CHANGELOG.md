@@ -1,3 +1,11 @@
+# 5.0.0-beta.4 (2021-08-11)
+
+- Added bug fixes and features from the `master` branch.
+
+# 4.21.1 (2021-08-11)
+
+- Fixed modern theme selectors when view encapsulation is disabled. [#261](https://github.com/blackbaud/skyux-theme/pull/261)
+
 # 5.0.0-beta.3 (2021-08-05)
 
 - Added bug fixes and features from the `master` branch. [#259](https://github.com/blackbaud/skyux-theme/pull/259)
