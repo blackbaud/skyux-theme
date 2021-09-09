@@ -5,9 +5,9 @@ import {
 
 describe('Borders', () => {
 
-  beforeEach(() => {
-    SkyHostBrowser.get('visual/borders');
-    SkyHostBrowser.setWindowBreakpoint('lg');
+  beforeEach(async () => {
+    await SkyHostBrowser.get('visual/borders');
+    await SkyHostBrowser.setWindowBreakpoint('lg');
   });
 
   it('should match the previous screenshot', (done) => {
