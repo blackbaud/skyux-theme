@@ -22,6 +22,10 @@
       "theme": [
         "dist/theme/theme",
         "dist/theme"
+      ],
+      "@skyux/theme": [
+        "dist/theme",
+        "projects/theme/src/public-api.ts"
       ]
     }
   },

@@ -35,8 +35,8 @@
               "**/fixtures/**"
             ],
             "styles": [
-              "@skyux/theme/css/sky.css",
-              "@skyux/theme/css/themes/modern/styles.css"
+              "dist/theme/css/sky.css",
+              "dist/theme/css/themes/modern/styles.css"
             ]
           }
         },
@@ -98,8 +98,8 @@
               "projects/theme-showcase/src/assets"
             ],
             "styles": [
-              "node_modules/@skyux/theme/css/sky.css",
-              "node_modules/@skyux/theme/css/themes/modern/styles.css",
+              "dist/theme/css/sky.css",
+              "dist/theme/css/themes/modern/styles.css",
               "projects/theme-showcase/src/styles.scss"
             ],
             "scripts": []
