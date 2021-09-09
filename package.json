@@ -5,13 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "postbuild": "node ./scripts/prepare-package.js && npm run skyux:generate-documentation",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "skyux:generate-lib-resources-module": "ng generate @skyux/i18n:lib-resources-module",
     "lint": "ng lint",
+    "e2e": "ng e2e",
     "skyux:generate-documentation": "ng generate @skyux-sdk/documentation-schematics:documentation",
-    "postbuild": "npm run skyux:generate-documentation",
-    "e2e": "ng e2e"
+    "skyux:generate-lib-resources-module": "ng generate @skyux/i18n:lib-resources-module"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +30,7 @@
     "@skyux/packages": "^5.0.0-beta.61",
     "@skyux/theme": "^5.0.0-beta.3",
     "fontfaceobserver": "2.1.0",
+    "node-sass-tilde-importer": "^1.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
