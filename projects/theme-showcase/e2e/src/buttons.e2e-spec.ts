@@ -10,10 +10,6 @@ import {
   SkyVisualThemeSelector
 } from '@skyux-sdk/e2e';
 
-import {
-  ThemePlatformHelper
-} from './utils/theme-platform-utils';
-
 describe('Buttons', () => {
   let currentTheme: string;
   let currentThemeMode: string;
@@ -71,10 +67,6 @@ describe('Buttons', () => {
     screenshotName: string,
     buttonState?: 'active' | 'focus' | 'hover'
   ): Promise<void> {
-    if (ThemePlatformHelper.shouldSkipVisualTests()) {
-      return done();
-    }
-
     await scrollToElement(selector);
 
     if (buttonState === 'hover' || buttonState === 'focus') {
@@ -352,8 +344,12 @@ describe('Buttons', () => {
     });
 
     // .sky-btn-icon-borderless
-    it('should match screenshot for borderless icon button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-icon-borderless`, 'btn-icon-borderless');
+    it('should match screenshot for borderless icon button', async (done) => {
+      await validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-icon-borderless`,
+        'btn-icon-borderless'
+      );
     });
 
     it('should match screenshot when hovering on icon button', (done) => {
