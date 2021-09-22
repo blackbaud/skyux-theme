@@ -1,3 +1,7 @@
+# 5.0.0-beta.6 (2021-09-22)
+
+- Added support for `@skyux/icons@5.0.0-beta.0`. [#267](https://github.com/blackbaud/skyux-theme/pull/267)
+
 # 5.0.0-beta.5 (2021-09-09)
 
 - Ejected to Angular CLI. [#265](https://github.com/blackbaud/skyux-theme/pull/265)
