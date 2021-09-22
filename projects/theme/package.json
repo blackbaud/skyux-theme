@@ -2,12 +2,12 @@
   "name": "@skyux/theme",
   "version": "5.0.0-beta.5",
   "peerDependencies": {
-    "@angular/core": "^12.2.0",
-    "@angular/common": "^12.2.0"
+    "@angular/core": "^12.2.6",
+    "@angular/common": "^12.2.6"
   },
   "dependencies": {
     "@blackbaud/skyux-design-tokens": "0.0.24",
-    "@skyux/icons": "4.0.0-beta.5",
+    "@skyux/icons": "5.0.0-beta.0",
     "fontfaceobserver": "2.1.0",
     "tslib": "^2.3.0"
   }
