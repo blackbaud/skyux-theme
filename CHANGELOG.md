@@ -1,3 +1,11 @@
+# 5.0.0 (2021-09-28)
+
+## New features
+
+- Added support for Angular 12. [#265](https://github.com/blackbaud/skyux-theme/pull/265)
+- Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
+- Added support for "lazy loaded" feature modules. [#232](https://github.com/blackbaud/skyux-theme/pull/232)
+
 # 5.0.0-beta.6 (2021-09-22)
 
 - Added support for `@skyux/icons@5.0.0-beta.0`. [#267](https://github.com/blackbaud/skyux-theme/pull/267)
