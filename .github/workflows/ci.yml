@@ -4,14 +4,11 @@ on:
   pull_request:
     branches:
       - master
-      - 5.0.0-next
   push:
     branches:
       - master
-      - 5.0.0-next
     tags:
       - '*.*.*'
-      - '*.*.*-alpha.*'
 
 jobs:
   ci:
@@ -21,6 +18,8 @@ jobs:
         with:
           fetch-depth: 2
       - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
       - uses: blackbaud/skyux-sdk-actions@master
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
@@ -29,6 +28,5 @@ jobs:
           npm-token: ${{ secrets.NPM_TOKEN }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
-          visual-baselines-branch: '5.0.0-next'
       - name: Upload coverage report
         run: bash <(curl -s https://codecov.io/bash)
