@@ -27,5 +27,6 @@ jobs:
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
           hook-before-script: ./scripts/before-script.js
+          visual-baselines-branch: '4.x.x'
       - name: Upload coverage report
         run: bash <(curl -s https://codecov.io/bash)
