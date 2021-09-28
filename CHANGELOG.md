@@ -1,6 +1,6 @@
 # 5.0.0 (2021-09-28)
 
-## New features
+### New features
 
 - Added support for Angular 12. [#265](https://github.com/blackbaud/skyux-theme/pull/265)
 - Added font face definitions for "BLKB Sans" and deprecated "Blackbaud Sans." [#243](https://github.com/blackbaud/skyux-theme/pull/243)
