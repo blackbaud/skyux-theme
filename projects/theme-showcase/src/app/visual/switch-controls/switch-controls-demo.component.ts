@@ -8,10 +8,6 @@ import {
   FormGroup
 } from '@angular/forms';
 
-import {
-  SkyThemeService,
-  SkyThemeSettings
-} from '@skyux/theme';
 
 @Component({
   selector: 'app-switch-controls-demo',
@@ -54,8 +50,7 @@ export class SwitchControlsDemoComponent implements OnInit {
   ];
 
   constructor(
-    private formBuilder: FormBuilder,
-    private themeSvc: SkyThemeService
+    private formBuilder: FormBuilder
   ) { }
 
   public ngOnInit(): void {
@@ -64,10 +59,6 @@ export class SwitchControlsDemoComponent implements OnInit {
       radioIconGroupControl: this.radioGroupIconOptions[0].name,
       radioIconGroupDisabledControl: this.radioGroupIconDisabledOptions[0].name
     });
-  }
-
-  public themeSettingsChange(themeSettings: SkyThemeSettings): void {
-    this.themeSvc.setTheme(themeSettings);
   }
 
 }

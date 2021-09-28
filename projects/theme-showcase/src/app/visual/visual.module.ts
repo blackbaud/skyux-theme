@@ -10,8 +10,10 @@ import { SkyValidationDemoComponent } from './validation/validation-demo.compone
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SkyE2eThemeSelectorModule } from '@skyux/e2e-client';
+import { SkyCheckboxModule, SkyRadioModule } from '@skyux/forms';
 import { SkyThemeModule } from '@skyux/theme';
 import { SkyResponsiveContentComponent } from './responsive/responsive-content.component';
+import { SwitchControlsDemoComponent } from './switch-controls/switch-controls-demo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { SkyResponsiveContentComponent } from './responsive/responsive-content.c
     HTMLInputsDemoComponent,
     SkyResponsiveContentComponent,
     SkyResponsiveDemoComponent,
+    SwitchControlsDemoComponent,
     ThemingDemoComponent,
     SkyValidationDemoComponent,
     VisualComponent
@@ -29,7 +32,9 @@ import { SkyResponsiveContentComponent } from './responsive/responsive-content.c
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    SkyCheckboxModule,
     SkyE2eThemeSelectorModule,
+    SkyRadioModule,
     SkyThemeModule
   ]
 })

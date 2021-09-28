@@ -4,6 +4,7 @@ import { SkyBordersDemoComponent } from './visual/borders/borders-demo.component
 import { SkyButtonsDemoComponent } from './visual/buttons/buttons-demo.component';
 import { HTMLInputsDemoComponent } from './visual/inputs/inputs-demo.component';
 import { SkyResponsiveDemoComponent } from './visual/responsive/responsive-demo.component';
+import { SwitchControlsDemoComponent } from './visual/switch-controls/switch-controls-demo.component';
 import { ThemingDemoComponent } from './visual/theming/theming-demo.component';
 import { SkyValidationDemoComponent } from './visual/validation/validation-demo.component';
 import { VisualComponent } from './visual/visual.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'visual/responsive',
     component: SkyResponsiveDemoComponent
+  },
+  {
+    path: 'visual/switch-controls',
+    component: SwitchControlsDemoComponent
   },
   {
     path: 'visual/theming',
