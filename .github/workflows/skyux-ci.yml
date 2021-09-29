@@ -1,6 +1,7 @@
 name: SKY UX CI
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - master
