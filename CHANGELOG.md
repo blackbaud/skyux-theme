@@ -1,3 +1,7 @@
+# 4.22.0 (2021-10-08)
+
+- Added additional modern theme spacing classes to the default theme. [#271](https://github.com/blackbaud/skyux-theme/pull/271)
+
 # 4.21.1 (2021-08-11)
 
 - Fixed modern theme selectors when view encapsulation is disabled. [#261](https://github.com/blackbaud/skyux-theme/pull/261)
