@@ -1,3 +1,7 @@
+# 4.22.1 (2021-10-08)
+
+- Fixed the `4.22.0` release.
+
 # 4.22.0 (2021-10-08)
 
 - Added additional modern theme spacing classes to the default theme. [#271](https://github.com/blackbaud/skyux-theme/pull/271)
