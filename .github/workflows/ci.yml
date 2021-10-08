@@ -3,11 +3,9 @@ name: SKY UX CI
 on:
   pull_request:
     branches:
-      - master
       - 4.x.x
   push:
     branches:
-      - master
       - 4.x.x
     tags:
       - '*.*.*'
@@ -19,7 +17,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
       - uses: blackbaud/skyux-sdk-actions@master
         with:
           browser-stack-access-key: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
@@ -30,5 +30,6 @@ jobs:
           hook-after-build-public-library-success: ./scripts/after-build-public-library-success.js
           hook-before-script: ./scripts/before-script.js
           visual-baselines-branch: '4.x.x'
+          npm-dry-run: true
       - name: Upload coverage report
         run: bash <(curl -s https://codecov.io/bash)
