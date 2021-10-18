@@ -23,7 +23,7 @@ describe('Theme if directive', () => {
 
       expect('#sky-theme-if-demo')
         .toMatchBaselineScreenshot(done, {
-          screenshotName: 'theme-switched'
+          screenshotName: 'sky-theme-if-theme-switched'
         });
     }
   );
