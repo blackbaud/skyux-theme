@@ -14,6 +14,8 @@ import { SkyCheckboxModule, SkyRadioModule } from '@skyux/forms';
 import { SkyThemeModule } from '@skyux/theme';
 import { SkyResponsiveContentComponent } from './responsive/responsive-content.component';
 import { SwitchControlsDemoComponent } from './switch-controls/switch-controls-demo.component';
+import { SkyThemeIfDemoComponent } from './theme-if/theme-if-demo.component';
+import { SkyThemeIfOnPushDemoComponent } from './theme-if/theme-if-on-push-demo.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { SwitchControlsDemoComponent } from './switch-controls/switch-controls-d
     HTMLInputsDemoComponent,
     SkyResponsiveContentComponent,
     SkyResponsiveDemoComponent,
+    SkyThemeIfDemoComponent,
+    SkyThemeIfOnPushDemoComponent,
     SwitchControlsDemoComponent,
     ThemingDemoComponent,
     SkyValidationDemoComponent,
