@@ -5,6 +5,7 @@ import { SkyButtonsDemoComponent } from './visual/buttons/buttons-demo.component
 import { HTMLInputsDemoComponent } from './visual/inputs/inputs-demo.component';
 import { SkyResponsiveDemoComponent } from './visual/responsive/responsive-demo.component';
 import { SwitchControlsDemoComponent } from './visual/switch-controls/switch-controls-demo.component';
+import { SkyThemeIfDemoComponent } from './visual/theme-if/theme-if-demo.component';
 import { ThemingDemoComponent } from './visual/theming/theming-demo.component';
 import { SkyValidationDemoComponent } from './visual/validation/validation-demo.component';
 import { VisualComponent } from './visual/visual.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'visual/switch-controls',
     component: SwitchControlsDemoComponent
+  },
+  {
+    path: 'visual/theme-if',
+    component: SkyThemeIfDemoComponent
   },
   {
     path: 'visual/theming',
