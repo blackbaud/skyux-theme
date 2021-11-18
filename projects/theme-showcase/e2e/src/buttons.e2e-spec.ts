@@ -1,14 +1,6 @@
-import {
-  browser,
-  by,
-  element
-} from 'protractor';
+import { browser, by, element } from 'protractor';
 
-import {
-  expect,
-  SkyHostBrowser,
-  SkyVisualThemeSelector
-} from '@skyux-sdk/e2e';
+import { expect, SkyHostBrowser, SkyVisualThemeSelector } from '@skyux-sdk/e2e';
 
 describe('Buttons', () => {
   let currentTheme: string;
@@ -37,7 +29,8 @@ describe('Buttons', () => {
   }
 
   async function hoverMouseOverSelector(selector: string): Promise<any> {
-    return browser.actions()
+    return browser
+      .actions()
       .mouseMove(element(by.css(selector)))
       .perform();
   }
@@ -45,16 +38,11 @@ describe('Buttons', () => {
   async function mouseDownSelector(selector: string): Promise<any> {
     const el = element(by.css(selector));
 
-    return browser.actions()
-      .mouseMove(el)
-      .mouseDown(el)
-      .perform();
+    return browser.actions().mouseMove(el).mouseDown(el).perform();
   }
 
   async function mouseUp(): Promise<any> {
-    return browser.actions()
-      .mouseUp()
-      .perform();
+    return browser.actions().mouseUp().perform();
   }
 
   async function scrollToElement(selector: string): Promise<void> {
@@ -82,7 +70,7 @@ describe('Buttons', () => {
     }
 
     expect(selector).toMatchBaselineScreenshot(done, {
-      screenshotName: getScreenshotName(screenshotName)
+      screenshotName: getScreenshotName(screenshotName),
     });
 
     if (buttonState === 'active') {
@@ -90,10 +78,14 @@ describe('Buttons', () => {
     }
   }
 
-  function validateAllButtons () {
+  function validateAllButtons() {
     // .sky-btn-default
     it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-default`, 'btn-default');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-default`,
+        'btn-default'
+      );
     });
 
     it('should match screenshot when hovering on default button', (done) => {
@@ -124,12 +116,20 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-default`, 'btn-default-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-default`,
+        'btn-default-disabled'
+      );
     });
 
     // .sky-btn-primary
     it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-primary`, 'btn-primary');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-primary`,
+        'btn-primary'
+      );
     });
 
     it('should match screenshot when hovering on default button', (done) => {
@@ -160,12 +160,20 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-primary`, 'btn-primary-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-primary`,
+        'btn-primary-disabled'
+      );
     });
 
     // .sky-btn-danger
     it('should match screenshot for default button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-danger`, 'btn-danger');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-danger`,
+        'btn-danger'
+      );
     });
 
     it('should match screenshot when hovering on default button', (done) => {
@@ -196,7 +204,11 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-danger`, 'btn-danger-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-danger`,
+        'btn-danger-disabled'
+      );
     });
 
     // .sky-btn-link
@@ -232,12 +244,20 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled default button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-link`, 'btn-link-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-link`,
+        'btn-link-disabled'
+      );
     });
 
     // .sky-btn-borderless
     it('should match screenshot for borderless button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-borderless`, 'btn-borderless');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-borderless`,
+        'btn-borderless'
+      );
     });
 
     it('should match screenshot when hovering on bordeless button', (done) => {
@@ -268,12 +288,20 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled borderless button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-borderless`, 'btn-borderless-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-borderless`,
+        'btn-borderless-disabled'
+      );
     });
 
     // a.sky-btn
     it('should match screenshot for anchor button', (done) => {
-      validateButton(done, `${defaultStateSelector} a.sky-btn-primary`, 'btn-anchor');
+      validateButton(
+        done,
+        `${defaultStateSelector} a.sky-btn-primary`,
+        'btn-anchor'
+      );
     });
 
     it('should match screenshot when hovering on anchor button', (done) => {
@@ -304,7 +332,11 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled anchor button', (done) => {
-      validateButton(done, `${disabledStateSelector} a.sky-btn-primary`, 'btn-anchor-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} a.sky-btn-primary`,
+        'btn-anchor-disabled'
+      );
     });
 
     // .sky-btn-icon
@@ -340,7 +372,11 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled icon button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-icon`, 'btn-icon-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-icon`,
+        'btn-icon-disabled'
+      );
     });
 
     // .sky-btn-icon-borderless
@@ -380,12 +416,20 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled icon button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-icon-borderless`, 'btn-icon-borderless-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-icon-borderless`,
+        'btn-icon-borderless-disabled'
+      );
     });
 
     // .sky-btn-link-inline
     it('should match screenshot for inline link button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-link-inline`, 'btn-link-inline');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-link-inline`,
+        'btn-link-inline'
+      );
     });
 
     it('should match screenshot when hovering on inline link button', (done) => {
@@ -416,17 +460,26 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled inline link button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-link-inline`, 'btn-link-inline-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-link-inline`,
+        'btn-link-inline-disabled'
+      );
     });
 
     // .sky-btn-borderless-inline
     it('should match screenshot for borderless inline button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-btn-borderless-inline`,
+        'btn-borderless-inline'
+      );
     });
 
     it('should match screenshot when hovering on borderless inline button', (done) => {
       validateButton(
-        done, `${defaultStateSelector} .sky-btn-borderless-inline`,
+        done,
+        `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-hover',
         'hover'
       );
@@ -434,7 +487,8 @@ describe('Buttons', () => {
 
     it('should match screenshot when clicking on borderless inline button', (done) => {
       validateButton(
-        done, `${defaultStateSelector} .sky-btn-borderless-inline`,
+        done,
+        `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-active',
         'active'
       );
@@ -442,19 +496,28 @@ describe('Buttons', () => {
 
     it('should match screenshot when focused on borderless inline button', (done) => {
       validateButton(
-        done, `${defaultStateSelector} .sky-btn-borderless-inline`,
+        done,
+        `${defaultStateSelector} .sky-btn-borderless-inline`,
         'btn-borderless-inline-focus',
         'focus'
       );
     });
 
     it('should match screenshot for disabled borderless inline button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-borderless-inline`, 'btn-borderless-inline-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-borderless-inline`,
+        'btn-borderless-inline-disabled'
+      );
     });
 
     // .sky-input-group-btn
     it('should match screenshot for input group button', (done) => {
-      validateButton(done, `${defaultStateSelector} .sky-input-group-btn`, 'btn-input-group');
+      validateButton(
+        done,
+        `${defaultStateSelector} .sky-input-group-btn`,
+        'btn-input-group'
+      );
     });
 
     it('should match screenshot when hovering on input group button', (done) => {
@@ -485,7 +548,11 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled input group button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-input-group-btn`, 'btn-input-group-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-input-group-btn`,
+        'btn-input-group-disabled'
+      );
     });
 
     // .sky-btn-sm
@@ -521,9 +588,12 @@ describe('Buttons', () => {
     });
 
     it('should match screenshot for disabled small button', (done) => {
-      validateButton(done, `${disabledStateSelector} .sky-btn-sm`, 'btn-sm-disabled');
+      validateButton(
+        done,
+        `${disabledStateSelector} .sky-btn-sm`,
+        'btn-sm-disabled'
+      );
     });
-
   }
   //#endregion
 
@@ -538,22 +608,18 @@ describe('Buttons', () => {
   validateAllButtons();
 
   describe('when modern theme', () => {
-
     beforeEach(async () => {
       await selectTheme('modern', 'light');
     });
 
     validateAllButtons();
-
   });
 
   describe('when modern theme in dark mode', () => {
-
     beforeEach(async () => {
       await selectTheme('modern', 'dark');
     });
 
     validateAllButtons();
   });
-
 });

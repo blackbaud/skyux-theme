@@ -1,18 +1,11 @@
-<sky-e2e-theme-selector>
-</sky-e2e-theme-selector>
+<sky-e2e-theme-selector> </sky-e2e-theme-selector>
 
-<form
-  novalidate
-  [formGroup]="myForm"
->
-
+<form novalidate [formGroup]="myForm">
   <h3>Checkboxes</h3>
 
-  <div
-    class="sky-margin-stacked-default"
-    id="screenshot-checkbox"
-  >
-    <sky-checkbox *ngFor="let option of checkboxOptions"
+  <div class="sky-margin-stacked-default" id="screenshot-checkbox">
+    <sky-checkbox
+      *ngFor="let option of checkboxOptions"
       [checked]="option.checked"
       [disabled]="option.disabled"
     >
@@ -24,21 +17,11 @@
 
   <h3>Radio buttons</h3>
 
-  <div
-    class="sky-margin-stacked-default"
-    id="screenshot-radio"
-  >
-    <sky-radio-group
-      formControlName="radioControl"
-    >
-      <ul
-        class="sky-list-unstyled"
-      >
+  <div class="sky-margin-stacked-default" id="screenshot-radio">
+    <sky-radio-group formControlName="radioControl">
+      <ul class="sky-list-unstyled">
         <li *ngFor="let option of radioOptions">
-          <sky-radio
-            [disabled]="option.disabled"
-            [value]="option.name"
-          >
+          <sky-radio [disabled]="option.disabled" [value]="option.name">
             <sky-radio-label>
               {{ option.name }}
             </sky-radio-label>
@@ -54,7 +37,8 @@
     class="sky-switch-icon-group sky-margin-stacked-default"
     id="screenshot-checkbox-icon-group"
   >
-    <sky-checkbox *ngFor="let option of checkboxIconGroupOptions"
+    <sky-checkbox
+      *ngFor="let option of checkboxIconGroupOptions"
       [checked]="option.checked"
       [disabled]="option.disabled"
       [icon]="option.icon"
@@ -64,16 +48,11 @@
 
   <h3>Radio button icon groups</h3>
 
-  <div
-    id="screenshot-radio-icon-group"
-  >
-    <div
-      class="sky-switch-icon-group sky-margin-stacked-default"
-    >
-      <sky-radio-group
-        formControlName="radioIconGroupControl"
-      >
-        <sky-radio *ngFor="let option of radioGroupIconOptions"
+  <div id="screenshot-radio-icon-group">
+    <div class="sky-switch-icon-group sky-margin-stacked-default">
+      <sky-radio-group formControlName="radioIconGroupControl">
+        <sky-radio
+          *ngFor="let option of radioGroupIconOptions"
           [disabled]="option.disabled"
           [icon]="option.icon"
           [value]="option.name"
@@ -82,13 +61,10 @@
       </sky-radio-group>
     </div>
 
-    <div
-      class="sky-switch-icon-group sky-margin-stacked-default"
-    >
-      <sky-radio-group
-        formControlName="radioIconGroupDisabledControl"
-      >
-        <sky-radio *ngFor="let option of radioGroupIconDisabledOptions"
+    <div class="sky-switch-icon-group sky-margin-stacked-default">
+      <sky-radio-group formControlName="radioIconGroupDisabledControl">
+        <sky-radio
+          *ngFor="let option of radioGroupIconDisabledOptions"
           [disabled]="option.disabled"
           [icon]="option.icon"
           [value]="option.name"
@@ -97,5 +73,4 @@
       </sky-radio-group>
     </div>
   </div>
-
 </form>

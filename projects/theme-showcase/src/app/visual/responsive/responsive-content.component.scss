@@ -1,4 +1,4 @@
-@import "../../../../../theme/src/styles/mixins";
+@import '../../../../../theme/src/styles/mixins';
 
 :host {
   width: 100%;
@@ -6,7 +6,8 @@
   border: 3px black solid;
 }
 
-.box-1, .box-2 {
+.box-1,
+.box-2 {
   height: 200px;
 }
 

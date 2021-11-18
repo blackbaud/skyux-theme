@@ -1,19 +1,18 @@
-import {
-  browser,
-  by
-} from 'protractor';
+import { browser, by } from 'protractor';
 
-import {
-  expect,
-  SkyHostBrowser
-} from '@skyux-sdk/e2e';
+import { expect, SkyHostBrowser } from '@skyux-sdk/e2e';
 
 describe('Theming', () => {
   let currentThemeName: string;
   let currentSection: string;
 
-  async function selectItem(selectId: string, optionValue: string): Promise<void> {
-    return browser.findElement(by.css(`#${selectId} option[value="${optionValue}"]`)).click();
+  async function selectItem(
+    selectId: string,
+    optionValue: string
+  ): Promise<void> {
+    return browser
+      .findElement(by.css(`#${selectId} option[value="${optionValue}"]`))
+      .click();
   }
 
   async function selectTheme(themeName: string): Promise<void> {
@@ -27,10 +26,9 @@ describe('Theming', () => {
   }
 
   function validate(done: DoneFn): void {
-    expect('#screenshot-theme-container')
-      .toMatchBaselineScreenshot(done, {
-        screenshotName: `theming-${currentSection}-${currentThemeName}`
-      });
+    expect('#screenshot-theme-container').toMatchBaselineScreenshot(done, {
+      screenshotName: `theming-${currentSection}-${currentThemeName}`,
+    });
   }
 
   beforeEach(async () => {
@@ -162,5 +160,4 @@ describe('Theming', () => {
       });
     });
   });
-
 });

@@ -1,20 +1,17 @@
-import {
-  ChangeDetectionStrategy,
-  Component
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import {
   SkyTheme,
   SkyThemeMode,
   SkyThemeService,
-  SkyThemeSettings
+  SkyThemeSettings,
 } from '@skyux/theme';
 
 @Component({
   selector: 'app-theme-if-demo',
   templateUrl: './theme-if-demo.component.html',
   styleUrls: ['./theme-if-demo.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkyThemeIfDemoComponent {
   constructor(private themeSvc: SkyThemeService) {
@@ -24,10 +21,12 @@ export class SkyThemeIfDemoComponent {
     // app-theme-if-on-push-demo component's displayText property is displayed when
     // switching to modern theme; failure means that the text to display never shows.
     setTimeout(() => {
-      this.themeSvc.setTheme(new SkyThemeSettings(
-        SkyTheme.presets.modern,
-        SkyThemeMode.presets.light
-      ));
+      this.themeSvc.setTheme(
+        new SkyThemeSettings(
+          SkyTheme.presets.modern,
+          SkyThemeMode.presets.light
+        )
+      );
     });
   }
 }
