@@ -1,6 +1,6 @@
 # 5.0.4 (2021-11-18)
 
-- Added support for prettier code formatting and updated the builder to support StackBlitz. []()
+- Added support for prettier code formatting and updated the builder to support StackBlitz. [#279](https://github.com/blackbaud/skyux-theme/pull/279)
 
 # 5.0.3 (2021-11-08)
 
