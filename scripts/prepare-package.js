@@ -18,7 +18,7 @@ function validateSkyuxIconVersionMatch() {
   );
 
   const scssVersionMatches = scssContents.match(
-    /@import url\(\"https\:\/\/sky\.blackbaudcdn\.net\/static\/skyux\-icons\/([A-z0-9\-\.]+)\/assets\/css\/skyux\-icons\.min\.css\"\)/
+    /@import url\('https:\/\/sky\.blackbaudcdn\.net\/static\/skyux-icons\/([A-z0-9\-.]+)\/assets\/css\/skyux-icons\.min\.css'\)/
   );
 
   if (!scssVersionMatches || scssVersionMatches.length !== 2) {
