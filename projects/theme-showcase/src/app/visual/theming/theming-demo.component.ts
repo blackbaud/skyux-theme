@@ -1,21 +1,13 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {
-  SkyTheme,
-  SkyThemeMode,
-  SkyThemeSettings
-} from '@skyux/theme';
+import { SkyTheme, SkyThemeMode, SkyThemeSettings } from '@skyux/theme';
 
 @Component({
   selector: 'app-theming-demo',
   templateUrl: './theming-demo.component.html',
-  styleUrls: ['./theming-demo.component.scss']
+  styleUrls: ['./theming-demo.component.scss'],
 })
 export class ThemingDemoComponent implements OnInit {
-
   public set themeName(value: string) {
     this._themeName = value;
 
@@ -52,9 +44,6 @@ export class ThemingDemoComponent implements OnInit {
         theme = SkyTheme.presets.default;
         break;
     }
-    this.themeSettings = new SkyThemeSettings(
-      theme,
-      themeMode
-    );
+    this.themeSettings = new SkyThemeSettings(theme, themeMode);
   }
 }

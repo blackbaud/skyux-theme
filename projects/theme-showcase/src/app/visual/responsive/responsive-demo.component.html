@@ -1,9 +1,9 @@
 <div id="screenshot-responsive">
-  <div
-    id="screen-queries"
-  >
+  <div id="screen-queries">
     <h3>Responsive based on screen size</h3>
-    <p>Current screen breakpoint: <b>{{ currentScreenBreakpoint }}</b></p>
+    <p>
+      Current screen breakpoint: <b>{{ currentScreenBreakpoint }}</b>
+    </p>
     <sky-responsive-content></sky-responsive-content>
   </div>
   <div
@@ -11,7 +11,9 @@
     [class]="'sky-responsive-container-' + currentContainerBreakpoint"
   >
     <h3>Responsive based on container class</h3>
-    <p>Current container breakpoint: <b>{{ currentContainerBreakpoint }}</b></p>
+    <p>
+      Current container breakpoint: <b>{{ currentContainerBreakpoint }}</b>
+    </p>
     <sky-responsive-content></sky-responsive-content>
   </div>
 </div>

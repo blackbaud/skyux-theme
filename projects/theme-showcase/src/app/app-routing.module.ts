@@ -13,44 +13,44 @@ import { VisualComponent } from './visual/visual.component';
 const routes: Routes = [
   {
     path: '',
-    component: VisualComponent
+    component: VisualComponent,
   },
   {
     path: 'visual/borders',
-    component: SkyBordersDemoComponent
+    component: SkyBordersDemoComponent,
   },
   {
     path: 'visual/buttons',
-    component: SkyButtonsDemoComponent
+    component: SkyButtonsDemoComponent,
   },
   {
     path: 'visual/inputs',
-    component: HTMLInputsDemoComponent
+    component: HTMLInputsDemoComponent,
   },
   {
     path: 'visual/responsive',
-    component: SkyResponsiveDemoComponent
+    component: SkyResponsiveDemoComponent,
   },
   {
     path: 'visual/switch-controls',
-    component: SwitchControlsDemoComponent
+    component: SwitchControlsDemoComponent,
   },
   {
     path: 'visual/theme-if',
-    component: SkyThemeIfDemoComponent
+    component: SkyThemeIfDemoComponent,
   },
   {
     path: 'visual/theming',
-    component: ThemingDemoComponent
+    component: ThemingDemoComponent,
   },
   {
     path: 'visual/validation',
-    component: SkyValidationDemoComponent
-  }
+    component: SkyValidationDemoComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

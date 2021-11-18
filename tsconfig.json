@@ -14,19 +14,10 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "theme": [
-        "dist/theme/theme",
-        "dist/theme"
-      ],
-      "@skyux/theme": [
-        "dist/theme",
-        "projects/theme/src/public-api.ts"
-      ]
+      "theme": ["dist/theme/theme", "dist/theme"],
+      "@skyux/theme": ["dist/theme", "projects/theme/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {

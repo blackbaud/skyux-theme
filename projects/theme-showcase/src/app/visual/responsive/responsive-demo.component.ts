@@ -1,6 +1,4 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 // import {
 //   SkyMediaBreakpoints,
@@ -10,10 +8,9 @@ import {
 @Component({
   selector: 'sky-responsive-demo',
   templateUrl: './responsive-demo.component.html',
-  styleUrls: ['./responsive-demo.component.scss']
+  styleUrls: ['./responsive-demo.component.scss'],
 })
 export class SkyResponsiveDemoComponent {
-
   public currentContainerBreakpoint = 'xs';
 
   public currentScreenBreakpoint: string;
@@ -35,5 +32,4 @@ export class SkyResponsiveDemoComponent {
   public setClass(breakpoint: string) {
     this.currentContainerBreakpoint = breakpoint;
   }
-
 }

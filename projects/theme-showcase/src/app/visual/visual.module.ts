@@ -29,7 +29,7 @@ import { SkyThemeIfOnPushDemoComponent } from './theme-if/theme-if-on-push-demo.
     SwitchControlsDemoComponent,
     ThemingDemoComponent,
     SkyValidationDemoComponent,
-    VisualComponent
+    VisualComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +39,7 @@ import { SkyThemeIfOnPushDemoComponent } from './theme-if/theme-if-on-push-demo.
     SkyCheckboxModule,
     SkyE2eThemeSelectorModule,
     SkyRadioModule,
-    SkyThemeModule
-  ]
+    SkyThemeModule,
+  ],
 })
-export class VisualModule { }
+export class VisualModule {}

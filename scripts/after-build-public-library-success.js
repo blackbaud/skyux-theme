@@ -5,12 +5,12 @@ async function runAsync() {
 
   crossSpawn.sync('node', ['./scripts/prepare-package.js'], {
     cwd: process.cwd(),
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
 
   console.log('Done preparing package.');
 }
 
 module.exports = {
-  runAsync
+  runAsync,
 };
