@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./validation-demo.component.scss'],
 })
 export class SkyValidationDemoComponent {
-  public textInput: string;
-  public selectInput: string;
+  public textInput: string | undefined;
+  public selectInput: string | undefined;
 }

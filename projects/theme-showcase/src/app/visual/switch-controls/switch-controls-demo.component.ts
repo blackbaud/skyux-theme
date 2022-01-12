@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   selector: 'app-switch-controls-demo',
   templateUrl: './switch-controls-demo.component.html',
 })
-export class SwitchControlsDemoComponent implements OnInit {
+export class SwitchControlsDemoComponent {
   public myForm: FormGroup;
 
   public checkboxOptions: any[] = [
@@ -41,10 +41,8 @@ export class SwitchControlsDemoComponent implements OnInit {
     { name: 'Disabled radio button', value: '3', disabled: true },
   ];
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  public ngOnInit(): void {
-    this.myForm = this.formBuilder.group({
+  constructor(formBuilder: FormBuilder) {
+    this.myForm = formBuilder.group({
       radioControl: this.radioOptions[0].name,
       radioIconGroupControl: this.radioGroupIconOptions[0].name,
       radioIconGroupDisabledControl: this.radioGroupIconDisabledOptions[0].name,
