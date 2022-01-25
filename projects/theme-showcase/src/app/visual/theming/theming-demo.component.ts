@@ -20,7 +20,7 @@ export class ThemingDemoComponent implements OnInit {
 
   public section = 'elevation';
 
-  public themeSettings: SkyThemeSettings;
+  public themeSettings: SkyThemeSettings | undefined;
 
   private _themeName = 'default';
 

@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class SkyThemeIfOnPushDemoComponent {
   @Input()
-  public displayText: string;
+  public displayText: string | undefined;
 }

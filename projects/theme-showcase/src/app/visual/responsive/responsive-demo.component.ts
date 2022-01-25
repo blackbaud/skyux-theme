@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
 export class SkyResponsiveDemoComponent {
   public currentContainerBreakpoint = 'xs';
 
-  public currentScreenBreakpoint: string;
+  public currentScreenBreakpoint: string | undefined;
 
   // constructor(private mediaQueryService: SkyMediaQueryService) {
   //   // this.mediaQueryService.subscribe(breakpoint => {
